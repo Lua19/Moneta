@@ -1,0 +1,17 @@
+#section1{
+    background: rgb(21,31,32);
+    background: linear-gradient(90deg, rgba(21,31,32,1) 0%, rgba(255,255,255,1) 100%);
+}
+.title-text1{
+    color: whitesmoke;
+    font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+    font-weight: 600;
+}
+.text-space1{
+    color: whitesmoke;
+    font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+    font-weight: 600;
+}
+.photo{
+    width: 20%;
+}
