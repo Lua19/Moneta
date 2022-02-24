@@ -3,7 +3,10 @@
     color: white;
     font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
     display: flex;
-    width: 100%;
+    position: fixed;
+    top: 0;
+    width: 99vw;
+    z-index: 1;
     
 }
 #logo-img{
@@ -29,6 +32,7 @@
     padding-right: 10px;
     margin: auto;
     font-weight: 500;
+    border-radius: 5px;
 }
 #contact:hover{
     cursor: pointer;
