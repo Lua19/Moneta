@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./price-page.component.css']
 })
 export class PricePageComponent implements OnInit {
-
+  Fee : number = 0;
+  CreditCardFee = 0;
+  
   constructor() { }
 
   ngOnInit(): void {

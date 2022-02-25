@@ -1,0 +1,10 @@
+.container{
+    margin-top: 80px;
+}
+
+#title-span{
+    background-color: #151f20;
+    border-radius: 5px;
+    color: whitesmoke;
+    justify-content: center;
+}
