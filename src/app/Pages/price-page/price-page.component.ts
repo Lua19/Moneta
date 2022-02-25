@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class PricePageComponent implements OnInit {
   Fee : number = 0;
   CreditCardFee = 0;
-  
+  Money: number =0;
   constructor() { }
 
   ngOnInit(): void {

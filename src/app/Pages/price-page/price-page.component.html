@@ -1,4 +1,4 @@
-<table class="table">
+<table class="animate__animated animate__fadeInLeft table">
     <thead>
       <tr>
         <th scope="col">Sales range (Per Kiosk)</th>
@@ -25,15 +25,15 @@
     </tbody>
   </table>
 
-  <div class="container">
+  <div class="animate__animated animate__fadeInRight container">
     <h2 class="title-text1">How much does each system cost? </h2>
     <p class="text-space1">You can use our calculator below to calculate your average monthly sales and fees</p>
     <p class="text-space1">Just type the amount each sell point produces monthly</p>
     <div class="row">
       <div class="input-group mb-3 col">
         <span class="input-group-text">$</span>
-        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+        <input ngClass="Money" type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
       </div>
-      <div class="col"><h2 class="title-text1">Monthly fee: {{Fee}}</h2></div>
+      <div class="col"><h2 class="title-text1">Monthly fee: {{Money}}</h2></div>
     </div>
   </div>
