@@ -19,6 +19,8 @@
 }
 #add-button{
     width: 15%;
+    font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+    font-weight: 600;
     text-align: center;
     margin: auto;
     justify-content: center;
@@ -28,9 +30,12 @@
     color: whitesmoke;
     border: 1px gray;
 
+
 }
 #calc-button{
     width: 15%;
+    font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+    font-weight: 600;
     text-align: center;
     margin: auto;
     justify-content: center;
@@ -45,5 +50,5 @@
     border-style: solid;
 }
 .container{
-    padding-bottom: 15vh;
+    padding-bottom: 10vh;
 }

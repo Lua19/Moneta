@@ -32,12 +32,11 @@
     <button id="add-button" type="button" (click)="addMachine()">Add spot</button>
       <div class="row">      
       <br>
-      <div class="input-group mb-3 col" *ngFor="let machine of machines; let i = index">
-        <span class="input-group-text">Kiosk {{i+1}}</span>
-        <input id="input-field" name="Machine_{{i}}" type="text" placeholder="Monthly earnigns">
-        <button type="button" class="btn btn-danger btn-sm" (click)="removeMachine(i)">Remove</button>
-      </div>
-      
+        <div class="input-group mb-3 col" *ngFor="let machine of machines; let i = index">
+          <span class="input-group-text">Kiosk {{i+1}}</span>
+          <input id="input-field" name="Machine_{{i}}" type="text" placeholder="Monthly earnigns">
+          <button type="button" class="btn btn-danger btn-sm" (click)="removeMachine(i)">Remove</button>
+        </div>
       </div>
       <button id="calc-button" type="submit" (click)="calcFee" >Calculate</button>
     <div class="col" *ngIf="Fee > 0"><h2 class="title-text1">Monthly fee: {{Fee}}</h2></div>
