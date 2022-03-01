@@ -1,6 +1,6 @@
 .table{
     width: 60%;
-    margin-top: 80px;
+    margin-top: 15vh;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -16,4 +16,34 @@
     font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
     font-weight: 600;
     text-align: center;
+}
+#add-button{
+    width: 15%;
+    text-align: center;
+    margin: auto;
+    justify-content: center;
+    display: flex;
+    border-radius: 5px;
+    background-color: #151f20;
+    color: whitesmoke;
+    border: 1px gray;
+
+}
+#calc-button{
+    width: 15%;
+    text-align: center;
+    margin: auto;
+    justify-content: center;
+    display: flex;
+    border-radius: 5px;
+    background-color: #151f20;
+    color: whitesmoke;
+    border: 1px gray;
+}
+#input-field{
+    background-color: white;
+    border-style: solid;
+}
+.container{
+    padding-bottom: 15vh;
 }

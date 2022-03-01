@@ -20,6 +20,7 @@ export class PricePageComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   addMachine() {
     this.machines.push(
       {name: '',
@@ -30,11 +31,17 @@ export class PricePageComponent implements OnInit {
     this.machines.splice(i, 1);
   }
 
-  calculateFee(Fee : number){
-    
-    if (Fee>0) {
-      
+  calcFee (){
+    for (let index = 0; index < this.Earnings.length; index++) {
+      if (this.Earnings[index] > 300 && this.Earnings[index] <= 3000) {
+        this.Fee = this.Fee+50;
+      }
+      if (this.Earnings[index] > 3000 && this.Earnings[index] <= 5000) {
+        this.Fee = this.Fee+75;
+      }
+      if (this.Earnings[index] > 5000) {
+        this.Fee = this.Fee+100;
+      }  
     }
   }
-
 }
