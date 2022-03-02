@@ -1,4 +1,5 @@
-<table class="animate__animated animate__fadeInLeft table">
+<div class="content">
+<!-- <table class="animate__animated animate__fadeInLeft table">
     <thead>
       <tr>
         <th scope="col">Sales range (Per Kiosk)</th>
@@ -23,21 +24,27 @@
         <td>$100</td>
       </tr>
     </tbody>
-  </table>
+  </table> -->
 
   <div class="animate__animated animate__fadeInRight container">
     <h2 class="title-text1">How much does each system cost? </h2>
     <p class="text-space1">You can use our calculator below to calculate your average monthly sales and fees</p>
     <p class="text-space1">Just add and type the amount each sell point produces monthly</p>
+
     <button id="add-button" type="button" (click)="addMachine()">Add spot</button>
-      <div class="row">      
-      <br>
-        <div class="input-group mb-3 col" *ngFor="let machine of machines; let i = index">
-          <span class="input-group-text">Kiosk {{i+1}}</span>
-          <input id="input-field" name="Machine_{{i}}" type="text" placeholder="Monthly earnigns">
-          <button type="button" class="btn btn-danger btn-sm" (click)="removeMachine(i)">Remove</button>
-        </div>
+      
+    <form #myform="ngForm" (ngSubmit)="calcFee(myform)">
+      <div class="row" *ngFor="let salesPoint of salesPoints; index as i" >
+        <span class="input-group-text col-1">Machine {{i+1}}</span>
+        <input class="col-2" name="cashSales{{i}}" type="number" placeholder="$ of sales by cash" ngModel>
+        <input class="col-2" name="cardSales{{i}}" type="number" placeholder="$ of sales by credit card" ngModel>
+        <input class="col-2" name="userSales{{i}}" type="number" placeholder="$ of sales using account balance" ngModel>
+        <button class="col-2" (click)="removeMachine(i)">Delete</button>
       </div>
-      <button id="calc-button" type="submit" (click)="calcFee" >Calculate</button>
-    <div class="col" *ngIf="Fee > 0"><h2 class="title-text1">Monthly fee: {{Fee}}</h2></div>
+      <button id="calc-button" type="submit" >Calculate</button>
+    </form>
+    
+    
+    <div class="col" *ngIf="monthlyFee > 0"><h2 class="title-text1">Monthly fee : ${{monthlyFee}}</h2></div>
   </div>
+</div>

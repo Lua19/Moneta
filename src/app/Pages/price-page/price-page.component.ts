@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-price-page',
@@ -6,42 +7,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./price-page.component.css']
 })
 export class PricePageComponent implements OnInit {
-  Fee : number = 0;
-  CreditCardFee = 0;
-  Earnings : number[] = [];
-
-  public machines : any [] =
-  [
-    {name: '',
-     earnings: 0}
-  ]
+  monthlyFee : number = 0;
+  salesPoints : {cashSales: number, cardSales: number, userSales:number}[] = [
+    {cashSales : 0, cardSales : 0, userSales : 0}
+  ];
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
-  addMachine() {
-    this.machines.push(
-      {name: '',
-      earnings: 0}
-      );
-    }
-  removeMachine(i: number) {
-    this.machines.splice(i, 1);
+  addMachine(){
+    this.salesPoints.push(
+      {cashSales : 0, cardSales : 0, userSales : 0}
+    )
+  }
+  removeMachine(i : number){
+    this.salesPoints.splice(i,1);
   }
 
-  calcFee (){
-    for (let index = 0; index < this.Earnings.length; index++) {
-      if (this.Earnings[index] > 300 && this.Earnings[index] <= 3000) {
-        this.Fee = this.Fee+50;
-      }
-      if (this.Earnings[index] > 3000 && this.Earnings[index] <= 5000) {
-        this.Fee = this.Fee+75;
-      }
-      if (this.Earnings[index] > 5000) {
-        this.Fee = this.Fee+100;
-      }  
-    }
+  cardFee(cardSales:number){
+    cardSales = cardSales * 0.051;
   }
+
+  calcFee(myform: NgForm){
+    console.log(myform.value)
+  }
+
 }
