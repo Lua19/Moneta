@@ -4,8 +4,10 @@
     width: 100vw;
     overflow: hidden;
     position: relative;
+    background-color: black;
 }
 .body { 
     min-height: 100vh;
     position: relative;
+    background-color: black;
 }

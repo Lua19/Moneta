@@ -9,6 +9,7 @@ import { PricePageComponent } from './Pages/price-page/price-page.component';
 import { StorePageComponent } from './Pages/store-page/store-page.component';
 import { ContactComponent } from './Pages/contact/contact.component';
 import { FooterComponent } from './Items/footer/footer.component';
+import { LandingComponent } from './Pages/landing/landing.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FooterComponent } from './Items/footer/footer.component';
     PricePageComponent,
     StorePageComponent,
     ContactComponent,
-    FooterComponent
+    FooterComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,

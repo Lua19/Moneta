@@ -6,7 +6,7 @@
     position: fixed;
     top: 0;
     width: 99vw;
-    z-index: 1;
+    z-index: 3;
     height: 10vh;
     
 }
@@ -26,8 +26,11 @@
     padding-left: 10px;
     padding-right: 10px;
 }
+#main-link:hover{
+    cursor: pointer;
+}
 #contact{
-    background-color: rgb(60, 133, 151);
+    background-color: #0CBABA;
     font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
     padding-left: 10px;
     padding-right: 10px;
@@ -47,31 +50,29 @@
 }
 
 .bar-tab-body{
-    
+    background-color: #151f20;
+    color:whitesmoke;
+    display: flex;
     justify-content: center;
     margin-left: auto;
     margin-right: 0;
     margin: auto;
+    height: 100%;
+    width: 10%;
 }
 
 .bar-tab{
-    background-color: whitesmoke;
-    color: #151f20;
+    
     padding-left: 10px;
     padding-right: 10px;
     font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
     font-weight: 600;
     margin: auto;
-    width: 100%;
-    height: 100%;
+    
     border-radius: 5px;
 }
 .bar-tab-body:hover{
     cursor: pointer;
-    border: white;
-}
-.bar-tab:hover{
-    background-color: #151f20;
-    color: whitesmoke;
-    border: white;
+    background-color: whitesmoke;
+    color:#151f20;
 }

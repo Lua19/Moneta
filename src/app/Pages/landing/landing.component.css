@@ -1,0 +1,29 @@
+.background{
+    height: 100vh;
+    width: 100%;
+    background-image: url('https://d6scj24zvfbbo.cloudfront.net/86841d27658b72967b976ede38728e51/200000002-6fb216fb24/Imagen1.png?ph=7ca524daed');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(3px);
+}
+.content{
+    background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 60%;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+}
+#main-img{
+    width: 25%;
+    margin: auto;
+}
