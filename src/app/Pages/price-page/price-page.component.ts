@@ -8,14 +8,17 @@ import { FormsModule, NgForm } from '@angular/forms';
 })
 export class PricePageComponent implements OnInit {
   monthlyFee : number = 0;
-  salesPoints : {cashSales: number, cardSales: number, userSales:number}[] = [
-    {cashSales : 0, cardSales : 0, userSales : 0}
-  ];
+  totalFee : number = 0;
+  creditFee : number = 0;
+
+  salesPoints : {cashSales: number, cardSales: number, userSales:number}[]
+   = [{cashSales : 0, cardSales : 0, userSales : 0}];
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
   addMachine(){
     this.salesPoints.push(
       {cashSales : 0, cardSales : 0, userSales : 0}
@@ -27,10 +30,28 @@ export class PricePageComponent implements OnInit {
 
   cardFee(cardSales:number){
     cardSales = cardSales * 0.051;
+    return cardSales;
   }
 
   calcFee(myform: NgForm){
-    console.log(myform.value)
+     this.monthlyFee = 0;
+     this.totalFee = 0;
+     console.log(myform.value)
+     for (let index = 0; index < myform.value; index++) {
+       this.totalFee = myform.value.window['cashSales'+index] + myform.value.window['cardSales'+index] + myform.value.window['userSales'+index];
+       if (this.totalFee > 300 && this.totalFee <= 3000) {
+         this.monthlyFee = this.monthlyFee + 50;        
+       }
+       if (this.totalFee > 3000 && this.totalFee <= 5000) {
+         this.monthlyFee = this.monthlyFee + 75;        
+       }
+       if (this.totalFee > 5000) {
+         this.monthlyFee = this.monthlyFee + 100;        
+       }
+      
+     }
+     this.creditFee = this.cardFee(myform.value.cardSales);
+     this.monthlyFee = this.monthlyFee + this.creditFee;
   }
 
 }

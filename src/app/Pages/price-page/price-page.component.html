@@ -1,5 +1,5 @@
 <div class="content">
-<!-- <table class="animate__animated animate__fadeInLeft table">
+ <table class="animate__animated animate__fadeInLeft table">
     <thead>
       <tr>
         <th scope="col">Sales range (Per Kiosk)</th>
@@ -24,7 +24,7 @@
         <td>$100</td>
       </tr>
     </tbody>
-  </table> -->
+  </table> 
 
   <div class="animate__animated animate__fadeInRight container">
     <h2 class="title-text1">How much does each system cost? </h2>
@@ -35,9 +35,9 @@
       
     <form #myform="ngForm" (ngSubmit)="calcFee(myform)">
       <div class="row" *ngFor="let salesPoint of salesPoints; index as i" >
-        <span class="input-group-text col-1">Machine {{i+1}}</span>
-        <input class="col-2" name="cashSales{{i}}" type="number" placeholder="$ of sales by cash" ngModel>
-        <input class="col-2" name="cardSales{{i}}" type="number" placeholder="$ of sales by credit card" ngModel>
+        <span class="input-group-text col-2">Machine {{i+1}}</span>
+        <input class="col-2" name="cardSales{{i}}"  type="number" placeholder="$ of sales by credit card" ngModel>
+        <input class="col-2" name="cashSales{{i}}"  type="number" placeholder="$ of sales by cash" ngModel>
         <input class="col-2" name="userSales{{i}}" type="number" placeholder="$ of sales using account balance" ngModel>
         <button class="col-2" (click)="removeMachine(i)">Delete</button>
       </div>
@@ -45,6 +45,8 @@
     </form>
     
     
-    <div class="col" *ngIf="monthlyFee > 0"><h2 class="title-text1">Monthly fee : ${{monthlyFee}}</h2></div>
+    <div class="col" *ngIf="monthlyFee > 0"><h2 class="title-text1">Monthly fee : {{monthlyFee | currency }}</h2>
+
+    </div>
   </div>
 </div>
