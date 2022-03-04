@@ -72,3 +72,30 @@ tr{
     font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
     font-weight: 600;
 }
+.machine{
+    margin: auto;
+    border-radius: 5px;
+    border: solid 1px gray;
+    color: whitesmoke;
+    font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+    font-weight: 500;
+}
+.number{
+    margin: auto;
+    border-radius: 5px;
+    border: solid whitesmoke;
+    font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+    font-weight: 500;
+}
+.delete{
+    margin: auto;
+    border-radius: 5px;
+    border: solid 1px gray;
+    font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+    font-weight: 500;
+}
+.row{
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

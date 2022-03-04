@@ -34,24 +34,23 @@ export class PricePageComponent implements OnInit {
   }
 
   calcFee(myform: NgForm){
-     this.monthlyFee = 0;
-     this.totalFee = 0;
-     console.log(myform.value)
-     for (let index = 0; index < myform.value; index++) {
-       this.totalFee = myform.value.window['cashSales'+index] + myform.value.window['cardSales'+index] + myform.value.window['userSales'+index];
-       if (this.totalFee > 300 && this.totalFee <= 3000) {
-         this.monthlyFee = this.monthlyFee + 50;        
-       }
-       if (this.totalFee > 3000 && this.totalFee <= 5000) {
-         this.monthlyFee = this.monthlyFee + 75;        
-       }
-       if (this.totalFee > 5000) {
-         this.monthlyFee = this.monthlyFee + 100;        
-       }
-      
-     }
-     this.creditFee = this.cardFee(myform.value.cardSales);
-     this.monthlyFee = this.monthlyFee + this.creditFee;
+    this.monthlyFee = 0;
+    this.totalFee = 0;
+     
+    this.totalFee = myform.value.cardSales + myform.value.cashSales + myform.value.userSales
+
+    if (this.totalFee > 300 && this.totalFee <= 3000) {
+      this.monthlyFee = this.monthlyFee + 50; 
+    }
+    if (this.totalFee > 3000 && this.totalFee <= 5000) {
+      this.monthlyFee = this.monthlyFee + 75;        
+    }
+    if (this.totalFee > 5000) {
+      this.monthlyFee = this.monthlyFee + 100;        
+    }
+    
+    this.creditFee = this.cardFee(myform.value.cardSales);
+    this.monthlyFee = this.monthlyFee + this.creditFee;
   }
 
 }
