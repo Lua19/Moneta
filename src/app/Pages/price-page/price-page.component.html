@@ -33,17 +33,17 @@
     <button id="add-button" type="button" (click)="addMachine()">Add spot</button>
       
     <form #myform="ngForm" (ngSubmit)="calcFee(myform)">
-      <div class="row" *ngFor="let salesPoint of salesPoints; index as i" >
+
+      <div class="row" *ngFor="let machine of machines; index as i" >
         <span class="machine col-1">Kiosk {{i+1}}</span>
-        <input class="number col-3" name="cardSales"  type="number" placeholder="$ of sales by credit card" ngModel>
-        <input class="number col-3" name="cashSales"  type="number" placeholder="$ of sales by cash" ngModel>
-        <input class="number col-3" name="userSales" type="number" placeholder="$ of sales using account balance" ngModel>
+        <input class="number col-3" name="cardSales{{i}}"  type="number" placeholder="$ of sales by credit card" [(ngModel)]="cardSales[i]">
+        <input class="number col-3" name="cashSales{{i}}" type="number" placeholder="$ of sales by cash" [(ngModel)]="cashSales[i]">
+        <input class="number col-3" name="userSales{{i}}" type="number" placeholder="$ of sales using account balance" [(ngModel)]="userSales[i]">
         <button class="delete col-1" (click)="removeMachine(i)"><img src="https://img.icons8.com/ios-filled/50/000000/trash.png"/></button>
-        
       </div>
+
       <button id="calc-button" type="submit" >Calculate</button>
     </form>
-    
     
     <div class="col" *ngIf="monthlyFee > 0"><h2 class="title-text1">Monthly fee : {{monthlyFee | currency }}</h2>
 
