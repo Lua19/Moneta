@@ -46,13 +46,13 @@
 #calc-button{
     width: 15%;
     font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
-    font-weight: 600;
+    font-weight: 700;
     text-align: center;
     margin: auto;
     justify-content: center;
     display: flex;
     border-radius: 5px;
-    background-color: #67d85c;
+    background-color: #43a33a;
     color: whitesmoke;
     border: solid whitesmoke;
     border-width: 1px;
@@ -76,9 +76,10 @@ tr{
     margin: auto;
     border-radius: 5px;
     border: solid 1px gray;
-    color: whitesmoke;
+    background-color: whitesmoke;
+    color: #151f20;
     font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
-    font-weight: 500;
+    font-weight: 700;
 }
 .number{
     margin: auto;
@@ -96,6 +97,6 @@ tr{
 }
 .row{
     margin: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
