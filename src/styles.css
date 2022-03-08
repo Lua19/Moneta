@@ -12,3 +12,12 @@ html {
     width: 98vw;
     position: relative;
 }
+
+.bg-gradient-dark {
+    background-image: linear-gradient(195deg, #42424a 0%, #191919 100%);
+}
+
+.bg-transparent-dark {
+    background-color: black;
+    opacity: 0.8;
+}

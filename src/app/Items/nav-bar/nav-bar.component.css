@@ -1,4 +1,4 @@
-#top-bar{
+#top-bar {
     background-color: #151f20;
     color: white;
     font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
@@ -7,30 +7,36 @@
     top: 0;
     width: 99vw;
     z-index: 3;
-    height: 10vh;
-    
+    height: 12vh;
 }
+
 #logo-img{
     padding-left: 10px;
     padding-right: 10px;
 }
-.title{
+.title {
+    color: whitesmoke;
     margin: auto;
     font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
     font-weight: 600;
     display: flex;
     text-align: center;
 }
-#main-link{
+
+#main-link {
     display: flex;
     padding-left: 10px;
     padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
+
 #main-link:hover{
     cursor: pointer;
 }
-#contact{
+#contact {
     background-color: #0CBABA;
+    color: whitesmoke;
     font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
     padding-left: 10px;
     padding-right: 10px;

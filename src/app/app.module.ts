@@ -11,6 +11,7 @@ import { ContactComponent } from './Pages/contact/contact.component';
 import { FooterComponent } from './Items/footer/footer.component';
 import { LandingComponent } from './Pages/landing/landing.component';
 import { FormsModule } from '@angular/forms';
+import { MainInfoComponent } from './Pages/main-info/main-info.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     StorePageComponent,
     ContactComponent,
     FooterComponent,
-    LandingComponent
+    LandingComponent,
+    MainInfoComponent
   ],
   imports: [
     BrowserModule,
