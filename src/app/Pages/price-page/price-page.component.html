@@ -1,4 +1,5 @@
 <div class="content bg-gradient-dark">
+  <br>
  <table class="animate__animated animate__fadeInLeft table">
     <thead>
       <tr>
@@ -8,15 +9,11 @@
     </thead>
     <tbody>
       <tr>
-        <td>Under or equal to $300</td>
-        <td>$0</td>
-      </tr>
-      <tr>
-        <td>Over $300 - Under or equal to $3,000</td>
+        <td>$0 - $2,999</td>
         <td>$50</td>
       </tr>
       <tr>
-        <td>Over $3,000 - Under or equal to $5,000</td>
+        <td>$3,000 - $4,999</td>
         <td>$75</td>
       </tr>
       <tr>
@@ -29,26 +26,22 @@
     <h2 class="title-text1">How much does each system cost? </h2>
     <p class="text-space1">You can use our calculator below to calculate your average monthly sales and fees</p>
     <p class="text-space1">Just add and type the amount each sell point produces monthly</p>
-
-    
       
     <form #myform="ngForm" (ngSubmit)="calcFee(myform)">
 
       <div class="row" *ngFor="let machine of machines; index as i" >
         <span class="machine col-1">Kiosk {{i+1}}</span>
         <input class="number col-3" name="cardSales{{i}}"  type="number" placeholder="$ of sales by credit card" [(ngModel)]="cardSales[i]">
-        <input class="number col-3" name="cashSales{{i}}" type="number" placeholder="$ of sales by cash" [(ngModel)]="cashSales[i]">
-        <input class="number col-3" name="userSales{{i}}" type="number" placeholder="$ of sales using account balance" [(ngModel)]="userSales[i]">
         <button class="delete col-1" (click)="removeMachine(i)"><img src="https://img.icons8.com/ios-filled/50/000000/trash.png"/></button>
       </div>
       <div class="row">
-        <button id="add-button" type="button" (click)="addMachine()">Add spot</button>
+        <button id="add-button" type="button" (click)="addMachine()">Add market</button>
         <button id="calc-button" type="submit" >Calculate</button>
       </div>
       
     </form>
     <br>
-    <div class="col" *ngIf="monthlyFee > 0"><h2 class="title-text1">Monthly fee : {{monthlyFee | currency }}</h2>
+    <div class="col animate__animated animate__fadeIn" *ngIf="monthlyFee > 0"><h2 class="title-text1">Moneta monthly fee : {{monthlyFee | currency }}</h2>
 
     </div>
   </div>

@@ -3,19 +3,16 @@
   <form class="contact-form" #ContactForm="ngForm" (ngSubmit)="sendContact(ContactForm)">
   <span class="input-group-text" id="title-span">Need some more information? Send us a message or give us a call</span>
   <br>
-  <select class="form-select col-2" aria-label="Default select example" name="type" ngModel>
+  <!-- <select class="form-select col-2" aria-label="Default select example" name="type" ngModel>
     <option selected value="purchase-micromarket">I wish to buy a kiosk</option>
     <option value="convert-micromarket">I would like to switch to a kiosk </option>
     <option value="doubt">I have further questions</option>
-  </select>
-  <br>
+  </select> -->
   <div class="input-group mb-3 ">
     <span class="input-group-text col-3" id="basic-addon1">Name</span>
     <input type="text" class="form-control" placeholder="Whats your name?" name="Name" aria-label="Username" aria-describedby="basic-addon1"ngModel>
   </div>
 
-  
-  
   <div class="input-group mb-3 ">
     <span class="input-group-text col-3" id="basic-addon1">Email </span>
     <input type="text" class="form-control" placeholder="email@example.com" name="Email" aria-label="Username" aria-describedby="basic-addon1" ngModel>
@@ -26,10 +23,9 @@
     <input type="text" class="form-control" placeholder="A phone number to reach you" name="Phone" aria-label="Username" aria-describedby="basic-addon1" ngModel>
   </div>
   
-  
-  <div class="input-group">
-    <span class="input-group-text col-3" >Issue</span> 
-    <textarea class="form-control" aria-label="With textarea" name="Issue" placeholder="How can we help you?" ngModel></textarea>
+  <div class="input-group mb-3">
+    <span class="input-group-text col-3" >Comments</span> 
+    <textarea class="form-control" aria-label="With textarea" name="Comments" placeholder="How can we help you?" ngModel></textarea>
   </div>
 
   <button type="submit" value="submit">Send</button>

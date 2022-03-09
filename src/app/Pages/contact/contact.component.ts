@@ -12,11 +12,10 @@ export class ContactComponent implements OnInit {
   private apiURL: string = '';
 
   NewContact: Contact = {
-    type: '',
     name: '',
     email: '',
     phone: '',
-    Issue: ''
+    comments: ''
   };
 
   constructor(private contactService: ContactServiceService) { }
