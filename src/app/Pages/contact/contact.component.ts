@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Contact } from 'src/app/Interfaces/contact';
+import { ContactServiceService } from 'src/app/Services/contact-service.service';
 
 @Component({
   selector: 'app-contact',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  private apiURL: string = '';
+
+  NewContact: Contact = {
+    type: '',
+    name: '',
+    email: '',
+    phone: '',
+    Issue: ''
+  };
+
+  constructor(private contactService: ContactServiceService) { }
 
   ngOnInit(): void {
+  }
+
+  sendContact(ContactForm : any){
+    this.NewContact = ContactForm.form.value;
+    this.contactService.postContact(this.NewContact).subscribe(contact =>{
+      console.log(contact);
+    })
   }
 
 }

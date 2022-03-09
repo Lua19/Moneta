@@ -1,36 +1,38 @@
 <div class="animate__animated animate__fadeInLeft contact bg-gradient-dark">
-  <div class="contact-form">
-  <span class="input-group-text" id="title-span">Need some more information? Send us a message through this form or give us a call</span>
+
+  <form class="contact-form" #ContactForm="ngForm" (ngSubmit)="sendContact(ContactForm)">
+  <span class="input-group-text" id="title-span">Need some more information? Send us a message or give us a call</span>
   <br>
-  <select class="form-select col-2" aria-label="Default select example">
-    <option selected>Contact ...</option>
-    <option value="1">I wish to buy a kiosk</option>
-    <option value="2">I have further questions </option>
-    <option value="3">Other...</option>
+  <select class="form-select col-2" aria-label="Default select example" name="type" ngModel>
+    <option selected value="purchase-micromarket">I wish to buy a kiosk</option>
+    <option value="convert-micromarket">I would like to switch to a kiosk </option>
+    <option value="doubt">I have further questions</option>
   </select>
   <br>
   <div class="input-group mb-3 ">
     <span class="input-group-text col-3" id="basic-addon1">Name</span>
-    <input type="text" class="form-control" placeholder="Whats your name?" aria-label="Username" aria-describedby="basic-addon1">
+    <input type="text" class="form-control" placeholder="Whats your name?" name="Name" aria-label="Username" aria-describedby="basic-addon1"ngModel>
   </div>
 
   
   
   <div class="input-group mb-3 ">
     <span class="input-group-text col-3" id="basic-addon1">Email </span>
-    <input type="text" class="form-control" placeholder="email@example.com" aria-label="Username" aria-describedby="basic-addon1">
+    <input type="text" class="form-control" placeholder="email@example.com" name="Email" aria-label="Username" aria-describedby="basic-addon1" ngModel>
   </div>
 
   <div class="input-group mb-3 ">
     <span class="input-group-text col-3" id="basic-addon1">Phone number</span>
-    <input type="text" class="form-control" placeholder="A phone number to reach you" aria-label="Username" aria-describedby="basic-addon1">
+    <input type="text" class="form-control" placeholder="A phone number to reach you" name="Phone" aria-label="Username" aria-describedby="basic-addon1" ngModel>
   </div>
   
   
   <div class="input-group">
-    <span class="input-group-text col-3" >Issue</span>
-    <textarea class="form-control" aria-label="With textarea" placeholder="How can we help you?"></textarea>
+    <span class="input-group-text col-3" >Issue</span> 
+    <textarea class="form-control" aria-label="With textarea" name="Issue" placeholder="How can we help you?" ngModel></textarea>
   </div>
-</div>
+
+  <button type="submit" value="submit">Send</button>
+</form>
 </div>
 <app-footer></app-footer>
