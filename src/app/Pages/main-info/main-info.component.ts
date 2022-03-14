@@ -12,4 +12,8 @@ export class MainInfoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  goToLink() {
+    window.open('https://youtu.be/CHd4Xev4XyY', '_blank');
+  }
+
 }

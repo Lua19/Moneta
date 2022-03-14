@@ -13,6 +13,7 @@ import { FooterComponent } from './Items/footer/footer.component';
 import { LandingComponent } from './Pages/landing/landing.component';
 import { FormsModule } from '@angular/forms';
 import { MainInfoComponent } from './Pages/main-info/main-info.component';
+import { ContactServiceService } from './Services/contact-service.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { MainInfoComponent } from './Pages/main-info/main-info.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ContactServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

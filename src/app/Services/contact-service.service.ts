@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Contact } from '../Interfaces/contact';
@@ -7,11 +7,10 @@ import { Contact } from '../Interfaces/contact';
   providedIn: 'root'
 })
 export class ContactServiceService {
-  private apiURL : string = '';
+
   constructor(private http: HttpClient) {}
 
-  postContact(contact: Contact): Observable<Contact>{
-    console.log("Submited "+contact)
-    return this.http.post<Contact>(this.apiURL, contact)
+  postContact(body:any){
+    return this.http.post("http://localhost:3000/email",body)
   }
 }
