@@ -25,10 +25,16 @@ export class ContactComponent implements OnInit {
 
   sendContact(ContactForm : any){
     this.NewContact = ContactForm.form.value;
-    
+    console.log(ContactForm.value)
     let email = ContactForm.form.value.Email;
+    let name = ContactForm.form.value.Name;
+    let phone = ContactForm.form.value.Phone;
+    let comments = ContactForm.form.value.Comments;
     let reqObj = {
-      email: email
+      email: email,
+      name: name,
+      phone: phone,
+      comments: comments
     }
     this.contactService.postContact(reqObj).subscribe(data =>{
       console.log(data);

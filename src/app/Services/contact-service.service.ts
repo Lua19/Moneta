@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { response } from 'express';
 import { Observable } from 'rxjs';
 import { Contact } from '../Interfaces/contact';
 
@@ -11,6 +12,8 @@ export class ContactServiceService {
   constructor(private http: HttpClient) {}
 
   postContact(body:any){
-    return this.http.post("http://localhost:3000/email",body)
+    console.log(body);
+    
+    return this.http.post('http://localhost:3000/email',body)
   }
 }
