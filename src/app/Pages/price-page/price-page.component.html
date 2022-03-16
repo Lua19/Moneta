@@ -27,13 +27,14 @@
     <p class="text-space1">You can use our calculator below to calculate your average monthly sales and fees</p>
     <p class="text-space1">Just add and type the amount each sell point produces monthly</p>
       
-    <form #myform="ngForm" (ngSubmit)="calcFee(myform)">
+    <form #myform="ngForm" (ngSubmit)="calcFee()">
 
-      <div class="row d-flex justify-content-center" *ngFor="let machine of machines; index as i" >
+      <div class="row d-flex justify-content-center animate__animated animate__fadeIn" *ngFor="let machine of machines; index as i" >
         <span class="machine col-1">Kiosk {{i+1}}</span>
         <span class="machine col-2">Monthly Sales</span>
-        <input class="number col-2" name="cardSales{{i}}"  type="number" placeholder="$ of sales by credit card" [(ngModel)]="cardSales[i]">
-        <button class="delete col-1" (click)="removeMachine(i)"><img src="https://img.icons8.com/material-rounded/24/000000/trash.png"/></button>
+        <input class="number col-2" name="sales{{i}}" (click)="sales[i]= ''" placeholder="$ of sales by credit card" [(ngModel)]="sales[i]">
+        <span class="machine col-2">{{singleFee[i] | currency}} per month</span>
+        <button class="delete bg-danger col-1" (click)="removeMachine(i)"><img src="https://img.icons8.com/material-rounded/24/000000/trash.png"/></button>
       </div>
       <div class="row d-flex justify-content-center" id="buttons">
         <button id="add-button" type="button" (click)="addMachine()">Add market</button>
@@ -42,8 +43,8 @@
       
     </form>
     <br>
-    <div class="col animate__animated animate__fadeIn" *ngIf="monthlyFee > 0"><h2 class="title-text1">Moneta monthly fee : {{monthlyFee | currency }}</h2>
-
+    <div class="col animate__animated animate__fadeIn" *ngIf="monthlyFee > 0">
+      <h2 class="title-text1">Total monthly fee : {{monthlyFee | currency }}</h2>
     </div>
   </div>
 </div>
