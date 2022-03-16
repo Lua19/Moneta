@@ -13,6 +13,7 @@ const routes: Routes =
    {path: 'price', component: PricePageComponent},
    {path: 'store', component: StorePageComponent},
    {path: 'contact', component: ContactComponent},
+   {path: 'store', component: StorePageComponent},
    {path: '**', component: LandingComponent}
   ];
 
