@@ -29,13 +29,13 @@
       
     <form #myform="ngForm" (ngSubmit)="calcFee(myform)">
 
-      <div class="row" *ngFor="let machine of machines; index as i" >
+      <div class="row d-flex justify-content-center" *ngFor="let machine of machines; index as i" >
         <span class="machine col-1">Kiosk {{i+1}}</span>
         <span class="machine col-2">Monthly Sales</span>
-        <input class="number col-3" name="cardSales{{i}}"  type="number" placeholder="$ of sales by credit card" [(ngModel)]="cardSales[i]">
+        <input class="number col-2" name="cardSales{{i}}"  type="number" placeholder="$ of sales by credit card" [(ngModel)]="cardSales[i]">
         <button class="delete col-1" (click)="removeMachine(i)"><img src="https://img.icons8.com/material-rounded/24/000000/trash.png"/></button>
       </div>
-      <div class="row">
+      <div class="row d-flex justify-content-center" id="buttons">
         <button id="add-button" type="button" (click)="addMachine()">Add market</button>
         <button id="calc-button" type="submit" >Calculate</button>
       </div>
