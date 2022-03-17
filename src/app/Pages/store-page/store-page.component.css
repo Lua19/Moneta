@@ -1,0 +1,32 @@
+.store-list{
+    margin-top: 12vh;
+}
+#item{
+  padding: 25px;
+}
+.photo{
+    width: 80%;
+    margin: auto;
+}
+.title-text1{
+    color: whitesmoke;
+    font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+    font-weight: 600;
+    text-align: center;
+}
+.text-space1{
+    color: whitesmoke;
+    font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+    font-weight: 600;
+}
+li{
+    color: whitesmoke;
+    font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+    font-weight: 600;
+}
+#buy-button{
+    color: white;
+    font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+    font-weight: 600;
+    border: solid 1px gray;
+}
