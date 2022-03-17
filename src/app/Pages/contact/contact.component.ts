@@ -25,7 +25,6 @@ export class ContactComponent implements OnInit {
 
   sendContact(ContactForm : any){
     this.NewContact = ContactForm.form.value;
-    console.log(ContactForm.value)
     let email = ContactForm.form.value.Email;
     let name = ContactForm.form.value.Name;
     let phone = ContactForm.form.value.Phone;

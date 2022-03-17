@@ -12,8 +12,6 @@ export class ContactServiceService {
   constructor(private http: HttpClient) {}
 
   postContact(body:any){
-    console.log(body);
-    
     return this.http.post('http://localhost:3000/email',body)
   }
 }
