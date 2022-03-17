@@ -1,8 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { response } from 'express';
-import { Observable } from 'rxjs';
-import { Contact } from '../Interfaces/contact';
 
 @Injectable({
   providedIn: 'root'

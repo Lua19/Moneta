@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-price-page',
@@ -38,7 +37,7 @@ export class PricePageComponent implements OnInit {
     this.calcFee();
   }
 
-  /*
+  /* THIS HELPS CALCULATE CREDIT CARD TAXES
   cardFee(){
     this.creditFee = 0;
     for (let index = 0; index < this.machines.length; index++) {

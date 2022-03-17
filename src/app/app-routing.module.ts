@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ContactComponent } from './Pages/contact/contact.component';
-import { InfoPageComponent } from './Pages/info-page/info-page.component';
 import { LandingComponent } from './Pages/landing/landing.component';
 import { MainInfoComponent } from './Pages/main-info/main-info.component';
 import { PricePageComponent } from './Pages/price-page/price-page.component';
