@@ -1,5 +1,4 @@
 var express = require('express');
-var bodyParser = require('body-parser');
 var cors = require('./../cors');
 const emailRouter = express.Router();
 var nodeMailer = require('nodemailer');
@@ -7,16 +6,19 @@ emailRouter.route('/')
 
 .options(cors.cors,(req,res)=>{
     console.log("Coming email here");
-    res.sendStatus(200);
+    res.sendStatus(200).json({
+        ok: true,
+        message: 'Message sent correctly'
+    });
 })
 .post(cors.cors, (req,res,next) =>{
     let transporter = nodeMailer.createTransport({
-        host: "email-smtp.us-east-1.amazonaws.com",
+        host: process.env.host,
         port: 587,
-        secure: false, // true for 465, false for other ports
+        secure: false,
         auth: {
-          user: "AKIAZ47ZBAGYWTJV3EJA", // generated ethereal user
-          pass: "BDWy2v0UCaC1/d6bojdBzQHWQxM/+9d3NccL7D9s2lZV", // generated ethereal password
+          user: process.env.user, // generated ethereal user
+          pass: process.env.pass, // generated ethereal password
         },
       });
     var mailOptions = {
