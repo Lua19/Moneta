@@ -14,7 +14,7 @@ emailRouter.route('/')
 .post(cors.cors, (req,res,next) =>{
     let transporter = nodeMailer.createTransport({
         host: process.env.host,
-        port: 587,
+        port: process.env.port,
         secure: false,
         auth: {
           user: process.env.user, // generated ethereal user
