@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ContactComponent } from './Pages/contact/contact.component';
 import { LandingComponent } from './Pages/landing/landing.component';
+import { LoginComponent } from './Pages/login/login.component';
 import { MainInfoComponent } from './Pages/main-info/main-info.component';
 import { PricePageComponent } from './Pages/price-page/price-page.component';
+import { ProductComponent } from './Pages/product/product.component';
 import { StorePageComponent } from './Pages/store-page/store-page.component';
 
 const routes: Routes = 
@@ -13,6 +15,8 @@ const routes: Routes =
    {path: 'store', component: StorePageComponent},
    {path: 'contact', component: ContactComponent},
    {path: 'store', component: StorePageComponent},
+   {path: 'store/products', component: ProductComponent},
+   {path: 'login', component: LoginComponent},
    {path: '**', component: LandingComponent}
   ];
 

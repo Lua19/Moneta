@@ -14,6 +14,8 @@ import { LandingComponent } from './Pages/landing/landing.component';
 import { FormsModule } from '@angular/forms';
 import { MainInfoComponent } from './Pages/main-info/main-info.component';
 import { ContactServiceService } from './Services/contact-service.service';
+import { LoginComponent } from './Pages/login/login.component';
+import { ProductComponent } from './Pages/product/product.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { ContactServiceService } from './Services/contact-service.service';
     ContactComponent,
     FooterComponent,
     LandingComponent,
-    MainInfoComponent
+    MainInfoComponent,
+    LoginComponent,
+    ProductComponent
     
   ],
   imports: [

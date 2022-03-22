@@ -1,0 +1,37 @@
+.content{
+    background-color: #151f20;
+    margin-top: 80px;
+    padding-top: 15vh;
+    width: 100%;
+}
+form{
+    width: 35%;
+    margin: auto;
+    padding-bottom: 12vh;
+}
+label{
+    color: whitesmoke;
+    font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+    font-weight: 600;
+    text-align: center;
+}
+#title-span{
+    background-color: #151f20;
+    border-radius: 5px;
+    color: whitesmoke;
+    justify-content: center;
+}
+button{
+    width: 15%;
+    font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+    font-weight: 600;
+    text-align: center;
+    margin: auto;
+    justify-content: center;
+    display: flex;
+    border-radius: 5px;
+    background-color: #151f20;
+    color: whitesmoke;
+    border: solid whitesmoke;
+    border-width: 1px;
+}
