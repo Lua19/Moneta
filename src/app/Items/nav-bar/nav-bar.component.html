@@ -14,7 +14,8 @@
         <h2 class="bar-tab">Store</h2>
     </div>
     <div class="links align-items-center">
-        <div class="align-self-center" id="contact" routerLink="login"><h2 class="contact-text col">Login</h2></div>
+        <div *ngIf="!session" class="align-self-center" id="contact" routerLink="login"><h2 class="contact-text col">Login</h2></div>
+        <div *ngIf="session" class="align-self-center" id="contact" (click)="logout()"><h2 class="contact-text col">Logout</h2></div>
         <div class="align-self-center" id="contact" routerLink="contact"><h2 class="contact-text col">Contact us</h2></div>
     </div>
 </div>
