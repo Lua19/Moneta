@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-store-page',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StorePageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router : Router) { }
 
   ngOnInit(): void {
+  }
+  navigate(route: string){
+    this.router.navigate(['/store/'+route]);
   }
 
 }
