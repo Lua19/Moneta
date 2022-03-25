@@ -1,5 +1,4 @@
 .contact{
-    background-color: #151f20;
     margin-top: 80px;
     padding-top: 15vh;
     width: 100%;
@@ -19,7 +18,7 @@
 button{
     width: 15%;
     font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
-    font-weight: 600;
+    font-weight: 700;
     text-align: center;
     margin: auto;
     justify-content: center;

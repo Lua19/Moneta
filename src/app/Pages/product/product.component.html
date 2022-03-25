@@ -1,14 +1,55 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<h1>Only for Admins</h1>
+<div class="product bg-gradient-dark">
+    <form class="product-form" #ProductForm="ngForm" (ngSubmit)="addProduct(ProductForm)">
+        <h1 class="title-text1">New product</h1>
+        <div class="row d-flex justify-content-center">
+            <div class="col-4">
+              <input type="text" class="form-control" name="name" placeholder="Name" ngModel>
+            </div>
+            <div class="col-4">
+              <input type="text" class="form-control" name="barcode" placeholder="Barcode" ngModel>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-4">
+              <input type="number" class="form-control" name="quantity" placeholder="Amount" ngModel>
+            </div>
+            <div class="col-4">
+              <input type="number" class="form-control" name="price" placeholder="Price" ngModel>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-4">
+              <input type="number" class="form-control" name="taxPercentage" placeholder="Tax Percentage" ngModel>
+            </div>
+            <div class="col-4">
+              <input type="number" class="form-control" name="promotionAmount" placeholder="Promotion amount" ngModel>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-4">
+              <input type="number" class="form-control" name="salePrice" placeholder="Sale Price" ngModel>
+            </div>
+            <div class="col-4">
+              <input type="text" class="form-control" name="imageUrl" placeholder="Image URL" ngModel>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-4">
+              <input type="file" (change)="getBase64($event)" class="form-control" name="imageData" placeholder="Image Data" ngModel>
+            </div>
+            <div class="col-4">
+              <input type="number" class="form-control" name="unitCost" placeholder="Unit Cost" ngModel>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-4">
+              <input type="text" class="form-control" name="status" placeholder="Status" ngModel>
+            </div>
+            <div class="col-4">
+              <input type="text" class="form-control" name="deliveryTime" placeholder="Delivery Time" ngModel>
+            </div>
+        </div>
+        <img src="{{image}}" alt="">
+        <button type="submit" value="submit">Add product</button>
+    </form>
+</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-product',
@@ -7,9 +8,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
+  product: any;
+  image : any;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  getBase64(event :any){
+    const file = event.target.files[0];
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      this.image = reader.result;
+      console.log(this.image);
+  }
+   reader.onerror = function (error) {
+     console.log('Error: ', error);
+   };
+  }
+
+  addProduct(form: NgForm){
+    form.value.imageData = this.image;
+    console.log(form.value);
+    this.product = form.value
   }
 
 }
