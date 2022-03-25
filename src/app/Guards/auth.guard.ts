@@ -13,13 +13,10 @@ export class AuthGuard implements CanActivate, CanLoad {
   }
 
   canActivate(route: ActivatedRouteSnapshot,state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    console.log("It seems to work - CanActivate");
     if (this.auth.isLoggedIn() === true) {
-      console.log('Access granted');
       return true
     }
     if (this.auth.isLoggedIn() === false) {
-      console.log('Access denied');
       this.router.navigate(['/login'])
       return false
     }
@@ -27,15 +24,11 @@ export class AuthGuard implements CanActivate, CanLoad {
   }
 
   canLoad(route: Route,segments: UrlSegment[]): Observable<boolean> | Promise<boolean> | boolean  {
-    console.log("It seems to work - Can Load");
     if (this.auth.isLoggedIn() === true) {
-      console.log('Access granted');
       return true
     }
     if (this.auth.isLoggedIn() === false) {
-      console.log('Access denied');
-      
-      return false
+     return false
     }
     return false;
   }

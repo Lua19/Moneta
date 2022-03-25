@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/Services/auth.service';
 
 @Component({
@@ -18,7 +18,11 @@ export class NavBarComponent {
 
   logout(){
     localStorage.removeItem('token');
-    console.log("Token deleted, reload");
+    window.location.reload();
+  }
+
+  navigate(topage:string, ){
+    this.router.navigate([topage]);
   }
 
 }

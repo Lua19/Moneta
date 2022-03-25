@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -6,15 +6,12 @@ import { NgForm } from '@angular/forms';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
-export class ProductComponent implements OnInit {
+export class ProductComponent {
 
   product: any;
   image : any;
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
   getBase64(event :any){
     const file = event.target.files[0];
