@@ -16,6 +16,7 @@ import { MainInfoComponent } from './Pages/main-info/main-info.component';
 import { ContactServiceService } from './Services/contact-service.service';
 import { LoginComponent } from './Pages/login/login.component';
 import { ProductComponent } from './Pages/product/product.component';
+import { AuthService } from './Services/auth.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { ProductComponent } from './Pages/product/product.component';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [ContactServiceService],
+  providers: [ContactServiceService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

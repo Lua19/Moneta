@@ -27,8 +27,8 @@ export class LoginComponent implements OnInit {
 
   login(){
     localStorage.setItem('token','wrxscf');
-    this.auth.isLoggedIn();
-    console.log(this.returnUrl);
+    this.auth.isUserLoggedIn.next(true)
+    console.log(this.myForm.value);
     this.router.navigateByUrl(this.returnUrl);
     
   }

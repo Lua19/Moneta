@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/Services/auth.service';
 
 @Component({
@@ -9,10 +9,13 @@ import { AuthService } from 'src/app/Services/auth.service';
 })
 export class NavBarComponent {
 
-  session : boolean = this.auth.isLoggedIn();;
+  session : boolean = this.auth.isLoggedIn();
+  isUserLoggedIn: boolean = false
 
   constructor(private auth: AuthService,private router: Router) {
-
+    this.auth.isUserLoggedIn.subscribe( value => {
+      this.isUserLoggedIn = value;
+  });
   }
 
 
