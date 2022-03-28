@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from 'src/app/Services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -8,15 +10,27 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  myForm: FormGroup = this.fb.group({
+    email: ['', [Validators.required,Validators.email]],
+    password: ['', [Validators.required]],
+  })
+
+  returnUrl: string = '';
+  constructor(private router: Router,
+              private route: ActivatedRoute,
+              private auth: AuthService,
+              private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
   login(){
-
     localStorage.setItem('token','wrxscf');
-    console.log("Token set, reload");
+    this.auth.isLoggedIn();
+    console.log(this.returnUrl);
+    this.router.navigateByUrl(this.returnUrl);
+    
   }
 
 }

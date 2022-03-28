@@ -11,7 +11,7 @@ import { StorePageComponent } from './Pages/store-page/store-page.component';
 import { ContactComponent } from './Pages/contact/contact.component';
 import { FooterComponent } from './Items/footer/footer.component';
 import { LandingComponent } from './Pages/landing/landing.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MainInfoComponent } from './Pages/main-info/main-info.component';
 import { ContactServiceService } from './Services/contact-service.service';
 import { LoginComponent } from './Pages/login/login.component';
@@ -36,7 +36,8 @@ import { ProductComponent } from './Pages/product/product.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [ContactServiceService],
   bootstrap: [AppComponent]

@@ -21,8 +21,8 @@ export class NavBarComponent {
     window.location.reload();
   }
 
-  navigate(topage:string, ){
-    this.router.navigate([topage]);
+  navigate(toPage:string, ){
+    this.router.navigate([toPage]);
   }
 
 }

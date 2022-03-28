@@ -8,16 +8,15 @@ import { AuthService } from '../Services/auth.service';
 })
 export class AuthGuard implements CanActivate, CanLoad {
 
-  constructor(private auth : AuthService,private router: Router){
-
-  }
+  constructor(private auth : AuthService,private router: Router){}
 
   canActivate(route: ActivatedRouteSnapshot,state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     if (this.auth.isLoggedIn() === true) {
       return true
     }
     if (this.auth.isLoggedIn() === false) {
-      this.router.navigate(['/login'])
+      this.router.navigate(['/login'], { queryParams: { returnUrl: state.url }});
+      console.log(state.url);
       return false
     }
     return false;
