@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { ProductsService } from 'src/app/Services/products.service';
 
 @Component({
   selector: 'app-product',
@@ -11,7 +12,21 @@ export class ProductComponent {
   product: any;
   image : any;
 
-  constructor() { }
+  myForm: FormGroup = this.fb.group({
+    Name: ['', [Validators.required]],
+    Barcode: ['', [Validators.required]],
+   // Quantity: ['', [Validators.required]],
+   //  UnitCost: ['', [Validators.required]],
+    Price: ['', [Validators.required]],
+    // TaxPercentage: ['', [Validators.required]],
+    // PromotionAmount: ['', [Validators.required]],
+    // ImageUrl: ['', [Validators.required]],
+    // ImageData: ['', [Validators.required]],
+    // Status: ['', [Validators.required]],
+    // DeliveryTime: ['', [Validators.required]]
+  })
+
+  constructor(private productService: ProductsService, private fb: FormBuilder) { }
 
   getBase64(event :any){
     const file = event.target.files[0];
@@ -19,17 +34,19 @@ export class ProductComponent {
     reader.readAsDataURL(file);
     reader.onload = () => {
       this.image = reader.result;
-      console.log(this.image);
   }
    reader.onerror = function (error) {
      console.log('Error: ', error);
    };
   }
 
-  addProduct(form: NgForm){
-    form.value.imageData = this.image;
-    console.log(form.value);
-    this.product = form.value
+  addProduct(){
+   // this.myForm.value.imageData = this.image;
+    let body = JSON.stringify(this.myForm.value)
+    console.log(body);
+    this.productService.postProduct(body).subscribe(
+      (res) => console.log(res)
+    );
   }
 
 }

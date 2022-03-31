@@ -17,6 +17,7 @@ import { ContactServiceService } from './Services/contact-service.service';
 import { LoginComponent } from './Pages/login/login.component';
 import { ProductComponent } from './Pages/product/product.component';
 import { AuthService } from './Services/auth.service';
+import { ImagePipe } from './pipes/image.pipe';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AuthService } from './Services/auth.service';
     LandingComponent,
     MainInfoComponent,
     LoginComponent,
-    ProductComponent
+    ProductComponent,
+    ImagePipe
     
   ],
   imports: [
