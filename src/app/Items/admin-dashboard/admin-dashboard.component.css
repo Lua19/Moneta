@@ -1,0 +1,16 @@
+.dashboard{
+    background-color: #151f20;
+    color: rgb(190, 190, 190);
+    width: 100%;
+    font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+    bottom: 0;
+    padding: 15px;
+}
+.tab{
+    height: 100%;
+    background-color: darkgrey;
+    margin: 15px;
+    cursor: pointer;
+    text-align: center;
+    color: whitesmoke;
+}
