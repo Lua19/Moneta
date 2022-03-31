@@ -1,34 +1,20 @@
-<div class="store-list bg-gradient-dark">
-  <h1>{{productsList[0] | json}}</h1>
-  <div class="row row-cols-1 row-cols-md-3 g-4 d-flex justify-content-center">
+<div class="store-list bg-gradient-dark ">
+  <!-- <h1>{{productsList[0] | json}}</h1> -->
+  <div class="row row-cols-1 row-cols-md-3 g-4 d-flex justify-content-center animate__animated animate__fadeInLeft">
     <div class="card" id="item" style="width: 25rem;" *ngFor="let product of productsList; index as i">
-        <img src="{{productsList[i] | image}}" class="card-img-top" alt="...">
+        <img src="{{productsList[i] | image}}" class="card-img-top rounded" alt="...">
         <div class="card-body">
           <h5 class="card-title">{{productsList[i].name}}</h5>
-          <p class="card-text">Description</p>
+          <p class="card-text" *ngIf="productsList[i].quantity > 0">Remaining in stock: {{productsList[i].quantity}}</p>
         </div>
-        <ul class="list-group list-group-flush">
+        <ul class="list-group list-group-flush rounded">
           <li class="list-group-item">Price: {{productsList[i].price | currency}}</li>
           <li class="list-group-item" *ngIf="productsList[i].deliveryTime">Time of delivery: {{productsList[i].deliveryTime}}</li>
           <li class="list-group-item">Detail</li>
         </ul>
-        <button id="buy-button" class="col-4 bg-info rounded">Purchase<img src="https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/20/ffffff/external-plus-user-interface-tanah-basah-glyph-tanah-basah-2.png"/></button>
+        <button id="buy-button" class="col-4 bg-info mt-2 rounded">Purchase<img src="https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/20/ffffff/external-plus-user-interface-tanah-basah-glyph-tanah-basah-2.png"/></button>
       </div>
-    <div class="card bg-gradient-dark" id="item" style="width: 25rem;">
-        <img src="https://m.media-amazon.com/images/I/81arGTJu8uL._AC_SL1500_.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Test</h5>
-          <p class="card-text">The BioSlap employs the most advanced optical technology and dedicated special light source that allow high speed print image capturing</p>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Aplicaciones de objetivo: seguridad de PC de escritorio, PC móvil, aplicaciones personalizadas</li>
-          <li class="list-group-item">Tamaño aproximado del lector: 2.559 in x 1.417 in x 0.613 in</li>
-          <li class="list-group-item">Compatible con especificaciones USB 1.0, 1.1 y 2.0 (velocidad completa) y no incluye software</li>
-        </ul>
-        <button id="buy-button" class="col-4 bg-info rounded">Purchase<img src="https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/40/ffffff/external-plus-user-interface-tanah-basah-glyph-tanah-basah-2.png"/></button>
-      </div>
-
   </div>
-    <button (click)="navigate('/products')">Add Product</button>
 </div>
-<app-footer></app-footer>
+<app-admin-dashboard *ngIf="isUserLoggedIn"></app-admin-dashboard>
+<app-footer *ngIf="!isUserLoggedIn"></app-footer>

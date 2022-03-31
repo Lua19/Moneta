@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/Interfaces/Product.interface';
+import { AuthService } from 'src/app/Services/auth.service';
 import { ProductsService } from 'src/app/Services/products.service';
 
 @Component({
@@ -11,8 +12,13 @@ import { ProductsService } from 'src/app/Services/products.service';
 export class StorePageComponent implements OnInit {
 
   productsList: Product[] = [];
+  isUserLoggedIn: boolean = false
 
-  constructor(private router : Router, private products: ProductsService) { }
+  constructor(private router : Router, private products: ProductsService, private auth : AuthService) {
+    this.auth.isUserLoggedIn.subscribe( value => {
+      this.isUserLoggedIn = value;
+  });
+   }
 
   ngOnInit(): void {
     this.products.getProducts().subscribe(
