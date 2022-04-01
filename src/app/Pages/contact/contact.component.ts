@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Contact } from 'src/app/Interfaces/contact';
 import { ContactServiceService } from 'src/app/Services/contact-service.service';
 
@@ -9,34 +10,22 @@ import { ContactServiceService } from 'src/app/Services/contact-service.service'
 })
 export class ContactComponent implements OnInit {
 
-  private apiURL: string = '';
+  myForm: FormGroup = this.fb.group({
+    name: ['', [Validators.required]],
+    email: ['', [Validators.email]],
+    phone: ['',[Validators.required]],
+    comments: ['']
+  })
 
-  NewContact: Contact = {
-    name: '',
-    email: '',
-    phone: '',
-    comments: ''
-  };
 
-  constructor(private contactService: ContactServiceService) { }
+  constructor(private contactService: ContactServiceService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
   }
 
-  sendContact(ContactForm : any){
-    this.NewContact = ContactForm.form.value;
-    let email = ContactForm.form.value.Email;
-    let name = ContactForm.form.value.Name;
-    let phone = ContactForm.form.value.Phone;
-    let comments = ContactForm.form.value.Comments;
-    let reqObj = {
-      email: email,
-      name: name,
-      phone: phone,
-      comments: comments
-    }
-    this.contactService.postContact(reqObj).subscribe(data =>{
-      console.log(data);
-    })
+  sendContact(){
+    this.contactService.postContact(this.myForm.value).subscribe(
+      (res) => console.log(res)
+    );
   }
 }
