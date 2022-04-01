@@ -28,3 +28,7 @@ button{
     border: solid whitesmoke;
     border-width: 1px;
 }
+p{
+    color: whitesmoke;
+    text-align: center;
+}

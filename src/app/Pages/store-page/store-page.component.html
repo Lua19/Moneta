@@ -1,5 +1,4 @@
 <div class="store-list bg-gradient-dark ">
-  <!-- <h1>{{productsList[0] | json}}</h1> -->
   <div class="row row-cols-1 row-cols-md-3 g-4 d-flex justify-content-center animate__animated animate__fadeInLeft">
     <div class="card" id="item" style="width: 25rem;" *ngFor="let product of productsList; index as i">
         <img src="{{productsList[i] | image}}" class="card-img-top rounded" alt="...">
