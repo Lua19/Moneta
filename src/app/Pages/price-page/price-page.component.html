@@ -31,7 +31,7 @@
 
       <div class="row d-flex justify-content-center animate__animated animate__fadeIn" *ngFor="let machine of machines; index as i" >
         <span class="machine col-3"> <strong>Kiosk {{i+1}}</strong>  -  Monthly Sales</span>
-        <input class="number col-2" name="sales{{i}}" (click)="sales[i]= ''" placeholder="$ of sales" [(ngModel)]="sales[i]">
+        <input class="number col-2" name="sales{{i}}" placeholder="$ of sales" [(ngModel)]="sales[i]">
         <span class="machine col-2">{{singleFee[i] | currency}} per month</span>
         <button class="delete bg-danger col-1" (click)="removeMachine(i)"><img src="https://img.icons8.com/material-rounded/24/000000/trash.png"/></button>
       </div>

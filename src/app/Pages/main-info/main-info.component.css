@@ -1,0 +1,11 @@
+.w-70 {
+    width: 70% !important;
+}
+.title{
+    font-weight: 600;
+    font-size: 3em;
+}
+.description{
+    font-weight: 500;
+    font-size: 2rem;
+}

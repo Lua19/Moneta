@@ -12,15 +12,17 @@ export class PricePageComponent implements OnInit {
 
   machines : number[] = [0];
   singleFee : number[] = [0];
-  sales : any[] = [0];
+  sales : any[];
 
-  constructor() { }
+  constructor() {
+    this.sales = [null];
+   }
 
   ngOnInit(): void {
     this.machines = [0];
-
-    this.sales = [0];
     this.singleFee = [0];
+
+
   }
 
   addMachine(){
