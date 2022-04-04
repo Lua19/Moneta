@@ -42,9 +42,7 @@ export class ProductComponent {
 
   addProduct(){
    // this.myForm.value.imageData = this.image;
-    let body = JSON.stringify(this.myForm.value)
-    console.log(body);
-    this.productService.postProduct(body).subscribe(
+    this.productService.postProduct(this.myForm.value).subscribe(
       (res) => console.log(res)
     );
   }
