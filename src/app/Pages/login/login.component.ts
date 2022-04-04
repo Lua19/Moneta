@@ -27,8 +27,13 @@ export class LoginComponent implements OnInit {
 
   login(){
     localStorage.setItem('token','wrxscf');
-    this.auth.isUserLoggedIn.next(true)
-    this.router.navigateByUrl(this.returnUrl);
+    this.auth.isUserLoggedIn.next(true);
+    if (this.returnUrl == '/') {
+      this.router.navigateByUrl(this.auth.fromURL);
+    }
+    else{
+      this.router.navigate([this.returnUrl])
+    }
     
   }
 

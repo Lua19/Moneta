@@ -9,6 +9,8 @@ import { AuthService } from 'src/app/Services/auth.service';
 })
 export class NavBarComponent {
 
+  currentRoute: string = '';
+
   session : boolean = this.auth.isLoggedIn();
   isUserLoggedIn: boolean = false
 
@@ -18,10 +20,18 @@ export class NavBarComponent {
   });
   }
 
+  getCurrentRoute(){
+    this.currentRoute = this.router.url;
+    console.log(this.currentRoute);
+  }
 
   logout(){
     localStorage.removeItem('token');
     window.location.reload();
+  }
+  login(){
+    this.router.navigate(['login'])
+    this.auth.fromURL = this.router.url;
   }
 
   navigate(toPage:string, ){

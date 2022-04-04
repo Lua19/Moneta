@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -7,14 +8,16 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class AuthService {
 
+  fromURL : any = '';
+
   public isUserLoggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private key: string | null = ''; 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router : Router) { }
 
-  authenticate(){
-    
-
+  authenticate(url: any){
+    console.log("Sesion iniciada");
+    this.router.navigate([url]);
   }
 
   isLoggedIn(){

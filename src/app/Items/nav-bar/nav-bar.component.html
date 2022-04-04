@@ -30,7 +30,7 @@
             <div class="bar-tab-body nav-link mx-3" data-bs-toggle="collapse" data-bs-target="#navbarNav" (click)="navigate('/store')">
                 <h2 class="bar-tab">Store</h2>
             </div>
-            <div *ngIf="!isUserLoggedIn" class="align-self-center nav-link mx-3" data-bs-toggle="collapse" data-bs-target="#navbarNav" id="contact" (click)="navigate('login')"><h2 class="contact-text col">Login</h2></div>
+            <div *ngIf="!isUserLoggedIn" class="align-self-center nav-link mx-3" data-bs-toggle="collapse" data-bs-target="#navbarNav" id="contact" (click)="login()"><h2 class="contact-text col">Login</h2></div>
             <div *ngIf="isUserLoggedIn" class="align-self-center nav-link mx-3" data-bs-toggle="collapse" data-bs-target="#navbarNav" id="contact" (click)="logout()"><h2 class="contact-text col">Logout</h2></div>
             <div class="align-self-center nav-link mx-3 col-3" id="contact" data-bs-toggle="collapse" data-bs-target="#navbarNav" (click)="navigate('contact')"><h2 class="contact-text">Contact us</h2></div>
             
