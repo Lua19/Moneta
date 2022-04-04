@@ -13,11 +13,11 @@ const routes: Routes =
   [{path: '', component: LandingComponent},
    {path: 'info', component: MainInfoComponent},
    {path: 'price', component: PricePageComponent},
-   {path: 'store', component: StorePageComponent},
+  //  {path: 'store', component: StorePageComponent},
    {path: 'contact', component: ContactComponent},
-   {path: 'store', component: StorePageComponent, canActivate: [AuthGuard], canLoad: [AuthGuard]},
-   {path: 'store/products', component: ProductComponent, canActivate: [AuthGuard], canLoad: [AuthGuard]},
-   {path: 'login', component: LoginComponent},
+  //  {path: 'store', component: StorePageComponent, canActivate: [AuthGuard], canLoad: [AuthGuard]},
+  //  {path: 'store/products', component: ProductComponent, canActivate: [AuthGuard], canLoad: [AuthGuard]},
+  //  {path: 'login', component: LoginComponent},
    {path: '**', component: LandingComponent}
   ];
 
