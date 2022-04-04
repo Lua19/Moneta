@@ -39,7 +39,10 @@
     color: whitesmoke;
     border: solid whitesmoke;
     border-width: 1px;
-
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
 
 }
 #calc-button{
@@ -55,12 +58,17 @@
     color: whitesmoke;
     border: solid whitesmoke;
     border-width: 1px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 #input-field{
     background-color: white;
     border-style: solid;
+    
 }
-.container{
+.contain{
     padding-bottom: 10vh;
 }
 th{
@@ -80,6 +88,10 @@ tr{
     font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
     font-weight: 700;
     text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 .number{
     margin: 5px;
@@ -106,3 +118,22 @@ form{
 #buttons{
     margin-top: 4vh;
 }
+
+@media only screen and (max-width: 700px) {
+    .table{
+        width: 80%;
+    }
+    #calc-button{
+        width: 30%;
+    }
+    #add-button{
+        width: 30%;
+    }
+    .machine{
+        width: 25%;
+    }
+    .delete{
+        width: 9%;
+    }
+
+  }
