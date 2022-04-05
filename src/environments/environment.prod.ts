@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  requestURL: 'https://www.monetamarket.com/CustomersManager/HostedPayments/',
 };

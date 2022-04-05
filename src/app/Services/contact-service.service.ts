@@ -11,6 +11,6 @@ export class ContactServiceService {
   constructor(private http: HttpClient) {}
 
   postContact(body:any){
-    return this.http.post(`${this.apiURL}`,body)
+    return this.http.post(`${this.apiURL}MarketingWebAddContactInformation`,body)
   }
 }

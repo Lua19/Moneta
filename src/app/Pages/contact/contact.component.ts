@@ -11,7 +11,8 @@ import { ContactServiceService } from 'src/app/Services/contact-service.service'
 export class ContactComponent implements OnInit {
 
   myForm: FormGroup = this.fb.group({
-    Name: ['', [Validators.required]],
+    Fullname: ['', [Validators.required]],
+    CompanyName: [''],
     Email: ['', [Validators.email]],
     Phone: ['',[Validators.required]],
     Comments: ['']
@@ -25,10 +26,8 @@ export class ContactComponent implements OnInit {
   }
 
   sendContact(){
+    console.log(this.myForm.value);
     this.contactService.postContact(this.myForm.value).subscribe(
-      (res) => console.log(res)
-      
-    );
-    
+      (res) => this.response = true);
   }
 }

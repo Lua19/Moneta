@@ -26,4 +26,16 @@
 #main-img{
     width: 25%;
     margin: auto;
+    cursor: pointer;
 }
+h2,h3{
+    font-weight: 600;
+    text-decoration-line: underline;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 700px) {
+    .content{
+        width: 85%;
+    }
+  }

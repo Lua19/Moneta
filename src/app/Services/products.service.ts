@@ -18,7 +18,7 @@ export class ProductsService {
   }
 
   postProduct(body: any){
-    return this.http.post('https://moneta-server-customermanager.conveyor.cloud/HostedPayments/MarketingWebAddProduct',body)
+    return this.http.post(`${this.url}MarketingWebAddProduct`,body)
   }
 
 }
