@@ -11,12 +11,13 @@ import { ContactServiceService } from 'src/app/Services/contact-service.service'
 export class ContactComponent implements OnInit {
 
   myForm: FormGroup = this.fb.group({
-    name: ['', [Validators.required]],
-    email: ['', [Validators.email]],
-    phone: ['',[Validators.required]],
-    comments: ['']
+    Name: ['', [Validators.required]],
+    Email: ['', [Validators.email]],
+    Phone: ['',[Validators.required]],
+    Comments: ['']
   })
 
+  response: boolean = false;
 
   constructor(private contactService: ContactServiceService, private fb: FormBuilder) { }
 
@@ -26,6 +27,8 @@ export class ContactComponent implements OnInit {
   sendContact(){
     this.contactService.postContact(this.myForm.value).subscribe(
       (res) => console.log(res)
+      
     );
+    
   }
 }
