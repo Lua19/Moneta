@@ -18,7 +18,8 @@ import { LoginComponent } from './Pages/login/login.component';
 import { ProductComponent } from './Pages/product/product.component';
 import { AuthService } from './Services/auth.service';
 import { ImagePipe } from './pipes/image.pipe';
-import { AdminDashboardComponent } from './items/admin-dashboard/admin-dashboard.component';
+import { AdminDashboardComponent } from './Items/admin-dashboard/admin-dashboard.component';
+import { RegisterComponent } from './Pages/register/register.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { AdminDashboardComponent } from './items/admin-dashboard/admin-dashboard
     LoginComponent,
     ProductComponent,
     ImagePipe,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    RegisterComponent
     
   ],
   imports: [

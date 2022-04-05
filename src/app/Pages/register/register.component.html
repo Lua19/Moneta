@@ -1,0 +1,22 @@
+<div class="content animate__animated animate__fadeInLeft bg-gradient-dark">
+    <form [formGroup]="myForm" (ngSubmit)="register()">
+        <span class="input-group-text" id="title-span">Sign up</span>
+        <br>
+        <div class="form-outline mb-2">
+            <label class="form-label">Name</label>
+            <input type="email" class="form-control" formControlName="Name" placeholder="example@email.com"/>
+          </div>
+        <br>
+        <div class="form-outline mb-2">
+            <label class="form-label">Email address</label>
+            <input type="email" class="form-control" formControlName="Email" placeholder="example@email.com"/>
+          </div>
+        <br>
+        <!-- Password input -->
+        <div class="form-outline mb-4">
+            <label class="form-label">Password</label>
+            <input type="password" class="form-control" formControlName="Password" placeholder="secret#123"/>
+        </div>
+        <button type="submit" value="submit">Sign up</button>
+    </form>
+</div>

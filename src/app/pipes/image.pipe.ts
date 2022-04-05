@@ -13,7 +13,7 @@ export class ImagePipe implements PipeTransform {
     if (!product.imageURL == null) {
       return product.imageURL;
     }
-    return 'https://www.pngitem.com/pimgs/m/533-5339762_icon-box-vector-boxes-outline-hd-png-download.png';
+    return 'https://thumbs.dreamstime.com/b/groceries-97077851.jpg';
   }
 
 }
