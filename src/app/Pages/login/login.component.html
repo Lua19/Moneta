@@ -12,7 +12,7 @@
             <label class="form-label">Password</label>
             <input type="password" class="form-control" formControlName="Password" placeholder="secret#123"/>
         </div>
-        <button type="submit" value="submit">Login</button>
+        <button type="submit" value="submit" [disabled]="myForm.invalid">Login</button>
         <br>
         <p routerLink="/register">Sign up here</p>
         <div *ngIf="error" class="alert bg-dark border-danger animate__animated animate__fadeIn"> <p class="text-danger">

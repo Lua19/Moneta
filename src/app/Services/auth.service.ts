@@ -36,8 +36,7 @@ export class AuthService {
   }
 
   isLoggedIn(){
-    this.key = localStorage.getItem('token');
-    if (this.key) {
+    if (this.isAuthenticated == true) {
       return true
     }
     return false
