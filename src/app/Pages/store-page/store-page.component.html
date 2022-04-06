@@ -38,5 +38,5 @@
       </div>
   </div>
 </div>
-<app-admin-dashboard *ngIf="isUserLoggedIn"></app-admin-dashboard>
+<app-admin-dashboard *ngIf="isUserLoggedIn && user.role == 'Administrator'"></app-admin-dashboard>
 <app-footer *ngIf="!isUserLoggedIn"></app-footer>
