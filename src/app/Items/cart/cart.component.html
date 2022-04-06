@@ -1,1 +1,5 @@
-<p>cart works!</p>
+<div class="animate__animated animate__fadeInUp dashboard">
+    <ul>items
+        <li *ngFor="let item of cartItems; index as i">{{item | json}}</li>
+    </ul>
+</div>

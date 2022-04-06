@@ -33,5 +33,8 @@ export class StorePageComponent implements OnInit {
   navigate(route: string){
     this.router.navigate(['/store/'+route]);
   }
+  addToCart(index:number){
+    localStorage.setItem(`item${index}`,this.productsList[index].name)
+  }
 
 }
