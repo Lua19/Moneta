@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { WebUser } from '../Interfaces/WebUser.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -9,15 +11,28 @@ import { BehaviorSubject } from 'rxjs';
 export class AuthService {
 
   fromURL : any = '';
-
+  private apiURL = environment.requestURL;
   public isUserLoggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  private key: string | null = ''; 
+  private key: string | null = '';
+  user:WebUser|any;
+  isAuthenticated : boolean = false;
 
   constructor(private http: HttpClient, private router : Router) { }
 
-  authenticate(url: any){
-    console.log("Sesion iniciada");
-    this.router.navigate([url]);
+    postAuthenticate(user:any){
+    return this.http.post(`${this.apiURL}MarketingWebLogin`,user)
+    }
+
+    login(response : any){
+    this.user = response
+    if (this.user.id == "00000000-0000-0000-0000-000000000000") {
+      this.isAuthenticated = false;
+      return this.user.role;
+    }
+    else{
+      this.isUserLoggedIn.next(true);
+      this.isAuthenticated = true;
+    }
   }
 
   isLoggedIn(){

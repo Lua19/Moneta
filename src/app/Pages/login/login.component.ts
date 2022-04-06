@@ -10,9 +10,11 @@ import { AuthService } from 'src/app/Services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
+  error : string | any;
+
   myForm: FormGroup = this.fb.group({
-    email: ['', [Validators.required,Validators.email]],
-    password: ['', [Validators.required]],
+    Email: ['ivan@gmail.com', [Validators.required,Validators.email]],
+    Password: ['1234', [Validators.required]],
   })
 
   returnUrl: string = '';
@@ -25,16 +27,20 @@ export class LoginComponent implements OnInit {
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
-  login(){
-    localStorage.setItem('token','wrxscf');
-    this.auth.isUserLoggedIn.next(true);
-    if (this.returnUrl == '/') {
-      this.router.navigateByUrl(this.auth.fromURL);
-    }
-    else{
-      this.router.navigate([this.returnUrl])
-    }
-    
+   login(){
+    this.auth.postAuthenticate(this.myForm.value).subscribe(
+      (resp) => {
+        this.auth.login(resp);
+        this.error = this.auth.login(resp)
+        if (this.auth.isAuthenticated == true) {
+          if (this.returnUrl == '/') {
+            this.router.navigateByUrl(this.auth.fromURL);
+          }
+          else{
+            this.router.navigate([this.returnUrl])
+          }
+        }
+      })
   }
 
 }
