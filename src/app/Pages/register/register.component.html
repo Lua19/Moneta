@@ -3,10 +3,15 @@
         <span class="input-group-text" id="title-span">Sign up</span>
         <br>
         <div class="form-outline mb-2">
-            <label class="form-label">Name</label>
-            <input type="email" class="form-control" formControlName="Name" placeholder="example@email.com"/>
-          </div>
+            <label class="form-label">First Name</label>
+            <input type="email" class="form-control" formControlName="FirstName" placeholder="Christopher"/>
+        </div>
         <br>
+        <div class="form-outline mb-2">
+          <label class="form-label">Last Name</label>
+          <input type="email" class="form-control" formControlName="LastName" placeholder="Smith"/>
+        </div>
+      <br>
         <div class="form-outline mb-2">
             <label class="form-label">Email address</label>
             <input type="email" class="form-control" formControlName="Email" placeholder="example@email.com"/>
@@ -17,6 +22,13 @@
             <label class="form-label">Password</label>
             <input type="password" class="form-control" formControlName="Password" placeholder="secret#123"/>
         </div>
-        <button type="submit" value="submit">Sign up</button>
+        <button type="submit" value="submit" [disabled]="myForm.invalid">Sign up</button>
+        <br>
+        <div *ngIf="error" class="alert bg-dark border-danger animate__animated animate__fadeIn"> <p class="text-danger">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-lg" viewBox="0 0 16 16">
+              <path d="M7.005 3.1a1 1 0 1 1 1.99 0l-.388 6.35a.61.61 0 0 1-1.214 0L7.005 3.1ZM7 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z"/>
+            </svg>
+          {{error.error.text}}</p> 
+        </div>
     </form>
 </div>

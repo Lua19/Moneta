@@ -42,4 +42,8 @@ export class AuthService {
     return false
   }
 
+  postRegister(user:any){
+    return this.http.post(`${this.apiURL}RegisterMarketingWebUser`,user)
+  }
+
 }
