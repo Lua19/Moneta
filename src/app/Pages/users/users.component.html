@@ -1,0 +1,10 @@
+
+<div class="row d-flex justify-content-center animate__animated animate__fadeIn" *ngFor="let machine of contactsList; index as i" >
+    <span class="machine col-2"> <strong>Contact {{i+1}}</strong></span>
+    <span class="machine d-flex align-items-center col-1">{{contactsList[i].fullName}}</span>
+</div>
+<div class="row d-flex justify-content-center animate__animated animate__fadeIn" *ngFor="let machine of usersList; index as i" >
+    <span class="machine col-2"> <strong>User {{i+1}}</strong></span>
+    <span class="machine d-flex align-items-center col-1">{{usersList[i].firstName}}</span>
+</div>
+<app-admin-dashboard></app-admin-dashboard>

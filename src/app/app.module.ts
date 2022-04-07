@@ -21,6 +21,7 @@ import { ImagePipe } from './pipes/image.pipe';
 import { AdminDashboardComponent } from './Items/admin-dashboard/admin-dashboard.component';
 import { RegisterComponent } from './Pages/register/register.component';
 import { CartComponent } from './Items/cart/cart.component';
+import { UsersComponent } from './Pages/users/users.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { CartComponent } from './Items/cart/cart.component';
     ImagePipe,
     AdminDashboardComponent,
     RegisterComponent,
-    CartComponent
+    CartComponent,
+    UsersComponent
     
   ],
   imports: [

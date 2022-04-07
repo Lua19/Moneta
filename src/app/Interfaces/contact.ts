@@ -1,6 +1,11 @@
 export interface Contact {
-    name:  string;
-    email: string;
-    phone: string;
-    comments: string;
+    id?:                   string;
+    fullName?:             string;
+    email?:                string;
+    phone?:                string;
+    companyName?:          string;
+    comments?:             string;
+    status?:               null;
+    registrationDateTime?: Date;
 }
+

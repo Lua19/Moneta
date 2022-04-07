@@ -9,6 +9,7 @@ import { PricePageComponent } from './Pages/price-page/price-page.component';
 import { ProductComponent } from './Pages/product/product.component';
 import { RegisterComponent } from './Pages/register/register.component';
 import { StorePageComponent } from './Pages/store-page/store-page.component';
+import { UsersComponent } from './Pages/users/users.component';
 
 const routes: Routes = 
   [{path: '', component: LandingComponent},
@@ -18,6 +19,7 @@ const routes: Routes =
    {path: 'contact', component: ContactComponent},
    {path: 'store', component: StorePageComponent, canActivate: [AuthGuard], canLoad: [AuthGuard]},
    {path: 'store/products', component: ProductComponent, canActivate: [AuthGuard], canLoad: [AuthGuard]},
+   {path: 'store/users', component: UsersComponent, canActivate: [AuthGuard], canLoad: [AuthGuard]},
    {path: 'login', component: LoginComponent},
    {path: 'register', component: RegisterComponent},
    {path: '**', component: LandingComponent}
