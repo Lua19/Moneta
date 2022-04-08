@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminGuardGuard } from './Guards/admin-guard.guard';
 import { AuthGuard } from './Guards/auth.guard';
 import { ContactComponent } from './Pages/contact/contact.component';
 import { LandingComponent } from './Pages/landing/landing.component';
@@ -15,11 +16,10 @@ const routes: Routes =
   [{path: '', component: LandingComponent},
    {path: 'info', component: MainInfoComponent},
    {path: 'price', component: PricePageComponent},
-   {path: 'store', component: StorePageComponent},
    {path: 'contact', component: ContactComponent},
-   {path: 'store', component: StorePageComponent, canActivate: [AuthGuard], canLoad: [AuthGuard]},
-   {path: 'store/products', component: ProductComponent, canActivate: [AuthGuard], canLoad: [AuthGuard]},
-   {path: 'store/users', component: UsersComponent, canActivate: [AuthGuard], canLoad: [AuthGuard]},
+   {path: 'store', component: StorePageComponent, canActivate: [AuthGuard]},
+   {path: 'store/products', component: ProductComponent, canActivate: [AdminGuardGuard]},
+   {path: 'store/users', component: UsersComponent, canActivate: [AdminGuardGuard]},
    {path: 'login', component: LoginComponent},
    {path: 'register', component: RegisterComponent},
    {path: '**', component: LandingComponent}

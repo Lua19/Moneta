@@ -6,29 +6,23 @@ import { AuthService } from '../Services/auth.service';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate, CanLoad {
+export class AuthGuard implements CanActivate {
 
   constructor(private auth : AuthService,private router: Router){}
 
   canActivate(route: ActivatedRouteSnapshot,state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    if (this.auth.isLoggedIn() === true) {
-      return true
+    if (this.auth.isLoggedIn() == true) {
+      console.log("CA1");
+      console.log(this.auth._key,this.auth.isAuthenticated)
+      return this.auth.alreadyLoggedIn();
     }
-    if (this.auth.isLoggedIn() === false) {
-      this.router.navigate(['/login'], { queryParams: { returnUrl: state.url }});
-      return false
+    if (this.auth.isLoggedIn() == false) {
+      this.auth.isUserLoggedIn.next(false)
+      
+      return true
     }
     return false;
   }
 
-  canLoad(route: Route,segments: UrlSegment[]): Observable<boolean> | Promise<boolean> | boolean  {
-    if (this.auth.isLoggedIn() === true) {
-      return true
-    }
-    if (this.auth.isLoggedIn() === false) {
-     return false
-    }
-    return false;
-  }
 
 }

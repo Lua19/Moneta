@@ -13,8 +13,8 @@ export class LoginComponent implements OnInit {
   error : string | any;
 
   myForm: FormGroup = this.fb.group({
-    Email: ['', [Validators.required,Validators.email]],
-    Password: ['', [Validators.required]],
+    Email: ['ivan@gmail.com', [Validators.required,Validators.email]],
+    Password: ['1234', [Validators.required]],
   })
 
   returnUrl: string = '';

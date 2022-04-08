@@ -34,7 +34,13 @@ export class StorePageComponent implements OnInit {
     this.router.navigate(['/store/'+route]);
   }
   addToCart(index:number){
-    localStorage.setItem(`item${index}`,this.productsList[index].name)
+    if (!this.isUserLoggedIn) {
+      this.router.navigate(['login'])
+      this.auth.fromURL = this.router.url;
+    }
+    else{
+      localStorage.setItem(`item${index}`,this.productsList[index].name)
+    }
   }
 
 }

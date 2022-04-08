@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/Services/auth.service';
 
@@ -7,8 +7,8 @@ import { AuthService } from 'src/app/Services/auth.service';
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.css']
 })
-export class NavBarComponent {
-
+export class NavBarComponent implements OnInit{
+  userId : string|any = this.auth._key;
   session : boolean = this.auth.isLoggedIn();
   isUserLoggedIn: boolean = false
 
@@ -17,10 +17,14 @@ export class NavBarComponent {
       this.isUserLoggedIn = value;
   });
   }
+  ngOnInit(): void {
+    this.auth.alreadyLoggedIn();
+  }
 
 
   logout(){
-    localStorage.removeItem('token');
+    localStorage.removeItem('UserId');
+    this.auth.logout()
     window.location.reload();
   }
   login(){

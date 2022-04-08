@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, catchError, map, Observable, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { WebUser } from '../Interfaces/WebUser.interface';
 
@@ -13,7 +13,7 @@ export class AuthService {
   fromURL : any = '';
   private apiURL = environment.requestURL;
   public isUserLoggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  private _key: string | null = '';
+   _key: string | null = localStorage.getItem('UserId');
   user:WebUser|any;
   isAuthenticated : boolean = false;
 
@@ -30,14 +30,32 @@ export class AuthService {
       return this.user.role;
     }
     else{
-      this._key = this.user.id;
+      localStorage.setItem('UserId',this.user.id)
       this.isUserLoggedIn.next(true);
       this.isAuthenticated = true;
     }
   }
 
+  alreadyLoggedIn(): Observable<boolean>{
+    return this.http.get<WebUser>(`${this.apiURL}MarketingWebRenewUser?Id=${this._key}`).pipe(
+      map(
+        resp => {
+          if (resp.id == localStorage.getItem('UserId')) {
+            this.isUserLoggedIn.next(true);
+            this.isAuthenticated = true;
+            this.user = resp;
+            return true;
+          }
+          catchError(err => of(false));
+          return false;
+        }
+      )
+    );
+  }
+
   isLoggedIn(){
-    if (this.isAuthenticated == true) {
+    this._key = localStorage.getItem('UserId');
+    if (this._key != null) {
       return true
     }
     return false
@@ -45,6 +63,12 @@ export class AuthService {
 
   postRegister(user:any){
     return this.http.post(`${this.apiURL}RegisterMarketingWebUser`,user)
+  }
+
+  logout(){
+    this._key = '';
+    this.isUserLoggedIn.next(false);
+    this.isAuthenticated = false;
   }
 
 }
