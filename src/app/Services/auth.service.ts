@@ -13,7 +13,7 @@ export class AuthService {
   fromURL : any = '';
   private apiURL = environment.requestURL;
   public isUserLoggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  private key: string | null = '';
+  private _key: string | null = '';
   user:WebUser|any;
   isAuthenticated : boolean = false;
 
@@ -30,6 +30,7 @@ export class AuthService {
       return this.user.role;
     }
     else{
+      this._key = this.user.id;
       this.isUserLoggedIn.next(true);
       this.isAuthenticated = true;
     }
