@@ -1,5 +1,5 @@
 <div class="animate__animated animate__fadeInUp dashboard">
     <ul>items
-        <li class="text-white" *ngFor="let item of cartItems; index as i">{{item}} 1</li>
+        <li class="text-white" *ngFor="let item of cartItems; index as i">{{item.name | json}} 1</li>
     </ul>
 </div>

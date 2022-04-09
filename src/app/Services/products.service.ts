@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Product } from '../Interfaces/Product.interface';
 
@@ -8,6 +8,9 @@ import { Product } from '../Interfaces/Product.interface';
   providedIn: 'root'
 })
 export class ProductsService {
+
+  productsInCart: Product[] = []
+  public areItemsInCart: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor(private http: HttpClient) { }
 
@@ -21,8 +24,10 @@ export class ProductsService {
     return this.http.post(`${this.url}MarketingWebAddProduct`,body)
   }
   
-  addCartItems(product:Product){
-
+  addCartItems(product:Product) {
+    this.productsInCart.push(product)
+    console.log(this.productsInCart);
+    return this.productsInCart
   }
 
 }

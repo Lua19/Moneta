@@ -15,13 +15,17 @@ export class StorePageComponent implements OnInit {
   productsList: Product[] = [];
   cartItems: Product[] = [];
   isUserLoggedIn: boolean = false;
-
+  itemsInCart: boolean = false;
   user:WebUser|any
 
   constructor(private router : Router, private products: ProductsService, private auth : AuthService) {
     this.auth.isUserLoggedIn.subscribe( value => {
       this.isUserLoggedIn = value;
     });
+    this.products.areItemsInCart.subscribe( value => {
+      this.itemsInCart = value
+    }
+    )
    }
 
   ngOnInit(): void {
@@ -31,7 +35,7 @@ export class StorePageComponent implements OnInit {
         
         this.productsList = res}
       );
-
+    
     this.user = this.auth.user;
   }
 
@@ -39,7 +43,11 @@ export class StorePageComponent implements OnInit {
     this.router.navigate(['/store/'+route]);
   }
   addToCart(index:number){
-      localStorage.setItem(`Item ${index}`,this.productsList[index].name)
+    localStorage.setItem(`Product${index}`, this.productsList[index].id)
+      this.products.addCartItems( this.productsList[index])
+      this.cartItems = this.products.productsInCart; 
+      this.products.areItemsInCart.next(true)
+      console.log(this.cartItems);
   }
 
 }

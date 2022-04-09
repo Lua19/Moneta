@@ -39,5 +39,5 @@
   </div>
 </div>
 <app-admin-dashboard *ngIf="isUserLoggedIn && user.role == 'Administrator'"></app-admin-dashboard>
-<app-cart *ngIf="isUserLoggedIn && user.role == 'User'" ></app-cart>
-<app-footer *ngIf="!isUserLoggedIn"></app-footer>
+<app-cart *ngIf="itemsInCart" ></app-cart>
+<app-footer *ngIf="!isUserLoggedIn && cartItems.length == 0"></app-footer>
