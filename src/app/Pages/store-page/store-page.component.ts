@@ -13,6 +13,7 @@ import { ProductsService } from 'src/app/Services/products.service';
 export class StorePageComponent implements OnInit {
 
   productsList: Product[] = [];
+  cartItems: Product[] = [];
   isUserLoggedIn: boolean = false;
 
   user:WebUser|any
@@ -25,7 +26,11 @@ export class StorePageComponent implements OnInit {
 
   ngOnInit(): void {
     this.products.getProducts().subscribe(
-      (res) => this.productsList = res);
+      (res) => {
+        console.log(res);
+        
+        this.productsList = res}
+      );
 
     this.user = this.auth.user;
   }
@@ -34,13 +39,7 @@ export class StorePageComponent implements OnInit {
     this.router.navigate(['/store/'+route]);
   }
   addToCart(index:number){
-    if (!this.isUserLoggedIn) {
-      this.router.navigate(['login'])
-      this.auth.fromURL = this.router.url;
-    }
-    else{
-      localStorage.setItem(`item${index}`,this.productsList[index].name)
-    }
+      localStorage.setItem(`Item ${index}`,this.productsList[index].name)
   }
 
 }

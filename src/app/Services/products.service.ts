@@ -20,5 +20,9 @@ export class ProductsService {
   postProduct(body: any){
     return this.http.post(`${this.url}MarketingWebAddProduct`,body)
   }
+  
+  addCartItems(product:Product){
+
+  }
 
 }

@@ -15,15 +15,15 @@ export class ProductComponent {
   myForm: FormGroup = this.fb.group({
     Name: ['', [Validators.required]],
     Barcode: ['', [Validators.required]],
-   // Quantity: ['', [Validators.required]],
-   //  UnitCost: ['', [Validators.required]],
-    Price: ['', [Validators.required]],
-    // TaxPercentage: ['', [Validators.required]],
-    // PromotionAmount: ['', [Validators.required]],
-    // ImageUrl: ['', [Validators.required]],
-    // ImageData: ['', [Validators.required]],
-    // Status: ['', [Validators.required]],
-    // DeliveryTime: ['', [Validators.required]]
+    Quantity: [0, [Validators.required]],
+    UnitCost: [0, [Validators.required]],
+    Price: [0, [Validators.required]],
+    TaxPercentage: [0, [Validators.required]],
+    PromotionAmount: [0, [Validators.required]],
+    ImageUrl: ['', [Validators.required]],
+    ImageData: ['', [Validators.required]],
+    Status: ['', [Validators.required]],
+    DeliveryTime: ['', [Validators.required]]
   })
 
   constructor(private productService: ProductsService, private fb: FormBuilder) { }
@@ -41,7 +41,8 @@ export class ProductComponent {
   }
 
   addProduct(){
-   // this.myForm.value.imageData = this.image;
+    this.myForm.value.ImageData = this.image;
+    console.log(this.myForm.value);
     this.productService.postProduct(this.myForm.value).subscribe(
       (res) => console.log(res)
     );

@@ -6,12 +6,9 @@ import { Product } from '../Interfaces/Product.interface';
 })
 export class ImagePipe implements PipeTransform {
 
-  transform(product: Product,): string {
-    if (!product.imageData == null) {
-      return product.imageData;
-    }
-    if (!product.imageURL == null) {
-      return product.imageURL;
+  transform(product: string): string {
+    if (product != null) {
+      return product;
     }
     return 'https://thumbs.dreamstime.com/b/groceries-97077851.jpg';
   }

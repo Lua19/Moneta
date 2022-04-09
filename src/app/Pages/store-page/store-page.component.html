@@ -9,13 +9,13 @@
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active" data-bs-interval="false">
-            <img src="{{productsList[i] | image}}" class="d-block w-100" alt="...">
+            <img src="{{productsList[i].imageData | image}}" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item" data-bs-interval="false">
-            <img src="{{productsList[i] | image}}" class="d-block w-100" alt="...">
+            <img src="{{productsList[i].imageData | image}}" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item" data-bs-interval="false">
-            <img src="{{productsList[i] | image}}" class="d-block w-100" alt="...">
+            <img src="{{productsList[i].imageData | image}}" class="d-block w-100" alt="...">
           </div>
         </div>
         <div class="carousel-control-prev" type="button" [attr.data-bs-target]="'#carouselExampleDark'+i" data-bs-slide="prev">
