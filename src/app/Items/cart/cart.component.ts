@@ -17,4 +17,8 @@ export class CartComponent implements OnInit {
     this.cartItems = this.products.productsInCart
   }
 
+  deleteItem(index : number){
+    this.products.productsInCart.splice(index,1)
+  }
+
 }

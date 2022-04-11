@@ -1,6 +1,5 @@
 .dashboard{
     background-color: #151f20;
-    color: rgb(190, 190, 190);
     width: 100%;
     font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
     bottom: 0;
@@ -11,10 +10,16 @@ svg{
 }
 .cart-card{
     width: 10%;
+    border-radius: 5px;
+    border: solid 1px azure;
+    background-color: whitesmoke;
 }
 .payment-card{
     width: 10%;
     cursor: pointer;
+    border-radius: 5px;
+    border: solid 1px azure;
+    background-color: whitesmoke;
 }
 h2{
     margin: auto;
@@ -23,15 +28,21 @@ h2{
 .item-box{
     width: 9%;
     height: 50%;
-    color: azure;
+    color: black;
     text-align: center;
     font-size: x-large;
     font-weight: 600;
     border-radius: 5px;
     border: solid 1px azure;
-    background-color: darkblue ;
+    background-color: darkgrey ;
     padding-left: 5px; 
     padding-right: 5px;
     margin: 5px;
-
+}
+#delete-icon{
+    cursor: pointer;
+    border-radius: 3px;
+    border: solid 1px black;
+    background-color: red;
+    padding: 2px;
 }
