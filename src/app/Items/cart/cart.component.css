@@ -12,6 +12,10 @@ svg{
 .cart-card{
     width: 10%;
 }
+.payment-card{
+    width: 10%;
+    cursor: pointer;
+}
 h2{
     margin: auto;
     text-align: center;

@@ -1,0 +1,145 @@
+.content{
+    width: 100%;
+    height: 100%;
+    margin-top: 12vh;
+}
+.table{
+    
+    width: 55%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: #151f20 ;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+    font-weight: 400;
+}
+.title-text1{
+    color: whitesmoke;
+    font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+    font-weight: 600;
+    text-align: center;
+}
+.text-space1{
+    color: whitesmoke;
+    font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+    font-weight: 600;
+    text-align: center;
+}
+#add-button{
+    width: 15%;
+    font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+    font-weight: 600;
+    text-align: center;
+    margin: auto;
+    justify-content: center;
+    display: flex;
+    border-radius: 5px;
+    background-color: #151f20;
+    color: whitesmoke;
+    border: solid whitesmoke;
+    border-width: 1px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+#calc-button{
+    width: 15%;
+    font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+    font-weight: 700;
+    text-align: center;
+    margin: auto;
+    justify-content: center;
+    display: flex;
+    border-radius: 5px;
+    background-color: #43a33a;
+    color: whitesmoke;
+    border: solid whitesmoke;
+    border-width: 1px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#input-field{
+    background-color: white;
+    border-style: solid;
+    
+}
+.contain{
+    padding-bottom: 10vh;
+}
+th{
+    font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+    font-weight: 700; 
+}
+tr{
+    font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+    font-weight: 600;
+}
+.machine{
+    margin: 5px;
+    border-radius: 5px;
+    border: solid 1px gray;
+    background-color: whitesmoke;
+    color: #151f20;
+    font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.number{
+    margin: 5px;
+    border-radius: 5px;
+    border: solid whitesmoke;
+    font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+    font-weight: 500;
+}
+.delete{
+    margin: 5px;
+    border-radius: 5px;
+    border: solid 1px gray;
+    font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+    font-weight: 500;
+}
+.row{
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+form{
+    margin-top: 4vh;
+}
+#buttons{
+    margin-top: 4vh;
+}
+#item{
+    padding: 25px;
+    margin: 25px;
+    background-color: darkgrey;
+  }
+
+@media only screen and (max-width: 700px) {
+    .table{
+        width: 80%;
+    }
+    #calc-button{
+        width: 30%;
+    }
+    #add-button{
+        width: 30%;
+    }
+    .machine{
+        width: 25%;
+    }
+    .delete{
+        width: 9%;
+    }
+
+  }

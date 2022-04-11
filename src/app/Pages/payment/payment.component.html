@@ -1,1 +1,30 @@
-<p>payment works!</p>
+<div class="content bg-gradient-dark">
+    <br>
+    <h2 class="title-text1">Please verify your information </h2>
+   <div class="container">
+       <div class="col-5"></div>
+       <div class="col-5"></div>
+   </div>
+    <div class="animate__animated animate__fadeInRight contain">
+      <br>
+      <div class="card" id="item" style="width: 25rem;" *ngFor="let item of items; index as i">
+        <div id="carouselExampleDark{{i}}" class="carousel carousel-dark slide" data-bs-ride="carousel" data-bs-interval="false">
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="false">
+              <img src="{{items[i].imageData | image}}" class="d-block w-100" alt="...">
+            </div>
+          </div>
+        </div>
+          <div class="card-body">
+            <h5 class="card-title">{{items[i].name}}</h5>
+            <p class="card-text" *ngIf="items[i].quantity > 0">Remaining in stock: {{items[i].quantity}}</p>
+          </div>
+          <ul class="list-group list-group-flush rounded">
+            <li class="list-group-item">Price: {{items[i].price | currency}}</li>
+            <li class="list-group-item" *ngIf="items[i].deliveryTime">Time of delivery: {{items[i].deliveryTime}}</li>
+            <li class="list-group-item">Detail</li>
+          </ul>
+        </div>
+    </div>
+  </div>
+  <app-footer></app-footer>

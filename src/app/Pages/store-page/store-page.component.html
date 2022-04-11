@@ -40,4 +40,4 @@
 </div>
 <app-admin-dashboard *ngIf="isUserLoggedIn && user.role == 'Administrator'"></app-admin-dashboard>
 <app-cart *ngIf="itemsInCart" ></app-cart>
-<app-footer *ngIf="!isUserLoggedIn && cartItems.length == 0"></app-footer>
+<app-footer *ngIf="!isUserLoggedIn && !itemsInCart"></app-footer>

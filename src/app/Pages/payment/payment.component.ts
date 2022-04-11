@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from 'src/app/Interfaces/Product.interface';
+import { WebUser } from 'src/app/Interfaces/WebUser.interface';
+import { AuthService } from 'src/app/Services/auth.service';
+import { ProductsService } from 'src/app/Services/products.service';
 
 @Component({
   selector: 'app-payment',
@@ -7,9 +11,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaymentComponent implements OnInit {
 
-  constructor() { }
+  user : WebUser | any;
+  items : Product[] = []
+
+  constructor(private auth: AuthService, private products: ProductsService) { }
 
   ngOnInit(): void {
+    this.items = this.products.productsInCart
   }
 
 }
