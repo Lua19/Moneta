@@ -12,8 +12,6 @@ export class PaymentGuard implements CanActivate {
 
   constructor(private auth: AuthService, private products : ProductsService){}
 
-
-
   canActivate(route: ActivatedRouteSnapshot,state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     return true;
   }

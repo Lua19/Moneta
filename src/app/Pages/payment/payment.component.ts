@@ -13,11 +13,21 @@ export class PaymentComponent implements OnInit {
 
   user : WebUser | any;
   items : Product[] = []
+  total: number =0 ;
 
   constructor(private auth: AuthService, private products: ProductsService) { }
 
   ngOnInit(): void {
     this.items = this.products.productsInCart
+    this.user = this.auth.user
+    this.total = this.calcTotal();
+  }
+
+  calcTotal(){
+    for (let index = 0; index < this.items.length; index++) {
+       this.total = this.total + this.items[index].price;
+      }
+      return this.total
   }
 
 }

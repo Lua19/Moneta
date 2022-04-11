@@ -1,10 +1,25 @@
 <div class="content bg-gradient-dark">
     <br>
     <h2 class="title-text1">Please verify your information </h2>
-   <div class="container">
-       <div class="col-5"></div>
-       <div class="col-5"></div>
-   </div>
+    <div class="d-flex justify-content-center">
+
+      <div class="row container animate__animated animate__fadeInLeft d-flex justify-content-center">
+          <div class="col-5">
+           <ul class="list-group list-group-flush rounded">
+             <li class="list-group-item"><strong> Name - {{user.firstName}} {{user.lastName}}</strong></li>
+             <li class="list-group-item"><strong>Email - {{user.email}}</strong></li>
+             <li class="list-group-item"><strong>Phone - 6464646584</strong></li>
+             <li class="list-group-item"><strong>Address - P. Sherman Wallaby Street</strong></li>
+           </ul>
+          </div>
+          <div class="col-5">
+           <ul class="list-group list-group-flush rounded">
+             <li class="list-group-item" *ngFor="let item of items; index as i"><strong> Product - {{items[i].name}} | {{items[i].price | currency}}</strong></li>
+             <li class="list-group-item text-align-center"><strong> Total - {{total | currency}} </strong></li>
+            </ul>
+          </div>
+      </div>
+    </div>
    <h2 class="title-text1"> Items in detail</h2>
     <div class=" row row-cols-1 row-cols-md-3 g-4 animate__animated animate__fadeInRight contain">
       <br>
