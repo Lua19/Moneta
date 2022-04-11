@@ -24,10 +24,4 @@ export class ProductsService {
     return this.http.post(`${this.url}MarketingWebAddProduct`,body)
   }
   
-  addCartItems(product:Product) {
-    this.productsInCart.push(product)
-    console.log(this.productsInCart);
-    return this.productsInCart
-  }
-
 }

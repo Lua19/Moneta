@@ -31,4 +31,8 @@ li{
     font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
     font-weight: 600;
     border: solid 1px gray;
+    background-color: black;
+}
+#buy-button:hover{
+    filter: invert(100%);
 }

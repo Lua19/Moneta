@@ -14,7 +14,7 @@ export class CartComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.products.productsInCart = this.cartItems
+    this.cartItems = this.products.productsInCart
   }
 
 }

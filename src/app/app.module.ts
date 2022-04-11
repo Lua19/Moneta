@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,7 +12,6 @@ import { StorePageComponent } from './Pages/store-page/store-page.component';
 import { ContactComponent } from './Pages/contact/contact.component';
 import { FooterComponent } from './Items/footer/footer.component';
 import { LandingComponent } from './Pages/landing/landing.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MainInfoComponent } from './Pages/main-info/main-info.component';
 import { ContactServiceService } from './Services/contact-service.service';
 import { LoginComponent } from './Pages/login/login.component';
@@ -22,6 +22,7 @@ import { AdminDashboardComponent } from './Items/admin-dashboard/admin-dashboard
 import { RegisterComponent } from './Pages/register/register.component';
 import { CartComponent } from './Items/cart/cart.component';
 import { UsersComponent } from './Pages/users/users.component';
+import { PaymentComponent } from './Pages/payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { UsersComponent } from './Pages/users/users.component';
     AdminDashboardComponent,
     RegisterComponent,
     CartComponent,
-    UsersComponent
+    UsersComponent,
+    PaymentComponent
     
   ],
   imports: [

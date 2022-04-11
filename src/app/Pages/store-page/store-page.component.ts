@@ -31,8 +31,6 @@ export class StorePageComponent implements OnInit {
   ngOnInit(): void {
     this.products.getProducts().subscribe(
       (res) => {
-        console.log(res);
-        
         this.productsList = res}
       );
     
@@ -43,11 +41,8 @@ export class StorePageComponent implements OnInit {
     this.router.navigate(['/store/'+route]);
   }
   addToCart(index:number){
-    localStorage.setItem(`Product${index}`, this.productsList[index].id)
-      this.products.addCartItems( this.productsList[index])
-      this.cartItems = this.products.productsInCart; 
-      this.products.areItemsInCart.next(true)
-      console.log(this.cartItems);
+    this.products.productsInCart.push(this.productsList[index]);
+    this.products.areItemsInCart.next(true);
   }
 
 }
