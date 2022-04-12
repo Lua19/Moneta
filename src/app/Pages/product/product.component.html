@@ -3,46 +3,57 @@
         <h1 class="title-text1">New product</h1>
         <div class="row d-flex justify-content-center">
             <div class="col-4">
+              <label class="form-label">Name</label>
               <input type="text" class="form-control" formControlName="Name" placeholder="Name">
             </div>
           </div>
           <div class="row d-flex justify-content-center">
             <div class="col-4">
+              <label class="form-label">Price</label>
               <input type="number" class="form-control" formControlName="Price" placeholder="Price">
             </div>
             <div class="col-4">
+              <label class="form-label">Quantity</label>
               <input type="number" class="form-control" formControlName="Quantity" placeholder="Amount">
             </div>
           </div>
           <div class="row d-flex justify-content-center">
             <div class="col-4">
+              <label class="form-label">Tax Percentage</label>
               <input type="number" class="form-control" formControlName="TaxPercentage" placeholder="Tax Percentage">
             </div>
             <div class="col-4">
+              <label class="form-label">Promotion Amount</label>
               <input type="number" class="form-control" formControlName="PromotionAmount" placeholder="Promotion amount">
             </div>
           </div>
           <div class="row d-flex justify-content-center">
             <div class="col-4">
+              <label class="form-label">ImageUrl</label>
               <input type="text" class="form-control" formControlName="ImageUrl" placeholder="Image URL">
             </div>
             <div class="col-4">
+              <label class="form-label">Barcode</label>
               <input type="text" class="form-control" formControlName="Barcode" placeholder="Barcode">
             </div>
           </div>
           <div class="row d-flex justify-content-center">
             <div class="col-4">
+              <label class="form-label">Image Data</label>
               <input type="file" (change)="getBase64($event)" class="form-control" formControlName="ImageData" placeholder="Image Data">
             </div>
             <div class="col-4">
+              <label class="form-label">Unit Cost</label>
               <input type="number" class="form-control" formControlName="UnitCost" placeholder="Unit Cost">
             </div>
         </div>
         <div class="row d-flex justify-content-center">
             <div class="col-4">
+              <label class="form-label">Status</label>
               <input type="text" class="form-control" formControlName="Status" placeholder="Status">
             </div>
             <div class="col-4">
+              <label class="form-label">Delivery Time</label>
               <input type="text" class="form-control" formControlName="DeliveryTime" placeholder="Delivery Time">
             </div>
         </div>

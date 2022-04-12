@@ -33,3 +33,9 @@ button:hover{
     background-color: whitesmoke;
     color: #151f20;
 }
+label{
+    color: whitesmoke;
+    font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+    font-weight: 600;
+    text-align: center;
+}
