@@ -14,15 +14,15 @@ export class ProductComponent {
 
   myForm: FormGroup = this.fb.group({
     Name: ['', [Validators.required]],
-    Barcode: ['', [Validators.required]],
-    Quantity: [0, [Validators.required]],
+    // Barcode: ['', [Validators.required]],
+    // Quantity: [0, [Validators.required]],
     UnitCost: [0, [Validators.required]],
     Price: [0, [Validators.required]],
     TaxPercentage: [0, [Validators.required]],
-    PromotionAmount: [0, [Validators.required]],
-    ImageUrl: ['', [Validators.required]],
+    // PromotionAmount: [0, [Validators.required]],
+    // ImageUrl: ['', [Validators.required]],
     ImageData: ['', [Validators.required]],
-    Status: ['', [Validators.required]],
+    // Status: ['', [Validators.required]],
     DeliveryTime: ['', [Validators.required]]
   })
 

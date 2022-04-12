@@ -19,8 +19,7 @@ export class PaymentComponent implements OnInit {
   constructor(private auth: AuthService, private products: ProductsService) { }
 
   ngOnInit(): void {
-    this.items = this.products.productsInCart
-    console.log(this.items);
+    this.items = this.products.productsInCart;
     this.auth.isUserLoggedIn.subscribe( value => {
       this.isUserLoggedIn = value;});
     this.user = this.auth.user
