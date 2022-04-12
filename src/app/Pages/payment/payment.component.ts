@@ -13,12 +13,16 @@ export class PaymentComponent implements OnInit {
 
   user : WebUser | any;
   items : Product[] = []
-  total: number =0 ;
+  total: number = 0;
+  isUserLoggedIn: boolean = false
 
   constructor(private auth: AuthService, private products: ProductsService) { }
 
   ngOnInit(): void {
     this.items = this.products.productsInCart
+    console.log(this.items);
+    this.auth.isUserLoggedIn.subscribe( value => {
+      this.isUserLoggedIn = value;});
     this.user = this.auth.user
     this.total = this.calcTotal();
   }

@@ -1,28 +1,36 @@
 <div class="content bg-gradient-dark">
     <br>
-    <h2 class="title-text1">Please verify your information </h2>
+    <h2 *ngIf="isUserLoggedIn" class="title-text1">Please confirm your information </h2>
+    <h2 *ngIf="!isUserLoggedIn" class="title-text1">Please add your information </h2>
     <div class="d-flex justify-content-center">
-
       <div class="row container animate__animated animate__fadeInLeft d-flex justify-content-center">
-          <div class="col-5">
-           <ul class="list-group list-group-flush rounded">
-             <li class="list-group-item"><strong> Name - {{user.firstName}} {{user.lastName}}</strong></li>
-             <li class="list-group-item"><strong>Email - {{user.email}}</strong></li>
-             <li class="list-group-item"><strong>Phone - 6464646584</strong></li>
-             <li class="list-group-item"><strong>Address - P. Sherman Wallaby Street</strong></li>
-           </ul>
-          </div>
-          <div class="col-5">
-           <ul class="list-group list-group-flush rounded">
-             <li class="list-group-item" *ngFor="let item of items; index as i"><strong> Product - {{items[i].name}} | {{items[i].price | currency}}</strong></li>
-             <li class="list-group-item text-align-center"><strong> Total - {{total | currency}} </strong></li>
-            </ul>
+        <div *ngIf="isUserLoggedIn" class="col-6">
+          <ul class="list-group list-group-flush rounded">
+            <li class="list-group-item"><strong> Name - {{user.firstName}} {{user.lastName}}</strong></li>
+            <li class="list-group-item"><strong>Email - {{user.email}}</strong></li>
+            <li class="list-group-item"><strong>Phone - 6464646584</strong></li>
+            <li class="list-group-item"><strong>Address - P. Sherman Wallaby Street</strong></li>
+          </ul>
+        </div>
+        <div class="col-6">
+          <ul class="list-group list-group-flush rounded">
+            <li class="list-group-item" *ngFor="let item of items; index as i"><strong> Product - {{items[i].name}} | {{items[i].price | currency}}</strong></li>
+            <li class="list-group-item text-align-center"><strong> Total - {{total | currency}} </strong></li>
+          </ul>
+        </div>
+        <div *ngIf="!isUserLoggedIn" class="col-6">
+          <ul class="list-group list-group-flush rounded">
+            <li class="list-group-item"><strong>Name -  </strong> <input type="text" placeholder="Chris"> <strong>  Surname -  </strong> <input type="text" placeholder="Smith"></li>
+            <li class="list-group-item"><strong>Email -  </strong><input type="text" placeholder="Email"></li>
+            <li class="list-group-item"><strong>Phone -  </strong><input type="text" placeholder="512-592-9841"></li>
+            <li class="list-group-item"><strong>Address -  </strong><input type="text" placeholder="Ur Street #4132"></li>
+          </ul>
           </div>
       </div>
     </div>
     <br>
-   <h2 class="title-text1"> Items in detail</h2>
-   <br>
+    <h2 class="title-text1"> Items in detail</h2>
+    <br>
     <div class=" row row-cols-1 row-cols-md-3 g-4 d-flex justify-content-center animate__animated animate__fadeInRight contain">
       <br>
       <div class="card" id="item" style="width: 25rem;" *ngFor="let item of items; index as i">
@@ -33,16 +41,16 @@
             </div>
           </div>
         </div>
-          <div class="card-body">
-            <h5 class="card-title">{{items[i].name}}</h5>
-            <p class="card-text" *ngIf="items[i].quantity > 0">Remaining in stock: {{items[i].quantity}}</p>
-          </div>
-          <ul class="list-group list-group-flush rounded">
-            <li class="list-group-item">Price: {{items[i].price | currency}}</li>
-            <li class="list-group-item" *ngIf="items[i].deliveryTime">Time of delivery: {{items[i].deliveryTime}}</li>
-            <li class="list-group-item">Detail</li>
-          </ul>
+        <div class="card-body">
+          <h5 class="card-title">{{items[i].name}}</h5>
+          <p class="card-text" *ngIf="items[i].quantity > 0">Remaining in stock: {{items[i].quantity}}</p>
         </div>
+        <ul class="list-group list-group-flush rounded">
+          <li class="list-group-item">Price: {{items[i].price | currency}}</li>
+          <li class="list-group-item" *ngIf="items[i].deliveryTime">Time of delivery: {{items[i].deliveryTime}}</li>
+          <li class="list-group-item">Detail</li>
+        </ul>
+      </div>
     </div>
   </div>
   <app-footer></app-footer>
