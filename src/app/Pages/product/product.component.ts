@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ProductsService } from 'src/app/Services/products.service';
 
 @Component({
@@ -11,6 +12,7 @@ export class ProductComponent {
 
   product: any;
   image : any;
+  errorResponse: boolean | any = undefined;
 
   myForm: FormGroup = this.fb.group({
     Name: ['', [Validators.required]],
@@ -26,7 +28,7 @@ export class ProductComponent {
     DeliveryTime: ['', [Validators.required]]
   })
 
-  constructor(private productService: ProductsService, private fb: FormBuilder) { }
+  constructor(private productService: ProductsService, private fb: FormBuilder, private router: Router) { }
 
   getBase64(event :any){
     const file = event.target.files[0];
@@ -44,8 +46,14 @@ export class ProductComponent {
     this.myForm.value.ImageData = this.image;
     console.log(this.myForm.value);
     this.productService.postProduct(this.myForm.value).subscribe(
-      (res) => console.log(res)
+      (res) => {this.errorResponse = res}
     );
+  }
+  navigate(route: string){
+    this.router.navigateByUrl(route);
+  }
+  closeAlert(){
+    this.errorResponse = undefined;
   }
 
 }

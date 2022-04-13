@@ -31,8 +31,7 @@
         </div>
         <ul class="list-group list-group-flush rounded">
           <li class="list-group-item">Price: {{productsList[i].price | currency}}</li>
-          <li class="list-group-item" *ngIf="productsList[i].deliveryTime">Time of delivery: {{productsList[i].deliveryTime}}</li>
-          <li class="list-group-item">Detail</li>
+          <li class="list-group-item" *ngIf="productsList[i].deliveryTime">Description: {{productsList[i].deliveryTime}}</li>
         </ul>
         <button (click)="addToCart(i)" id="buy-button" class="col-4 mt-2 rounded">Purchase<img src="https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/20/ffffff/external-plus-user-interface-tanah-basah-glyph-tanah-basah-2.png"/></button>
       </div>
