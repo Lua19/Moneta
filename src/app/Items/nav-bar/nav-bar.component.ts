@@ -25,7 +25,13 @@ export class NavBarComponent implements OnInit{
   logout(){
     localStorage.removeItem('UserId');
     this.auth.logout()
-    window.location.reload();
+    console.log(this.router.url);
+    if (this.router.url == '/store/payment') {
+      this.router.navigate(['store'])
+    } 
+    else{
+      window.location.reload()
+    }
   }
   login(){
     this.router.navigate(['login'])
