@@ -17,6 +17,7 @@ export class StorePageComponent implements OnInit {
   isUserLoggedIn: boolean = false;
   itemsInCart: boolean = false;
   user:WebUser|any
+  loading : boolean = true
 
   constructor(private router : Router, private products: ProductsService, private auth : AuthService) {
     this.auth.isUserLoggedIn.subscribe( value => {
@@ -31,7 +32,8 @@ export class StorePageComponent implements OnInit {
   ngOnInit(): void {
     this.products.getProducts().subscribe(
       (res) => {
-        this.productsList = res}
+        this.productsList = res
+        this.loading = false}
       );
     
     this.user = this.auth.user;
