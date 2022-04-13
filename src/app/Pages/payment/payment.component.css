@@ -23,7 +23,15 @@
     margin: 25px;
     background-color: darkgrey;
   }
-
+#item-row{
+    background-color: black;
+    border: solid 2px whitesmoke;
+    width: 80%;
+    margin: auto;
+}
+.img{
+    margin: 20px;
+}
 @media only screen and (max-width: 700px) {
 
   }

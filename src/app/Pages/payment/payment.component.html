@@ -32,26 +32,11 @@
     <br>
     <h2 class="title-text1"> Items in detail</h2>
     <br>
-    <div class=" row row-cols-1 row-cols-md-3 g-4 d-flex justify-content-center animate__animated animate__fadeInRight contain">
-      <br>
-      <div class="card" id="item" style="width: 15rem;" *ngFor="let item of items; index as i">
-        <div id="carouselExampleDark{{i}}" class="carousel carousel-dark slide" data-bs-ride="carousel" data-bs-interval="false">
-          <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="false">
-              <img src="{{items[i].imageData | image}}" class="d-block w-100" alt="...">
-            </div>
-          </div>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">{{items[i].name}}</h5>
-          <p class="card-text" *ngIf="items[i].quantity > 0">Remaining in stock: {{items[i].quantity}}</p>
-        </div>
-        <ul class="list-group list-group-flush rounded">
-          <li class="list-group-item">Price: {{items[i].price | currency}}</li>
-          <li class="list-group-item" *ngIf="items[i].deliveryTime">Time of delivery: {{items[i].deliveryTime}}</li>
-          <li class="list-group-item">Detail</li>
-        </ul>
-      </div>
+    <div id="item-row" class="row d-flex justify-content-between animate__animated animate__fadeIn rounded" *ngFor="let item of items; index as i" >
+      <div class="col-2 d-flex justify-content-center image-container"><img class="d-block w-75 rounded" src="{{items[i].imageData | image}}" alt=""></div>
+      <div class="col-2 d-flex align-items-center"><h3 class="title-text1">Name : {{items[i].name}}</h3></div>
+      <div class="col-2 d-flex align-items-center"><h3 class="title-text1">Price : {{items[i].price | currency}}</h3></div>
+      <div class="col-2 d-flex align-items-center"><h3 class="title-text1">Description : {{items[i].deliveryTime}}</h3></div>
     </div>
   </div>
   <app-footer></app-footer>
