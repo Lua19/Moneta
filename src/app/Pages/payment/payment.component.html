@@ -33,10 +33,10 @@
     <h2 class="title-text1"> Items in detail</h2>
     <br>
     <div id="item-row" class="row d-flex justify-content-between animate__animated animate__fadeIn rounded" *ngFor="let item of items; index as i" >
-      <div class="col-2 d-flex justify-content-center image-container"><img class="d-block w-75 rounded" src="{{items[i].imageData | image}}" alt=""></div>
-      <div class="col-2 d-flex align-items-center"><h3 class="title-text1">Name : {{items[i].name}}</h3></div>
-      <div class="col-2 d-flex align-items-center"><h3 class="title-text1">Price : {{items[i].price | currency}}</h3></div>
-      <div class="col-2 d-flex align-items-center"><h3 class="title-text1">Description : {{items[i].deliveryTime}}</h3></div>
+      <div class="col col-sm d-flex justify-content-center image-container"><img class="d-block w-75 rounded" src="{{items[i].imageData | image}}" alt=""></div>
+      <div class="col d-flex align-items-center"><h3 class="title-text1">Name : {{items[i].name}}</h3></div>
+      <div class="col d-flex align-items-center"><h3 class="title-text1">Price : {{items[i].price | currency}}</h3></div>
+      <div class="col d-flex align-items-center"><h3 class="title-text1">Description : {{items[i].deliveryTime}}</h3></div>
     </div>
   </div>
   <app-footer></app-footer>
