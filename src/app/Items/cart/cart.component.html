@@ -6,7 +6,7 @@
         </svg>
         <h5>Items in cart : {{cartItems.length}}</h5>
     </div>
-    <div class="item-box align-self-center" *ngFor="let item of cartItems | slice:0:5 ; index as i">
+    <div class="item-box align-self-center" *ngFor="let item of cartItems | slice:0:maxItems ; index as i">
         {{item.name}}
         <br>
         {{item.price | currency}}

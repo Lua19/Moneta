@@ -8,13 +8,17 @@ import { ProductsService } from 'src/app/Services/products.service';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  cartItems: Product[] = []
+  cartItems: Product[] = [];
+  maxItems: number = 5;
   constructor(private products: ProductsService) {
     
    }
 
   ngOnInit(): void {
     this.cartItems = this.products.productsInCart
+    if (document.body.offsetWidth < 1024) { // 768px portrait
+      this.maxItems = 2;
+    }
   }
 
   deleteItem(index : number){
