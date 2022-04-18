@@ -47,3 +47,29 @@ h2{
     background-color: red;
     padding: 2px;
 }
+#cart-card-img{
+    height: 50%;
+    width: 50%;
+}
+@media only screen and (max-width: 700px) {
+    h2{
+        display: none;
+    }
+    h5{
+        font-size: small;
+        font-weight: 600;
+    }
+    #cart-card-img{
+        height: 50%;
+        width: 50%;
+    }
+    .cart-card{
+        width: 15%;
+        height: 75%;
+    }
+    .item-box{
+        width: 30%;
+        height: 20%;
+        font-size: small;
+    }
+  }
