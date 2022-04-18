@@ -13,6 +13,7 @@ export class CartViewComponent implements OnInit {
   productsList: Product[] = [];
   user : WebUser | any;
   loading : boolean = true;
+  total : number = 0;
   constructor(private products:ProductsService, private auth:AuthService) {
     
    }
@@ -20,7 +21,18 @@ export class CartViewComponent implements OnInit {
   ngOnInit(): void {
     this.productsList = this.products.productsInCart;
     this.user = this.auth.user;
-    
+    this.total = this.calcTotal();
+  }
+  deleteItem(index : number){
+    this.products.productsInCart.splice(index,1);
+    this.total = this.calcTotal();
+  }
+  calcTotal(){
+    this.total = 0;
+    for (let index = 0; index < this.productsList.length; index++) {
+       this.total = this.total + this.productsList[index].price;
+      }
+      return this.total
   }
 
 

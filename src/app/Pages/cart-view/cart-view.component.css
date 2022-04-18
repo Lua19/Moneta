@@ -13,3 +13,24 @@
     margin-left: 200px;
     margin-right: 200px;
 }
+#delete-button{
+    color: white;
+    font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+    font-weight: 600;
+    border: solid 1px gray;
+    background-color: black;
+}
+#delete-button:hover{
+    filter: invert(100%);
+}
+.payment-card{
+    width: 10%;
+    cursor: pointer;
+    border-radius: 5px;
+    border: solid 1px azure;
+    background-color: whitesmoke;
+}
+#cart-card-img{
+    height: 50%;
+    width: 50%;
+}
