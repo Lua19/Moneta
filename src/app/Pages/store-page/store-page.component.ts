@@ -16,8 +16,8 @@ export class StorePageComponent implements OnInit {
   cartItems: Product[] = [];
   isUserLoggedIn: boolean = false;
   itemsInCart: boolean = false;
-  user:WebUser|any
-  loading : boolean = true
+  user:WebUser|any;
+  loading : boolean = true;
 
   constructor(private router : Router, private products: ProductsService, private auth : AuthService) {
     this.auth.isUserLoggedIn.subscribe( value => {

@@ -23,6 +23,7 @@ import { RegisterComponent } from './Pages/register/register.component';
 import { CartComponent } from './Items/cart/cart.component';
 import { UsersComponent } from './Pages/users/users.component';
 import { PaymentComponent } from './Pages/payment/payment.component';
+import { CartViewComponent } from './Pages/cart-view/cart-view.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { PaymentComponent } from './Pages/payment/payment.component';
     RegisterComponent,
     CartComponent,
     UsersComponent,
-    PaymentComponent
+    PaymentComponent,
+    CartViewComponent
     
   ],
   imports: [

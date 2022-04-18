@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminGuardGuard } from './Guards/admin-guard.guard';
 import { AuthGuard } from './Guards/auth.guard';
+import { CartViewComponent } from './Pages/cart-view/cart-view.component';
 import { ContactComponent } from './Pages/contact/contact.component';
 import { LandingComponent } from './Pages/landing/landing.component';
 import { LoginComponent } from './Pages/login/login.component';
@@ -18,6 +19,7 @@ const routes: Routes =
    {path: 'info', component: MainInfoComponent},
    {path: 'price', component: PricePageComponent},
    {path: 'contact', component: ContactComponent},
+   {path: 'cart', component: CartViewComponent},
    {path: 'store', component: StorePageComponent, canActivate: [AuthGuard]},
    {path: 'store/products', component: ProductComponent, canActivate: [AdminGuardGuard]},
    {path: 'store/users', component: UsersComponent, canActivate: [AdminGuardGuard]},
