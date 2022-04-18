@@ -5,6 +5,13 @@
           <span class="visually-hidden">Loading...</span>
         </div>
       </div> -->
+      <div class="d-flex justify-content-between">
+        <h1 class="title-text1 mx-15">My cart</h1>
+        <h1 *ngIf="user" class="title-text1 mx-15">{{user.firstName}} {{user.lastName}}</h1>
+      </div>
+      <br>
+      <br>
+      <br>
       <div *ngIf="productsList" class="row row-cols-1 row-cols-md-3 g-4 d-flex justify-content-center animate__animated animate__fadeInLeft">
         <div class="card" id="item" style="width: 25rem;" *ngFor="let product of productsList; index as i">
           <div id="carouselExampleDark{{i}}" class="carousel carousel-dark slide" data-bs-ride="carousel" data-bs-interval="false">
@@ -40,5 +47,9 @@
               <li class="list-group-item" *ngIf="productsList[i].deliveryTime">Description: {{productsList[i].deliveryTime}}</li>
             </ul>
           </div>
+      </div>
+      <div class="d-flex justify-content-between">
+        <h1 class="title-text1 mx-15">Total</h1>
+        <h1 *ngIf="user" class="title-text1 mx-15">{{user.firstName}} {{user.lastName}}</h1>
       </div>
 </div>

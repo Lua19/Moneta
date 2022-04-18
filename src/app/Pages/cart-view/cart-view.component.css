@@ -1,0 +1,15 @@
+.content{
+    padding-top: 15vh;
+}
+#item{
+    padding: 25px;
+    margin: 25px;
+    background-color: darkgrey;
+  }
+  .title-text1{
+    color: whitesmoke;
+    font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+    font-weight: 600;
+    margin-left: 200px;
+    margin-right: 200px;
+}
