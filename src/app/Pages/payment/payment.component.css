@@ -15,6 +15,7 @@
     font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
     font-weight: 600;
     text-align: center;
+    
 }
 .contain{
     padding-bottom: 10vh;
@@ -36,6 +37,22 @@
 }
 .image-container{
     margin: 5px;
+}
+.payment-card{
+    width: 10%;
+    cursor: pointer;
+    border-radius: 5px;
+    border: solid 1px azure;
+    background-color: whitesmoke;
+    
+}
+svg{
+    width: 60%;
+    margin: 5px;
+}
+#pay-text{
+    color: whitesmoke;
+    margin: 25px;
 }
 @media only screen and (max-width: 700px) {
     .img{

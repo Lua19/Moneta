@@ -32,5 +32,12 @@ export class PaymentComponent implements OnInit {
       }
       return this.total
   }
+  pay(payment : number){
+    this.products.postPayment(payment).subscribe(
+      (res) => {
+        console.log(res)
+      }
+    )
+  }
 
 }

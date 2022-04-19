@@ -23,5 +23,7 @@ export class ProductsService {
   postProduct(body: any){
     return this.http.post(`${this.url}MarketingWebAddProduct`,body)
   }
-  
+  postPayment(body:any){
+    return this.http.post(`${this.url}ShoppingCartSale/`,body)
+  }
 }
