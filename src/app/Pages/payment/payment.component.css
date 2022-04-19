@@ -44,15 +44,35 @@
     border-radius: 5px;
     border: solid 1px azure;
     background-color: whitesmoke;
-    
+    color: black;
 }
 svg{
     width: 60%;
     margin: 5px;
 }
+.alert{
+    width: 80%;
+    margin: 20px;
+}
 #pay-text{
     color: whitesmoke;
     margin: 25px;
+}
+button[disabled]{
+    width: 10%;
+    cursor: pointer;
+    border-radius: 5px;
+    border: solid 1px azure;
+    background-color: whitesmoke;
+    color: gray;
+}
+#alert-svg{
+    width: 20%;
+}
+.text-danger{
+    width: 80%;
+    font-weight: 600;
+    font-size: larger;
 }
 @media only screen and (max-width: 700px) {
     .img{
