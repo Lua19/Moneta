@@ -10,12 +10,17 @@ import { ProductsService } from 'src/app/Services/products.service';
   styleUrls: ['./orders.component.css']
 })
 export class OrdersComponent implements OnInit {
-  order: Order[] = [];
+  Orders : Order[] = [];
   user : WebUser|any;
   constructor(private auth: AuthService, private products: ProductsService) { }
 
   ngOnInit(): void {
     this.user = this.auth.user;
+    this.getProductsForOrder();
+  }
+
+  getProductsForOrder(){
+    
   }
 
 }

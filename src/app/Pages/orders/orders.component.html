@@ -2,10 +2,10 @@
     <br>
     <h2 class="title-text1"> Orders</h2>
     <br>
-    <div id="item-row" class="row d-flex justify-content-between animate__animated animate__fadeIn rounded" >
-      <div class="col col-sm d-flex justify-content-center image-container"></div>
+    <div id="item-row" class="row d-flex justify-content-between animate__animated animate__fadeIn rounded" *ngFor="let order of Orders; index as i" >
+      <div class="col d-flex align-items-center"><h3 class="title-text1">Name : </h3></div>
       <div class="col d-flex align-items-center"><h3 class="title-text1">Name : </h3></div>
       <div class="col d-flex align-items-center"><h3 class="title-text1">Price :</h3></div>
-      <div class="col d-flex align-items-center"><h3 class="title-text1">Description : </h3></div>
+      <div class="col d-flex align-items-center"><h3 class="title-text1">Status : {{Orders[i].Status}}</h3></div>
     </div>
 </div>

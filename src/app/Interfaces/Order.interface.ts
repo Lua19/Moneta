@@ -1,3 +1,5 @@
+import { Product } from "./Product.interface";
+
 export interface Order {
     id: string;
     CompanyName: string;
@@ -16,4 +18,5 @@ export interface Order {
     LastTransactionType: string;
     Status: string;
     CustomerId: string;
+    Products:Product[]
 }

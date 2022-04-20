@@ -18,6 +18,7 @@ export class StorePageComponent implements OnInit {
   itemsInCart: boolean = false;
   user:WebUser|any;
   loading : boolean = true;
+  productsFromStorage: string | null = '';
 
   constructor(private router : Router, private products: ProductsService, private auth : AuthService) {
     this.auth.isUserLoggedIn.subscribe( value => {
@@ -35,7 +36,10 @@ export class StorePageComponent implements OnInit {
         this.productsList = res
         this.loading = false}
       );
-    
+    this.products.productsInCart = JSON.parse(localStorage.getItem("Products")!)
+    if (this.products.productsInCart) {
+      this.products.areItemsInCart.next(true);
+    }
     this.user = this.auth.user;
   }
 
@@ -44,6 +48,7 @@ export class StorePageComponent implements OnInit {
   }
   addToCart(index:number){
     this.products.productsInCart.push(this.productsList[index]);
+    localStorage.setItem("Products",JSON.stringify(this.products.productsInCart))
     this.products.areItemsInCart.next(true);
   }
 
