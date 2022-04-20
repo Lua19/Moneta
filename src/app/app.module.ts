@@ -24,6 +24,7 @@ import { CartComponent } from './Items/cart/cart.component';
 import { UsersComponent } from './Pages/users/users.component';
 import { PaymentComponent } from './Pages/payment/payment.component';
 import { CartViewComponent } from './Pages/cart-view/cart-view.component';
+import { OrdersComponent } from './Pages/orders/orders.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { CartViewComponent } from './Pages/cart-view/cart-view.component';
     CartComponent,
     UsersComponent,
     PaymentComponent,
-    CartViewComponent
+    CartViewComponent,
+    OrdersComponent
     
   ],
   imports: [

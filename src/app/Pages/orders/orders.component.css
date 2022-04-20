@@ -1,0 +1,19 @@
+.content{
+    width: 100%;
+    height: 100%;
+    margin-top: 12vh;
+    padding-bottom: 12vh;
+}
+.title-text1{
+    color: whitesmoke;
+    font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+    font-weight: 600;
+    text-align: center;
+}
+#item-row{
+    background-color: black;
+    border: solid 2px whitesmoke;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
+}

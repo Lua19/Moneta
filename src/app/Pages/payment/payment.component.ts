@@ -53,6 +53,7 @@ export class PaymentComponent implements OnInit {
   }
   pay(){
     let amount = this.total.toString();
+    this.storeItemsAsOrder();
     this.myForm.value.ssl_amount = amount;
     if (this.user) {
       this.myForm.value.ssl_first_name = this.user.firstName;
@@ -60,6 +61,11 @@ export class PaymentComponent implements OnInit {
       this.myForm.value.ssl_email = this.user.email;
     }
     this.handleRedirect();
+  }
+  storeItemsAsOrder(){
+    for (let index = 0; index < this.items.length; index++) {
+      localStorage.setItem('product'+index,JSON.stringify(this.items[index]));
+    }
   }
   handleRedirect(){
     this.products.postPayment(this.myForm.value).subscribe(

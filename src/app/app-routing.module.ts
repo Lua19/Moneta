@@ -7,6 +7,7 @@ import { ContactComponent } from './Pages/contact/contact.component';
 import { LandingComponent } from './Pages/landing/landing.component';
 import { LoginComponent } from './Pages/login/login.component';
 import { MainInfoComponent } from './Pages/main-info/main-info.component';
+import { OrdersComponent } from './Pages/orders/orders.component';
 import { PaymentComponent } from './Pages/payment/payment.component';
 import { PricePageComponent } from './Pages/price-page/price-page.component';
 import { ProductComponent } from './Pages/product/product.component';
@@ -19,6 +20,7 @@ const routes: Routes =
    {path: 'info', component: MainInfoComponent},
    {path: 'price', component: PricePageComponent},
    {path: 'contact', component: ContactComponent},
+   {path: 'orders', component: OrdersComponent},
    {path: 'cart', component: CartViewComponent},
    {path: 'store', component: StorePageComponent, canActivate: [AuthGuard]},
    {path: 'store/products', component: ProductComponent, canActivate: [AdminGuardGuard]},
