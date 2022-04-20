@@ -12,12 +12,67 @@
     <h2 *ngIf="!isUserLoggedIn" class="title-text1">Please add your information </h2>
     <div class="d-flex justify-content-center">
       <div class="row container animate__animated animate__fadeInLeft d-flex justify-content-center">
-        <div *ngIf="isUserLoggedIn" class="col-6">
+        <div [formGroup]="myForm" *ngIf="isUserLoggedIn" class="col-6">
           <ul class="list-group list-group-flush rounded">
+            <li class="list-group-item"><strong>Company -  </strong> <input formControlName="ssl_company" type="text" placeholder="OurNetwork LLC"></li>
             <li class="list-group-item"><strong> Name - {{user.firstName}} {{user.lastName}}</strong></li>
             <li class="list-group-item"><strong>Email - {{user.email}}</strong></li>
-            <li class="list-group-item"><strong>Phone - 6464646584</strong></li>
-            <li class="list-group-item"><strong>Address - P. Sherman Wallaby Street</strong></li>
+            <li class="list-group-item"><strong>Phone -  </strong><input formControlName="ssl_phone" type="text" placeholder="512-592-9841"></li>
+            <li class="list-group-item"><strong>State -  </strong><select formControlName="ssl_state">
+              <option value="Alabama">Alabama (AL)</option>
+              <option value="Alaska">Alaska (AK)</option>
+              <option value="Arizona">Arizona (AZ)</option>
+              <option value="Arkansas">Arkansas (AR)</option>
+              <option value="California">California (CA)</option>
+              <option value="Colorado">Colorado (CO)</option>
+              <option value="Connecticut">Connecticut (CT)</option>
+              <option value="Delaware">Delaware (DE)</option>
+              <option value="District Of Columbia">District Of Columbia (DC)</option>
+              <option value="Florida">Florida (FL)</option>
+              <option value="Georgia">Georgia (GA)</option>
+              <option value="Hawaii">Hawaii (HI)</option>
+              <option value="Idaho">Idaho (ID)</option>
+              <option value="Illinois">Illinois (IL)</option>
+              <option value="Indiana">Indiana (IN)</option>
+              <option value="Iowa">Iowa (IA)</option>
+              <option value="Kansas">Kansas (KS)</option>
+              <option value="Kentucky">Kentucky (KY)</option>
+              <option value="Louisiana">Louisiana (LA)</option>
+              <option value="Maine">Maine (ME)</option>
+              <option value="Maryland">Maryland (MD)</option>
+              <option value="Massachusetts">Massachusetts (MA)</option>
+              <option value="Michigan">Michigan (MI)</option>
+              <option value="Minnesota">Minnesota (MN)</option>
+              <option value="Mississippi">Mississippi (MS)</option>
+              <option value="Missouri">Missouri (MO)</option>
+              <option value="Montana">Montana (MT)</option>
+              <option value="Nebraska">Nebraska (NE)</option>
+              <option value="Nevada">Nevada (NV)</option>
+              <option value="New Hampshire">New Hampshire (NH)</option>
+              <option value="New Jersey">New Jersey (NJ)</option>
+              <option value="New Mexico">New Mexico (NM)</option>
+              <option value="New York">New York (NY)</option>
+              <option value="North Carolina">North Carolina (NC)</option>
+              <option value="North Dakota">North Dakota (ND)</option>
+              <option value="Ohio">Ohio (OH)</option>
+              <option value="Oklahoma">Oklahoma (OK)</option>
+              <option value="Oregon">Oregon (OR)</option>
+              <option value="Pennsylvania">Pennsylvania (PA)</option>
+              <option value="Rhode Island">Rhode Island (RI)</option>
+              <option value="South Carolina">South Carolina (SC)</option>
+              <option value="South Dakota">South Dakota (SD)</option>
+              <option value="Tennessee">Tennessee (TN)</option>
+              <option value="Texas">Texas (TX)</option>
+              <option value="Utah">Utah (UT)</option>
+              <option value="Vermont">Vermont</option>
+              <option value="Virginia">Virginia</option>
+              <option value="Washington">Washington</option>
+              <option value="West Virginia">West Virginia</option>
+              <option value="Wisconsin">Wisconsin</option>
+              <option value="Wyoming">Wyoming</option>
+            </select></li>
+            <li class="list-group-item"><strong>City -  </strong><input formControlName="ssl_city" type="text" placeholder="Sacramento"></li>
+            <li class="list-group-item"><strong>Address -  </strong><input formControlName="ssl_avs_address" type="text" placeholder="Ur Street #4132"></li>
           </ul>
         </div>
         <div class="col-6">
@@ -33,7 +88,59 @@
             <li class="list-group-item"><strong>Last name -  </strong><input formControlName="ssl_last_name" type="text" placeholder="Smith"></li>
             <li class="list-group-item"><strong>Email -  </strong><input formControlName="ssl_email" type="text" placeholder="Email"></li>
             <li class="list-group-item"><strong>Phone -  </strong><input formControlName="ssl_phone" type="text" placeholder="512-592-9841"></li>
-            <li class="list-group-item"><strong>State -  </strong><input formControlName="ssl_state" type="text" placeholder="California"></li>
+            <li class="list-group-item"><strong>State -  </strong><select formControlName="ssl_state">
+              <option value="Alabama">Alabama (AL)</option>
+              <option value="Alaska">Alaska (AK)</option>
+              <option value="Arizona">Arizona (AZ)</option>
+              <option value="Arkansas">Arkansas (AR)</option>
+              <option value="California">California (CA)</option>
+              <option value="Colorado">Colorado (CO)</option>
+              <option value="Connecticut">Connecticut (CT)</option>
+              <option value="Delaware">Delaware (DE)</option>
+              <option value="District Of Columbia">District Of Columbia (DC)</option>
+              <option value="Florida">Florida (FL)</option>
+              <option value="Georgia">Georgia (GA)</option>
+              <option value="Hawaii">Hawaii (HI)</option>
+              <option value="Idaho">Idaho (ID)</option>
+              <option value="Illinois">Illinois (IL)</option>
+              <option value="Indiana">Indiana (IN)</option>
+              <option value="Iowa">Iowa (IA)</option>
+              <option value="Kansas">Kansas (KS)</option>
+              <option value="Kentucky">Kentucky (KY)</option>
+              <option value="Louisiana">Louisiana (LA)</option>
+              <option value="Maine">Maine (ME)</option>
+              <option value="Maryland">Maryland (MD)</option>
+              <option value="Massachusetts">Massachusetts (MA)</option>
+              <option value="Michigan">Michigan (MI)</option>
+              <option value="Minnesota">Minnesota (MN)</option>
+              <option value="Mississippi">Mississippi (MS)</option>
+              <option value="Missouri">Missouri (MO)</option>
+              <option value="Montana">Montana (MT)</option>
+              <option value="Nebraska">Nebraska (NE)</option>
+              <option value="Nevada">Nevada (NV)</option>
+              <option value="New Hampshire">New Hampshire (NH)</option>
+              <option value="New Jersey">New Jersey (NJ)</option>
+              <option value="New Mexico">New Mexico (NM)</option>
+              <option value="New York">New York (NY)</option>
+              <option value="North Carolina">North Carolina (NC)</option>
+              <option value="North Dakota">North Dakota (ND)</option>
+              <option value="Ohio">Ohio (OH)</option>
+              <option value="Oklahoma">Oklahoma (OK)</option>
+              <option value="Oregon">Oregon (OR)</option>
+              <option value="Pennsylvania">Pennsylvania (PA)</option>
+              <option value="Rhode Island">Rhode Island (RI)</option>
+              <option value="South Carolina">South Carolina (SC)</option>
+              <option value="South Dakota">South Dakota (SD)</option>
+              <option value="Tennessee">Tennessee (TN)</option>
+              <option value="Texas">Texas (TX)</option>
+              <option value="Utah">Utah (UT)</option>
+              <option value="Vermont">Vermont</option>
+              <option value="Virginia">Virginia</option>
+              <option value="Washington">Washington</option>
+              <option value="West Virginia">West Virginia</option>
+              <option value="Wisconsin">Wisconsin</option>
+              <option value="Wyoming">Wyoming</option>
+            </select></li>
             <li class="list-group-item"><strong>City -  </strong><input formControlName="ssl_city" type="text" placeholder="Sacramento"></li>
             <li class="list-group-item"><strong>Address -  </strong><input formControlName="ssl_avs_address" type="text" placeholder="Ur Street #4132"></li>
           </ul>
@@ -43,7 +150,7 @@
     <br>
     <div class="d-flex justify-content-center align-items-center">
       <h1 id="pay-text">Total : {{total | currency}}</h1>
-      <button [disabled]="myForm.invalid" (click)="pay()" class="payment-card align-self-end d-flex flex-wrap justify-content-center align-items-center">
+      <button (click)="pay()" class="payment-card align-self-end d-flex flex-wrap justify-content-center align-items-center">
           <svg xmlns="http://www.w3.org/2000/svg" id="cart-card-img" fill="currentColor" class="bi bi-credit-card" viewBox="0 0 16 16">
               <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/>
               <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/>

@@ -52,8 +52,16 @@ export class PaymentComponent implements OnInit {
       return this.total
   }
   pay(){
-    this.myForm.value.ssl_amount = this.total;
-    console.log(this.myForm.value)
+    let amount = this.total.toString();
+    this.myForm.value.ssl_amount = amount;
+    if (this.user) {
+      this.myForm.value.ssl_first_name = this.user.firstName;
+      this.myForm.value.ssl_last_name = this.user.lastName;
+      this.myForm.value.ssl_email = this.user.email;
+    }
+    this.handleRedirect();
+  }
+  handleRedirect(){
     this.products.postPayment(this.myForm.value).subscribe(
       (res) => {
         console.log("This activated",res)
@@ -63,19 +71,14 @@ export class PaymentComponent implements OnInit {
         this.HttpError = error;
         if (this.HttpError.status == 200) {
           this.response = error.error.text;
-          console.log(this.response)
           window.open(this.response,"_blank")
         }
         else{
           this.paymentError = "There was a problem processing the payment"
           console.log(this.paymentError);
-          
         }
       }
     )
-  }
-  handleRedirect(){
-    
   }
 
 }
