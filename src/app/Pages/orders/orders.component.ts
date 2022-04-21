@@ -10,7 +10,7 @@ import { ProductsService } from 'src/app/Services/products.service';
   styleUrls: ['./orders.component.css']
 })
 export class OrdersComponent implements OnInit {
-  Orders : Order[] = [];
+  Order : Order | any;
   user : WebUser|any;
   constructor(private auth: AuthService, private products: ProductsService) { }
 

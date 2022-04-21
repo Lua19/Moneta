@@ -9,7 +9,7 @@ import { Product } from '../Interfaces/Product.interface';
 })
 export class ProductsService {
 
-  productsInCart: Product[] = []
+  productsInCart: Product[] = [];
   public areItemsInCart: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor(private http: HttpClient) { }
