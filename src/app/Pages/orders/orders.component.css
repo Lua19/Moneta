@@ -5,15 +5,40 @@
     padding-bottom: 12vh;
 }
 .title-text1{
+    color: black;
+    font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+    font-weight: 600;
+    text-align: center;
+}
+.title-text2{
+    color: whitesmoke;
+    font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+    font-weight: 600;
+    text-align: center;
+}
+.title-text3{
     color: whitesmoke;
     font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
     font-weight: 600;
     text-align: center;
 }
 #order-row{
+    background-color: whitesmoke;
+    border: solid 2px black;
+    width: 95%;
+    margin: 25px;
+}
+#order-card{
     background-color: black;
     border: solid 2px whitesmoke;
     width: 80%;
     margin: auto;
     margin-bottom: 20px;
+}
+#product-row{
+    background-color: gray;
+    border: solid 2px whitesmoke;
+    width: 95%;
+    margin: 5px;
+    border-radius: 15px;
 }

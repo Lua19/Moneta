@@ -53,19 +53,21 @@ export class PaymentComponent implements OnInit {
   }
   pay(){
     let amount = this.total.toString();
-    this.storeItemsAsOrder();
+    
     this.myForm.value.ssl_amount = amount;
     if (this.user) {
       this.myForm.value.ssl_first_name = this.user.firstName;
       this.myForm.value.ssl_last_name = this.user.lastName;
       this.myForm.value.ssl_email = this.user.email;
     }
+    this.storeItemsAsOrder();
     this.handleRedirect();
   }
   storeItemsAsOrder(){
     for (let index = 0; index < this.items.length; index++) {
-      localStorage.setItem('product'+index,JSON.stringify(this.items[index]));
+      sessionStorage.setItem("Products",JSON.stringify(this.products.productsInCart))
     }
+    sessionStorage.setItem("Order",JSON.stringify( this.myForm.value));
   }
   handleRedirect(){
     this.products.postPayment(this.myForm.value).subscribe(
