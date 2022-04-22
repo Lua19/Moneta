@@ -45,6 +45,10 @@
     padding-right: 10px;
 
 }
+#add-button:hover{
+    color: #151f20;
+    background-color: whitesmoke;
+}
 #calc-button{
     width: 15%;
     font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
@@ -62,6 +66,9 @@
     padding-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
+}
+#calc-button:hover{
+    background-color: #2e7128;
 }
 #input-field{
     background-color: white;
@@ -108,6 +115,7 @@ tr{
     font-weight: 500;
 }
 .row{
+    width: 80%;
     margin: auto;
     margin-top: 15px;
     margin-bottom: 15px;

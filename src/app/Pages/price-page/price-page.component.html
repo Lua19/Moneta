@@ -35,7 +35,7 @@
         <span class="machine d-flex align-items-center col-1">{{singleFee[i] | currency}}/ month</span>
         <button class="delete bg-danger col-1" (click)="removeMachine(i)"><img src="https://img.icons8.com/material-rounded/24/000000/trash.png"/></button>
       </div>
-      <div class="row d-flex justify-content-center" id="buttons">
+      <div class="row d-flex justify-content-between" id="buttons">
         <button id="add-button" type="button" (click)="addMachine()">Add market</button>
         <button id="calc-button" type="submit" >Calculate</button>
       </div>
