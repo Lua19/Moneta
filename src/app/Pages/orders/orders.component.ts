@@ -14,13 +14,14 @@ import { ProductsService } from 'src/app/Services/products.service';
 export class OrdersComponent implements OnInit {
   Order : any;
   user : WebUser|any;
-  productsList : Product[] = []
+  productsList : Product[] = [];
+  status: boolean = false;
 
   // myUrl= new URL('https://www.monetamarket.com/orders?BillingAddress=1246 E WOOD AVE&BillingCity=Salt Lake city&billingfirstname=luis&billinglastname=ruiz&billingstate=utah&billingzip=84105&amount=0.30&cardexpirationdate=0624&cardtype=48**********6705&lasttransactiontype=sale&maskedcardnumber=48**********6705&phone=4322143128&email=luisruiz.latic@gmail.com');
 
   // obj = new URLSearchParams(this.myUrl.search)
 
-  constructor(private auth: AuthService, private products: ProductsService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private auth: AuthService, private products: ProductsService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.user = this.auth.user;
@@ -29,9 +30,11 @@ export class OrdersComponent implements OnInit {
     // this.getOrder();
     this.route.queryParams.subscribe(
       params => {
+        console.log(params)
         this.Order = params
       }
     )
+    this.isValid();
   }
 
   // getOrder(){
@@ -39,6 +42,15 @@ export class OrdersComponent implements OnInit {
   //   // console.log(this.Order);
     
   // }
+
+  isValid(){
+    if (this.Order.Status == 'DECLINED') {
+      this.status = false
+    }
+    if (this.Order.Status == 'APPROVED') {
+      this.status = true
+    }
+  }
 
   getProductsForOrder(){
     this.productsList = JSON.parse(sessionStorage.getItem("Products")!)

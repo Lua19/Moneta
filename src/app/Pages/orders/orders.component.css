@@ -42,3 +42,7 @@
     margin: 5px;
     border-radius: 15px;
 }
+#error{
+    text-decoration: underline;
+    cursor: pointer;
+}

@@ -2,9 +2,10 @@
     <br>
     <h2 class="title-text2"> Orders</h2>
     <br>
-    <p class="title-text2">Your order has been processed and you will receive it shortly</p>
+    <p *ngIf="status" class="title-text2">Your order has been processed and you will receive it shortly</p>
+    <p *ngIf="!status" routerLink="/store" id="error" class="title-text2">There has been a mistake processing your order, please try your purchase again</p>
 
-    <div id="order-card" class="row d-flex justify-content-center rounded">
+    <div *ngIf="status" id="order-card" class="row d-flex justify-content-center rounded">
 
       <div id="order-row" class="row d-flex justify-content-between align-items-center rounded"  >
         <div class="col d-flex align-items-center"><h3 class="title-text1">Sent to <br>{{Order.BillingAddress}}</h3></div>
