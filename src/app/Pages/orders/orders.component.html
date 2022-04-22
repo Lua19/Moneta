@@ -3,7 +3,7 @@
     <h2 class="title-text2"> Orders</h2>
     <br>
     <p *ngIf="status" class="title-text2">Your order has been processed and you will receive it shortly</p>
-    <p *ngIf="!status" routerLink="/store" id="error" class="title-text2">There has been a mistake processing your order, please try your purchase again</p>
+    <p *ngIf="!status" routerLink="/store/payment" id="error" class="title-text2">There has been a mistake processing your order, please try your payment again</p>
 
     <div *ngIf="status" id="order-card" class="row d-flex justify-content-center rounded">
 

@@ -25,7 +25,7 @@ export class OrdersComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.auth.user;
-    localStorage.removeItem("Products")
+    
     this.getProductsForOrder();
     // this.getOrder();
     this.route.queryParams.subscribe(
@@ -49,6 +49,7 @@ export class OrdersComponent implements OnInit {
     }
     if (this.Order.Status == 'APPROVED') {
       this.status = true
+      localStorage.removeItem("Products")
     }
   }
 
