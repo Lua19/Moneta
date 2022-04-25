@@ -2,23 +2,33 @@
   <br>
   <h2 class="title-text1"> Items in detail</h2>
   <br>
-  <div id="item-row" class="row d-flex justify-content-between animate__animated animate__fadeIn rounded" *ngFor="let item of items; index as i" >
-    <div class="col col-sm d-flex justify-content-center image-container"><img class="d-block w-25 rounded" src="{{items[i].imageData | image}}" alt=""></div>
-    <div class="col d-flex align-items-center"><h3 class="title-text1">Name : {{items[i].name}}</h3></div>
-    <div class="col d-flex align-items-center"><h3 class="title-text1">Price : {{items[i].price | currency}}</h3></div>
-    <div class="col d-flex align-items-center"><h3 class="title-text1">Description : {{items[i].deliveryTime}}</h3></div>
+  <div id="item-row" class="row d-flex justify-content-between animate__animated animate__fadeIn rounded"
+    *ngFor="let item of items; index as i">
+    <div class="col col-sm d-flex justify-content-center image-container"><img class="d-block w-25 rounded"
+        src="{{items[i].imageData | image}}" alt=""></div>
+    <div class="col d-flex align-items-center">
+      <h3 class="title-text1">Name : {{items[i].name}}</h3>
+    </div>
+    <div class="col d-flex align-items-center">
+      <h3 class="title-text1">Price : {{items[i].price | currency}}</h3>
+    </div>
+    <div class="col d-flex align-items-center">
+      <h3 class="title-text1">Description : {{items[i].deliveryTime}}</h3>
+    </div>
   </div>
-    <h2 *ngIf="isUserLoggedIn" class="title-text1">Please confirm your information </h2>
-    <h2 *ngIf="!isUserLoggedIn" class="title-text1">Please add your information </h2>
-    <div class="d-flex justify-content-center">
-      <div class="row container animate__animated animate__fadeInLeft d-flex justify-content-center">
-        <div [formGroup]="myForm" *ngIf="isUserLoggedIn" class="col-6">
-          <ul class="list-group list-group-flush rounded">
-            <li class="list-group-item"><strong>Company -  </strong> <input formControlName="ssl_company" type="text" placeholder="OurNetwork LLC"></li>
-            <li class="list-group-item"><strong> Name - {{user.firstName}} {{user.lastName}}</strong></li>
-            <li class="list-group-item"><strong>Email - {{user.email}}</strong></li>
-            <li class="list-group-item"><strong>Phone -  </strong><input formControlName="ssl_phone" type="text" placeholder="512-592-9841"></li>
-            <li class="list-group-item"><strong>State -  </strong><select formControlName="ssl_state">
+  <h2 *ngIf="isUserLoggedIn" class="title-text1">Please confirm your information </h2>
+  <h2 *ngIf="!isUserLoggedIn" class="title-text1">Please add your information </h2>
+  <div class="d-flex justify-content-center">
+    <div class="row container animate__animated animate__fadeInLeft d-flex justify-content-center">
+      <div [formGroup]="myForm" *ngIf="isUserLoggedIn" class="col-6">
+        <ul class="list-group list-group-flush rounded">
+          <li class="list-group-item"><strong>Company - </strong> <input formControlName="ssl_company" type="text"
+              placeholder="OurNetwork LLC"></li>
+          <li class="list-group-item"><strong> Name - {{user.firstName}} {{user.lastName}}</strong></li>
+          <li class="list-group-item"><strong>Email - {{user.email}}</strong></li>
+          <li class="list-group-item"><strong>Phone - </strong><input formControlName="ssl_phone" type="text"
+              placeholder="512-592-9841"></li>
+          <li class="list-group-item"><strong>State - </strong><select formControlName="ssl_state">
               <option value="Alabama">Alabama (AL)</option>
               <option value="Alaska">Alaska (AK)</option>
               <option value="Arizona">Arizona (AZ)</option>
@@ -71,24 +81,32 @@
               <option value="Wisconsin">Wisconsin</option>
               <option value="Wyoming">Wyoming</option>
             </select></li>
-            <li class="list-group-item"><strong>City -  </strong><input formControlName="ssl_city" type="text" placeholder="Sacramento"></li>
-            <li class="list-group-item"><strong>Address -  </strong><input formControlName="ssl_avs_address" type="text" placeholder="Ur Street #4132"></li>
-          </ul>
-        </div>
-        <div class="col-6">
-          <ul class="list-group list-group-flush rounded">
-            <li class="list-group-item" *ngFor="let item of items; index as i"><strong> Product - {{items[i].name}} | {{items[i].price | currency}}</strong></li>
-            <li class="list-group-item text-align-center"><strong> Total - {{total | currency}} </strong></li>
-          </ul>
-        </div>
-        <form [formGroup]="myForm" *ngIf="!isUserLoggedIn" class="col-6">
-          <ul class="list-group list-group-flush rounded">
-            <li class="list-group-item"><strong>Company -  </strong> <input formControlName="ssl_company" type="text" placeholder="OurNetwork LLC"></li>
-            <li class="list-group-item"><strong>First name -  </strong> <input formControlName="ssl_first_name" type="text" placeholder="Chris"></li>
-            <li class="list-group-item"><strong>Last name -  </strong><input formControlName="ssl_last_name" type="text" placeholder="Smith"></li>
-            <li class="list-group-item"><strong>Email -  </strong><input formControlName="ssl_email" type="text" placeholder="Email"></li>
-            <li class="list-group-item"><strong>Phone -  </strong><input formControlName="ssl_phone" type="text" placeholder="512-592-9841"></li>
-            <li class="list-group-item"><strong>State -  </strong><select formControlName="ssl_state">
+          <li class="list-group-item"><strong>City - </strong><input formControlName="ssl_city" type="text"
+              placeholder="Sacramento"></li>
+          <li class="list-group-item"><strong>Address - </strong><input formControlName="ssl_avs_address" type="text"
+              placeholder="Ur Street #4132"></li>
+        </ul>
+      </div>
+      <div class="col-6">
+        <ul class="list-group list-group-flush rounded">
+          <li class="list-group-item" *ngFor="let item of items; index as i"><strong> Product - {{items[i].name}} |
+              {{items[i].price | currency}}</strong></li>
+          <li class="list-group-item text-align-center"><strong> Total - {{total | currency}} </strong></li>
+        </ul>
+      </div>
+      <form [formGroup]="myForm" *ngIf="!isUserLoggedIn" class="col-6">
+        <ul class="list-group list-group-flush rounded">
+          <li class="list-group-item"><strong>Company - </strong> <input formControlName="ssl_company" type="text"
+              placeholder="OurNetwork LLC"></li>
+          <li class="list-group-item"><strong>First name - </strong> <input formControlName="ssl_first_name" type="text"
+              placeholder="Chris"></li>
+          <li class="list-group-item"><strong>Last name - </strong><input formControlName="ssl_last_name" type="text"
+              placeholder="Smith"></li>
+          <li class="list-group-item"><strong>Email - </strong><input formControlName="ssl_email" type="text"
+              placeholder="Email"></li>
+          <li class="list-group-item"><strong>Phone - </strong><input formControlName="ssl_phone" type="text"
+              placeholder="512-592-9841"></li>
+          <li class="list-group-item"><strong>State - </strong><select formControlName="ssl_state">
               <option value="Alabama">Alabama (AL)</option>
               <option value="Alaska">Alaska (AK)</option>
               <option value="Arizona">Arizona (AZ)</option>
@@ -141,29 +159,39 @@
               <option value="Wisconsin">Wisconsin</option>
               <option value="Wyoming">Wyoming</option>
             </select></li>
-            <li class="list-group-item"><strong>City -  </strong><input formControlName="ssl_city" type="text" placeholder="Sacramento"></li>
-            <li class="list-group-item"><strong>Address -  </strong><input formControlName="ssl_avs_address" type="text" placeholder="Ur Street #4132"></li>
-          </ul>
-        </form>
-      </div>
+          <li class="list-group-item"><strong>City - </strong><input formControlName="ssl_city" type="text"
+              placeholder="Sacramento"></li>
+          <li class="list-group-item"><strong>Address - </strong><input formControlName="ssl_avs_address" type="text"
+              placeholder="Ur Street #4132"></li>
+        </ul>
+      </form>
     </div>
-    <br>
-    <div class="d-flex justify-content-center align-items-center">
-      <h1 id="pay-text">Total : {{total | currency}}</h1>
-      <button (click)="pay()" class="payment-card align-self-end d-flex flex-wrap justify-content-center align-items-center">
-          <svg xmlns="http://www.w3.org/2000/svg" id="cart-card-img" fill="currentColor" class="bi bi-credit-card" viewBox="0 0 16 16">
-              <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/>
-              <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/>
-          </svg>
-          <h5>Pay</h5>
-        </button>
-    </div>
-    <div class="row d-flex justify-content-center">
-      <div *ngIf="paymentError" class="alert bg-dark border-danger d-flex justify-content-center animate__animated animate__fadeIn"> <div class="text-danger d-flex justify-content-center">
-        <svg id="alert-svg" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-exclamation-lg" viewBox="0 0 16 16">
-            <path d="M7.005 3.1a1 1 0 1 1 1.99 0l-.388 6.35a.61.61 0 0 1-1.214 0L7.005 3.1ZM7 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z"/>
-          </svg>
-        {{paymentError}}</div> 
+  </div>
+  <br>
+  <div class="d-flex justify-content-center align-items-center">
+    <h1 id="pay-text">Total : {{total | currency}}</h1>
+    <button (click)="pay()"
+      class="payment-card align-self-end d-flex flex-wrap justify-content-center align-items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" id="cart-card-img" fill="currentColor" class="bi bi-credit-card"
+        viewBox="0 0 16 16">
+        <path
+          d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z" />
+        <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z" />
+      </svg>
+      <h5>Pay</h5>
+    </button>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <div *ngIf="paymentError"
+      class="alert bg-dark border-danger d-flex justify-content-center animate__animated animate__fadeIn">
+      <div class="text-danger d-flex justify-content-center">
+        <svg id="alert-svg" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+          class="bi bi-exclamation-lg" viewBox="0 0 16 16">
+          <path
+            d="M7.005 3.1a1 1 0 1 1 1.99 0l-.388 6.35a.61.61 0 0 1-1.214 0L7.005 3.1ZM7 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z" />
+        </svg>
+        {{paymentError}}
       </div>
     </div>
   </div>
+</div>

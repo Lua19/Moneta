@@ -1,23 +1,37 @@
 <div class="content animate__animated animate__fadeIn bg-gradient-dark">
-    <br>
-    <h2 class="title-text2"> Orders</h2>
-    <br>
-    <p *ngIf="status" class="title-text2">Your order has been processed and you will receive it shortly</p>
-    <p *ngIf="!status" routerLink="/store/payment" id="error" class="title-text2">There has been a mistake processing your order, please try your payment again</p>
+  <br>
+  <h2 class="title-text2"> Orders</h2>
+  <br>
+  <p *ngIf="status" class="title-text2">Your order has been processed and you will receive it shortly</p>
+  <p *ngIf="!status" routerLink="/store/payment" id="error" class="title-text2">There has been a mistake processing your order, please try your payment again</p>
+  <div *ngIf="status" id="order-card" class="row d-flex justify-content-center rounded">
 
-    <div *ngIf="status" id="order-card" class="row d-flex justify-content-center rounded">
-
-      <div id="order-row" class="row d-flex justify-content-between align-items-center rounded"  >
-        <div class="col d-flex align-items-center"><h3 class="title-text1">Sent to <br>{{Order.BillingAddress}}</h3></div>
-        <div class="col d-flex align-items-center"><h3 class="title-text1">Order by <br> {{Order.billingfirstname}} {{Order.billinglastname}}</h3></div>
-        <div class="col d-flex align-items-center"><h3 class="title-text1">Contact <br>{{Order.email}} <br> {{Order.phone}}</h3></div>
-        <div class="col-2 d-flex align-items-center"><h3 class="title-text1">Price {{Order.amount | currency}}</h3></div>
+    <div id="order-row" class="row d-flex justify-content-between align-items-center rounded">
+      <div class="col d-flex align-items-center">
+        <h3 class="title-text1">Sent to <br>{{Order.BillingAddress}}</h3>
       </div>
-      <div id="product-row" class="row d-flex justify-content-between" *ngFor="let product of productsList; index as i">
-        <div class="col col-sm d-flex justify-content-center image-container"><img class="d-block w-25 rounded" src="{{productsList[i].imageData | image}}" alt=""></div>
-        <div class="col d-flex align-items-center"><h3 class="title-text3">{{productsList[i].name}}</h3></div>
-        <div class="col d-flex align-items-center"><h3 class="title-text3">{{productsList[i].deliveryTime}}</h3></div>
-        <div class="col-2 d-flex align-items-center"><h3 class="title-text3">{{productsList[i].price | currency}}</h3></div>
+      <div class="col d-flex align-items-center">
+        <h3 class="title-text1">Order by <br> {{Order.billingfirstname}} {{Order.billinglastname}}</h3>
+      </div>
+      <div class="col d-flex align-items-center">
+        <h3 class="title-text1">Contact <br>{{Order.email}} <br> {{Order.phone}}</h3>
+      </div>
+      <div class="col-2 d-flex align-items-center">
+        <h3 class="title-text1">Price {{Order.amount | currency}}</h3>
       </div>
     </div>
+    <div id="product-row" class="row d-flex justify-content-between" *ngFor="let product of productsList; index as i">
+      <div class="col col-sm d-flex justify-content-center image-container"><img class="d-block w-25 rounded"
+          src="{{productsList[i].imageData | image}}" alt=""></div>
+      <div class="col d-flex align-items-center">
+        <h3 class="title-text3">{{productsList[i].name}}</h3>
+      </div>
+      <div class="col d-flex align-items-center">
+        <h3 class="title-text3">{{productsList[i].deliveryTime}}</h3>
+      </div>
+      <div class="col-2 d-flex align-items-center">
+        <h3 class="title-text3">{{productsList[i].price | currency}}</h3>
+      </div>
+    </div>
+  </div>
 </div>

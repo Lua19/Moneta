@@ -1,6 +1,6 @@
 <div class="content bg-gradient-dark">
   <br>
- <table class="animate__animated animate__fadeInLeft table">
+  <table class="animate__animated animate__fadeInLeft table">
     <thead>
       <tr>
         <th scope="col">Sales range (Per Kiosk)</th>
@@ -21,25 +21,27 @@
         <td>$100</td>
       </tr>
     </tbody>
-  </table> 
+  </table>
   <div class="animate__animated animate__fadeInRight contain">
     <h2 class="title-text1">How much does each system cost? </h2>
     <p class="text-space1">You can use our calculator below to calculate your average monthly sales and fees</p>
     <p class="text-space1">Just add and type the amount each sell point produces monthly</p>
-      
+
     <form #myform="ngForm" (ngSubmit)="calcFee()">
 
-      <div class="row d-flex justify-content-center animate__animated animate__fadeIn" *ngFor="let machine of machines; index as i" >
+      <div class="row d-flex justify-content-center animate__animated animate__fadeIn"
+        *ngFor="let machine of machines; index as i">
         <span class="machine col-2"> <strong>Kiosk {{i+1}} Monthly Sales</strong></span>
         <input class="number col-2" name="sales{{i}}" placeholder="$ of sales" [(ngModel)]="sales[i]">
         <span class="machine d-flex align-items-center col-1">{{singleFee[i] | currency}}/ month</span>
-        <button class="delete bg-danger col-1" (click)="removeMachine(i)"><img src="https://img.icons8.com/material-rounded/24/000000/trash.png"/></button>
+        <button class="delete bg-danger col-1" (click)="removeMachine(i)"><img
+            src="https://img.icons8.com/material-rounded/24/000000/trash.png" /></button>
       </div>
       <div class="row d-flex justify-content-between" id="buttons">
         <button id="add-button" type="button" (click)="addMachine()">Add market</button>
-        <button id="calc-button" type="submit" >Calculate</button>
+        <button id="calc-button" type="submit">Calculate</button>
       </div>
-      
+
     </form>
     <br>
     <div class="col animate__animated animate__fadeIn" *ngIf="monthlyFee > 0">

@@ -1,28 +1,28 @@
 <div class="product bg-gradient-dark animate__animated animate__fadeInLeft">
-    <form class="product-form" [formGroup]="myForm" (ngSubmit)="addProduct()">
-        <h1 class="title-text1">New product</h1>
-        <div class="row d-flex justify-content-center">
-            <div class="col-4">
-              <label class="form-label">Name</label>
-              <input type="text" class="form-control" formControlName="Name" placeholder="Name">
-            </div>
-            <div class="col-4">
-              <label class="form-label">Price</label>
-              <input type="number" class="form-control" formControlName="Price" placeholder="Price">
-            </div>
-          </div>
-          <div class="row d-flex justify-content-center">
-            
-            <div class="col-4">
-              <label class="form-label">Unit Cost</label>
-              <input type="number" class="form-control" formControlName="UnitCost" placeholder="Unit Cost">
-            </div>
-            <div class="col-4">
-              <label class="form-label">Tax Percentage</label>
-              <input type="number" class="form-control" formControlName="TaxPercentage" placeholder="Tax Percentage">
-            </div>
-          </div>
-          <!-- <div class="row d-flex justify-content-center">
+  <form class="product-form" [formGroup]="myForm" (ngSubmit)="addProduct()">
+    <h1 class="title-text1">New product</h1>
+    <div class="row d-flex justify-content-center">
+      <div class="col-4">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control" formControlName="Name" placeholder="Name">
+      </div>
+      <div class="col-4">
+        <label class="form-label">Price</label>
+        <input type="number" class="form-control" formControlName="Price" placeholder="Price">
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+
+      <div class="col-4">
+        <label class="form-label">Unit Cost</label>
+        <input type="number" class="form-control" formControlName="UnitCost" placeholder="Unit Cost">
+      </div>
+      <div class="col-4">
+        <label class="form-label">Tax Percentage</label>
+        <input type="number" class="form-control" formControlName="TaxPercentage" placeholder="Tax Percentage">
+      </div>
+    </div>
+    <!-- <div class="row d-flex justify-content-center">
              <div class="col-4">
               <label class="form-label">Quantity</label>
               <input type="number" class="form-control" formControlName="Quantity" placeholder="Amount">
@@ -32,7 +32,7 @@
               <input type="number" class="form-control" formControlName="PromotionAmount" placeholder="Promotion amount">
             </div>
           </div> -->
-          <!-- <div class="row d-flex justify-content-center">
+    <!-- <div class="row d-flex justify-content-center">
             <div class="col-4">
               <label class="form-label">ImageUrl</label>
               <input type="text" class="form-control" formControlName="ImageUrl" placeholder="Image URL">
@@ -42,42 +42,49 @@
               <input type="text" class="form-control" formControlName="Barcode" placeholder="Barcode">
             </div>
           </div> -->
-          <div class="row d-flex justify-content-center">
-            <div class="col-4">
-              <label class="form-label">Image Data</label>
-              <input type="file" (change)="getBase64($event)" class="form-control" formControlName="ImageData" placeholder="Image Data">
-            </div>
-            <div class="col-4">
-              <label class="form-label">Description</label>
-              <input type="text" class="form-control" formControlName="DeliveryTime" placeholder="Delivery Time">
-            </div>
-        </div>
-        <!-- <div class="row d-flex justify-content-center">
+    <div class="row d-flex justify-content-center">
+      <div class="col-4">
+        <label class="form-label">Image Data</label>
+        <input type="file" (change)="getBase64($event)" class="form-control" formControlName="ImageData"
+          placeholder="Image Data">
+      </div>
+      <div class="col-4">
+        <label class="form-label">Description</label>
+        <input type="text" class="form-control" formControlName="DeliveryTime" placeholder="Delivery Time">
+      </div>
+    </div>
+    <!-- <div class="row d-flex justify-content-center">
             <div class="col-4">
               <label class="form-label">Status</label>
               <input type="text" class="form-control" formControlName="Status" placeholder="Status">
             </div>
             
         </div> -->
-        <button type="submit" value="submit">Add product</button>
-        <br>
-        <div *ngIf="errorResponse == true" class="alert bg-dark border-success animate__animated animate__fadeIn d-flex">
-          <p class="text-success me-auto">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="50" fill="currentColor" class="bi bi-exclamation-lg" viewBox="0 0 16 16">
-              <path d="M7.005 3.1a1 1 0 1 1 1.99 0l-.388 6.35a.61.61 0 0 1-1.214 0L7.005 3.1ZM7 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z"/>
-          </svg>
-          Success! Product added to database
-        </p> 
-        <button id="alertButton" type="button" class="btn btn-light" (click)="closeAlert()" >Close</button>
-        <button id="alertButton" type="button" class="btn btn-success " (click)="navigate('store')">Ok, go to list</button>
-        </div>
-        <div *ngIf="errorResponse == false" class="alert bg-dark border-danger animate__animated animate__fadeIn"> 
-          <p class="text-danger">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="50" fill="currentColor" class="bi bi-exclamation-lg" viewBox="0 0 16 16">
-              <path d="M7.005 3.1a1 1 0 1 1 1.99 0l-.388 6.35a.61.61 0 0 1-1.214 0L7.005 3.1ZM7 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z"/>
-          </svg>
-          Error: something went wrong</p> 
-        </div>
-    </form>
+    <button type="submit" value="submit">Add product</button>
+    <br>
+    <div *ngIf="errorResponse == true" class="alert bg-dark border-success animate__animated animate__fadeIn d-flex">
+      <p class="text-success me-auto">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="50" fill="currentColor" class="bi bi-exclamation-lg"
+          viewBox="0 0 16 16">
+          <path
+            d="M7.005 3.1a1 1 0 1 1 1.99 0l-.388 6.35a.61.61 0 0 1-1.214 0L7.005 3.1ZM7 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z" />
+        </svg>
+        Success! Product added to database
+      </p>
+      <button id="alertButton" type="button" class="btn btn-light" (click)="closeAlert()">Close</button>
+      <button id="alertButton" type="button" class="btn btn-success " (click)="navigate('store')">Ok, go to
+        list</button>
+    </div>
+    <div *ngIf="errorResponse == false" class="alert bg-dark border-danger animate__animated animate__fadeIn">
+      <p class="text-danger">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="50" fill="currentColor" class="bi bi-exclamation-lg"
+          viewBox="0 0 16 16">
+          <path
+            d="M7.005 3.1a1 1 0 1 1 1.99 0l-.388 6.35a.61.61 0 0 1-1.214 0L7.005 3.1ZM7 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z" />
+        </svg>
+        Error: something went wrong
+      </p>
+    </div>
+  </form>
 </div>
 <app-admin-dashboard></app-admin-dashboard>

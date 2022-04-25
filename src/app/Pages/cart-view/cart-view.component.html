@@ -1,69 +1,81 @@
-
 <div class="content bg-gradient-dark">
-    <!-- <div *ngIf="loading" class="spinner-container d-flex justify-content-center">
+  <!-- <div *ngIf="loading" class="spinner-container d-flex justify-content-center">
         <div class="spinner-border text-light" style="width: 20rem; height: 20rem;" role="status">
           <span class="visually-hidden">Loading...</span>
         </div>
       </div> -->
-      <div class="d-flex justify-content-between">
-        <h1 class="title-text1">My cart</h1>
-        <h1 *ngIf="user" class="title-text1">{{user.firstName}} {{user.lastName}}</h1>
-      </div>
-      <br>
-      <br>
-      <br>
-      <div *ngIf="productsList" class="row row-cols-1 row-cols-md-3 g-4 d-flex justify-content-center animate__animated animate__fadeInLeft">
-        <div class="card" id="item" style="width: 25rem;" *ngFor="let product of productsList; index as i">
-          <div id="carouselExampleDark{{i}}" class="carousel carousel-dark slide" data-bs-ride="carousel" data-bs-interval="false">
-            <div class="carousel-indicators">
-              <button type="button" [attr.data-bs-target]="'#carouselExampleDark'+i" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" [attr.data-bs-target]="'#carouselExampleDark'+i" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" [attr.data-bs-target]="'#carouselExampleDark'+i" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active" data-bs-interval="false">
-                <img src="{{productsList[i].imageData | image}}" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item" data-bs-interval="false">
-                <img src="{{productsList[i].imageData | image}}" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item" data-bs-interval="false">
-                <img src="{{productsList[i].imageData | image}}" class="d-block w-100" alt="...">
-              </div>
-            </div>
-            <div class="carousel-control-prev" type="button" [attr.data-bs-target]="'#carouselExampleDark'+i" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            </div>
-            <div class="carousel-control-next" type="button" [attr.data-bs-target]="'#carouselExampleDark'+i" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            </div>
+  <div class="d-flex justify-content-between">
+    <h1 class="title-text1">My cart</h1>
+    <h1 *ngIf="user" class="title-text1">{{user.firstName}} {{user.lastName}}</h1>
+  </div>
+  <br>
+  <br>
+  <br>
+  <div *ngIf="productsList"
+    class="row row-cols-1 row-cols-md-3 g-4 d-flex justify-content-center animate__animated animate__fadeInLeft">
+    <div class="card" id="item" style="width: 25rem;" *ngFor="let product of productsList; index as i">
+      <div id="carouselExampleDark{{i}}" class="carousel carousel-dark slide" data-bs-ride="carousel"
+        data-bs-interval="false">
+        <div class="carousel-indicators">
+          <button type="button" [attr.data-bs-target]="'#carouselExampleDark'+i" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" [attr.data-bs-target]="'#carouselExampleDark'+i" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+          <button type="button" [attr.data-bs-target]="'#carouselExampleDark'+i" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="false">
+            <img src="{{productsList[i].imageData | image}}" class="d-block w-100" alt="...">
           </div>
-            <div class="card-body">
-              <h5 class="card-title">{{productsList[i].name}}</h5>
-              <p class="card-text" *ngIf="productsList[i].quantity > 0">Remaining in stock: {{productsList[i].quantity}}</p>
-            </div>
-            <ul class="list-group list-group-flush rounded">
-              <li class="list-group-item">Price: {{productsList[i].price | currency}}</li>
-              <li class="list-group-item" *ngIf="productsList[i].deliveryTime">Description: {{productsList[i].deliveryTime}}</li>
-            </ul>
-            <button (click)="deleteItem(i)" id="delete-button" class="col-4 mt-2 rounded">
-                Delete
-                <svg id="delete-icon" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-                </svg>
-            </button>
+          <div class="carousel-item" data-bs-interval="false">
+            <img src="{{productsList[i].imageData | image}}" class="d-block w-100" alt="...">
           </div>
-      </div>
-      <div class="d-flex justify-content-center align-items-center">
-        <h1 class="title-text1">Total : {{total | currency}}</h1>
-        <div routerLink="/store/payment" class="payment-card align-self-end d-flex flex-wrap justify-content-center">
-            <svg xmlns="http://www.w3.org/2000/svg" id="cart-card-img" fill="currentColor" class="bi bi-credit-card" viewBox="0 0 16 16">
-                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/>
-                <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/>
-            </svg>
-            <br>
-            <h5>Proceed to payment</h5>
+          <div class="carousel-item" data-bs-interval="false">
+            <img src="{{productsList[i].imageData | image}}" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <div class="carousel-control-prev" type="button" [attr.data-bs-target]="'#carouselExampleDark'+i"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </div>
+        <div class="carousel-control-next" type="button" [attr.data-bs-target]="'#carouselExampleDark'+i"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
         </div>
       </div>
+      <div class="card-body">
+        <h5 class="card-title">{{productsList[i].name}}</h5>
+        <p class="card-text" *ngIf="productsList[i].quantity > 0">Remaining in stock: {{productsList[i].quantity}}</p>
+      </div>
+      <ul class="list-group list-group-flush rounded">
+        <li class="list-group-item">Price: {{productsList[i].price | currency}}</li>
+        <li class="list-group-item" *ngIf="productsList[i].deliveryTime">Description: {{productsList[i].deliveryTime}}
+        </li>
+      </ul>
+      <button (click)="deleteItem(i)" id="delete-button" class="col-4 mt-2 rounded">
+        Delete
+        <svg id="delete-icon" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+          class="bi bi-trash" viewBox="0 0 16 16">
+          <path
+            d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+          <path fill-rule="evenodd"
+            d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center align-items-center">
+    <h1 class="title-text1">Total : {{total | currency}}</h1>
+    <div routerLink="/store/payment" class="payment-card align-self-end d-flex flex-wrap justify-content-center">
+      <svg xmlns="http://www.w3.org/2000/svg" id="cart-card-img" fill="currentColor" class="bi bi-credit-card"
+        viewBox="0 0 16 16">
+        <path
+          d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z" />
+        <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z" />
+      </svg>
+      <br>
+      <h5>Proceed to payment</h5>
+    </div>
+  </div>
 </div>

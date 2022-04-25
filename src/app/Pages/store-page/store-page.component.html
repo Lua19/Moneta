@@ -4,13 +4,18 @@
       <span class="visually-hidden">Loading...</span>
     </div>
   </div>
-  <div *ngIf="productsList" class="row row-cols-1 row-cols-md-3 g-4 d-flex justify-content-center animate__animated animate__fadeInLeft">
+  <div *ngIf="productsList"
+    class="row row-cols-1 row-cols-md-3 g-4 d-flex justify-content-center animate__animated animate__fadeInLeft">
     <div class="card" id="item" style="width: 25rem;" *ngFor="let product of productsList; index as i">
-      <div id="carouselExampleDark{{i}}" class="carousel carousel-dark slide" data-bs-ride="carousel" data-bs-interval="false">
+      <div id="carouselExampleDark{{i}}" class="carousel carousel-dark slide" data-bs-ride="carousel"
+        data-bs-interval="false">
         <div class="carousel-indicators">
-          <button type="button" [attr.data-bs-target]="'#carouselExampleDark'+i" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" [attr.data-bs-target]="'#carouselExampleDark'+i" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" [attr.data-bs-target]="'#carouselExampleDark'+i" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" [attr.data-bs-target]="'#carouselExampleDark'+i" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" [attr.data-bs-target]="'#carouselExampleDark'+i" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+          <button type="button" [attr.data-bs-target]="'#carouselExampleDark'+i" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active" data-bs-interval="false">
@@ -23,25 +28,29 @@
             <img src="{{productsList[i].imageData | image}}" class="d-block w-100" alt="...">
           </div>
         </div>
-        <div class="carousel-control-prev" type="button" [attr.data-bs-target]="'#carouselExampleDark'+i" data-bs-slide="prev">
+        <div class="carousel-control-prev" type="button" [attr.data-bs-target]="'#carouselExampleDark'+i"
+          data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         </div>
-        <div class="carousel-control-next" type="button" [attr.data-bs-target]="'#carouselExampleDark'+i" data-bs-slide="next">
+        <div class="carousel-control-next" type="button" [attr.data-bs-target]="'#carouselExampleDark'+i"
+          data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
         </div>
       </div>
-        <div class="card-body">
-          <h5 class="card-title">{{productsList[i].name}}</h5>
-          <p class="card-text" *ngIf="productsList[i].quantity > 0">Remaining in stock: {{productsList[i].quantity}}</p>
-        </div>
-        <ul class="list-group list-group-flush rounded">
-          <li class="list-group-item">Price: {{productsList[i].price | currency}}</li>
-          <li class="list-group-item" *ngIf="productsList[i].deliveryTime">Description: {{productsList[i].deliveryTime}}</li>
-        </ul>
-        <button (click)="addToCart(i)" id="buy-button" class="col-4 mt-2 rounded">Purchase<img src="https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/20/ffffff/external-plus-user-interface-tanah-basah-glyph-tanah-basah-2.png"/></button>
+      <div class="card-body">
+        <h5 class="card-title">{{productsList[i].name}}</h5>
+        <p class="card-text" *ngIf="productsList[i].quantity > 0">Remaining in stock: {{productsList[i].quantity}}</p>
       </div>
+      <ul class="list-group list-group-flush rounded">
+        <li class="list-group-item">Price: {{productsList[i].price | currency}}</li>
+        <li class="list-group-item" *ngIf="productsList[i].deliveryTime">Description: {{productsList[i].deliveryTime}}
+        </li>
+      </ul>
+      <button (click)="addToCart(i)" id="buy-button" class="col-4 mt-2 rounded">Purchase<img
+          src="https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/20/ffffff/external-plus-user-interface-tanah-basah-glyph-tanah-basah-2.png" /></button>
+    </div>
   </div>
 </div>
 <app-admin-dashboard *ngIf="isUserLoggedIn && user.role == 'Administrator'"></app-admin-dashboard>
-<app-cart *ngIf="itemsInCart" ></app-cart>
+<app-cart *ngIf="itemsInCart"></app-cart>
 <app-footer *ngIf="!isUserLoggedIn && itemsInCart == false"></app-footer>

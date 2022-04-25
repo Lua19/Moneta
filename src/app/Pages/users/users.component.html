@@ -9,15 +9,18 @@
     </div>
     <div class="row d-flex justify-content-center">
         <div class="col-6 text-white">
-            <div class="row d-flex justify-content-center animate__animated animate__fadeIn" *ngFor="let machine of contactsList; index as i" >
-                <div class="machine text-white col-3"> <strong>Contact {{i+1}} - {{contactsList[i].fullName}} - {{contactsList[i].phone}}</strong></div>
+            <div class="row d-flex justify-content-center animate__animated animate__fadeIn"
+                *ngFor="let machine of contactsList; index as i">
+                <div class="machine text-white col-3"> <strong>Contact {{i+1}} - {{contactsList[i].fullName}} -
+                        {{contactsList[i].phone}}</strong></div>
                 <div class="machine text-white col-3"> <strong>Comments{{contactsList[i].comments}}</strong></div>
                 <br>
                 <br>
             </div>
         </div>
         <div class="col-6 text-white">
-            <div class="row d-flex justify-content-center animate__animated animate__fadeIn" *ngFor="let machine of usersList; index as i" >
+            <div class="row d-flex justify-content-center animate__animated animate__fadeIn"
+                *ngFor="let machine of usersList; index as i">
                 <div class="machine text-white col-4"> <strong>User {{i+1}} - {{usersList[i].firstName}}</strong></div>
             </div>
         </div>
