@@ -41,3 +41,8 @@ li{
     margin-top: 50px;
     padding-top: 50px;
 }
+#prod-img{
+    width: 100% !important;
+    height: 250px !important;
+    object-fit: cover;
+}
