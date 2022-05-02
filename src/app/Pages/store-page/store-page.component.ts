@@ -52,6 +52,7 @@ export class StorePageComponent implements OnInit {
   addToCart(index:number){
     this.products.productsInCart.push(this.productsList[index]);
     localStorage.setItem("Products",JSON.stringify(this.products.productsInCart))
+    this.cartItems = this.products.productsInCart;
     this.products.areItemsInCart.next(true);
   }
 

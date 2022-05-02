@@ -52,5 +52,5 @@
   </div>
 </div>
 <app-admin-dashboard *ngIf="isUserLoggedIn && user.role == 'Administrator'"></app-admin-dashboard>
-<app-cart *ngIf="itemsInCart"></app-cart>
+<app-cart *ngIf="itemsInCart == true && cartItems.length > 0"></app-cart>
 <app-footer *ngIf="!isUserLoggedIn && itemsInCart == false"></app-footer>
