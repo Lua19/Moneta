@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ProductsService } from 'src/app/Services/products.service';
 
@@ -11,7 +11,8 @@ import { ProductsService } from 'src/app/Services/products.service';
 export class ProductComponent {
 
   product: any;
-  image : any;
+  image : any[] = [];
+  imagesArray: any[] = [];
   errorResponse: boolean | any = undefined;
 
   myForm: FormGroup = this.fb.group({
@@ -23,30 +24,37 @@ export class ProductComponent {
     TaxPercentage: [0, [Validators.required]],
     // PromotionAmount: [0, [Validators.required]],
     // ImageUrl: ['', [Validators.required]],
-    ImageData: ['', [Validators.required]],
+    // ImageData: ['', [Validators.required]],
     // Status: ['', [Validators.required]],
-    DeliveryTime: ['', [Validators.required]]
+    Description: ['', [Validators.required]]
   })
 
   constructor(private productService: ProductsService, private fb: FormBuilder, private router: Router) { }
 
   getBase64(event :any){
-    const file = event.target.files[0];
-    let reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => {
-      this.image = reader.result;
-  }
-   reader.onerror = function (error) {
-     console.log('Error: ', error);
-   };
+    for (let index = 0; index < event.target.files.length; index++) {
+      const files = event.target.files[index];
+      let reader = new FileReader();
+      reader.readAsDataURL(files);
+      reader.onload = () => {
+        this.image.push(reader.result);
+      }
+      reader.onerror = function (error) {
+        console.log('Error: ', error);
+      };
+    }
   }
 
   addProduct(){
-    this.myForm.value.ImageData = this.image;
-    console.log(this.myForm.value);
-    this.productService.postProduct(this.myForm.value).subscribe(
-      (res) => {this.errorResponse = res}
+    let productModel = {StoreProduct : {}, StoreProductImageList: [{}]};
+    for (let index = 0; index < this.image.length; index++) {
+      this.imagesArray.push({ImageData :this.image[index]});
+    }
+    productModel.StoreProduct = this.myForm.value;
+    productModel.StoreProductImageList = this.imagesArray;
+    this.productService.postProduct(productModel).subscribe(
+      (res) => {this.errorResponse = res; console.log(res);
+      }
     );
   }
   navigate(route: string){

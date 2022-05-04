@@ -44,13 +44,13 @@
           </div> -->
     <div class="row d-flex justify-content-center">
       <div class="col-4">
-        <label class="form-label">Image Data</label>
-        <input type="file" (change)="getBase64($event)" class="form-control" formControlName="ImageData"
+        <label class="form-label">Image Data {{image.length}}</label>
+        <input type="file" (change)="getBase64($event)" class="form-control" 
           placeholder="Image Data">
       </div>
       <div class="col-4">
         <label class="form-label">Description</label>
-        <input type="text" class="form-control" formControlName="DeliveryTime" placeholder="Delivery Time">
+        <input type="text" class="form-control" formControlName="Description" placeholder="Description test for product">
       </div>
     </div>
     <!-- <div class="row d-flex justify-content-center">

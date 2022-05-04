@@ -91,7 +91,7 @@
         <ul class="list-group list-group-flush rounded">
           <li class="list-group-item" *ngFor="let item of items; index as i"><strong> Product - {{items[i].name}} |
               {{items[i].price | currency}}</strong></li>
-          <li class="list-group-item text-align-center"><strong> Total - {{total | currency}} </strong></li>
+          <li class="list-group-item text-align-center"><strong> Total - {{total | currency}} <p *ngIf="tax > 0">({{tax | currency}} sales tax included)</p>  </strong></li>
         </ul>
       </div>
       <form [formGroup]="myForm" *ngIf="!isUserLoggedIn" class="col-6">
@@ -106,7 +106,7 @@
               placeholder="Email"></li>
           <li class="list-group-item"><strong>Phone - </strong><input formControlName="ssl_phone" type="text"
               placeholder="512-592-9841"></li>
-          <li class="list-group-item"><strong>State - </strong><select formControlName="ssl_state">
+          <li class="list-group-item"><strong>State - </strong><select formControlName="ssl_state" >
               <option value="Alabama">Alabama (AL)</option>
               <option value="Alaska">Alaska (AK)</option>
               <option value="Arizona">Arizona (AZ)</option>

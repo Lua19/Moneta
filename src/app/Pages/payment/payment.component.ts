@@ -21,6 +21,7 @@ export class PaymentComponent implements OnInit {
   paymentError : string | any;
   response : any;
   HttpError : HttpStatusCode | any;
+  tax : number = 0;
 
   
   myForm: FormGroup = this.fb.group({
