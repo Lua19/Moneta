@@ -40,8 +40,11 @@ export class StorePageComponent implements OnInit {
     let previousItems = JSON.parse(localStorage.getItem("Products")!)
     if (previousItems != null) {
       this.products.productsInCart = previousItems
+      this.cartItems = this.products.productsInCart;
+      this.products.areItemsInCart.next(true);
     }
     if (this.products.productsInCart.length > 0) {
+      this.cartItems = this.products.productsInCart;
       this.products.areItemsInCart.next(true);
     }
     this.user = this.auth.user;
