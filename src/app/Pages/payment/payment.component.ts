@@ -1,7 +1,6 @@
 import { HttpStatusCode } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { catchError } from 'rxjs';
 import { Product } from 'src/app/Interfaces/Product.interface';
 import { WebUser } from 'src/app/Interfaces/WebUser.interface';
 import { AuthService } from 'src/app/Services/auth.service';
@@ -22,7 +21,7 @@ export class PaymentComponent implements OnInit {
   response : any;
   HttpError : HttpStatusCode | any;
   tax : number = 0;
-
+  state: string = '';
   
   myForm: FormGroup = this.fb.group({
     ssl_company: ['', [Validators.required,Validators.minLength(3)]],
@@ -88,6 +87,15 @@ export class PaymentComponent implements OnInit {
         }
       }
     )
+  }
+  applyTax(){
+    console.log("Tax rule applied");
+    if (this.myForm.value.ssl_state == 'Utah') {
+      this.tax = this.total * 1.047 - this.total;
+    }
+    if (this.myForm.value.ssl_state != 'Utah') {
+      this.tax = 0;
+    }
   }
 
 }

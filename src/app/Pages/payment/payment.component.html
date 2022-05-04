@@ -28,7 +28,8 @@
           <li class="list-group-item"><strong>Email - {{user.email}}</strong></li>
           <li class="list-group-item"><strong>Phone - </strong><input formControlName="ssl_phone" type="text"
               placeholder="512-592-9841"></li>
-          <li class="list-group-item"><strong>State - </strong><select formControlName="ssl_state">
+          <li id="list-group-item" class="list-group-item"><strong>State - </strong>
+            <select formControlName="ssl_state" ngModel="state" (change)="applyTax()">
               <option value="Alabama">Alabama (AL)</option>
               <option value="Alaska">Alaska (AK)</option>
               <option value="Arizona">Arizona (AZ)</option>
@@ -80,7 +81,8 @@
               <option value="West Virginia">West Virginia</option>
               <option value="Wisconsin">Wisconsin</option>
               <option value="Wyoming">Wyoming</option>
-            </select></li>
+            </select>
+          </li>
           <li class="list-group-item"><strong>City - </strong><input formControlName="ssl_city" type="text"
               placeholder="Sacramento"></li>
           <li class="list-group-item"><strong>Address - </strong><input formControlName="ssl_avs_address" type="text"
@@ -106,7 +108,8 @@
               placeholder="Email"></li>
           <li class="list-group-item"><strong>Phone - </strong><input formControlName="ssl_phone" type="text"
               placeholder="512-592-9841"></li>
-          <li class="list-group-item"><strong>State - </strong><select formControlName="ssl_state" >
+          <li class="list-group-item"><strong>State - </strong>
+            <select formControlName="ssl_state" (change)="applyTax()" >
               <option value="Alabama">Alabama (AL)</option>
               <option value="Alaska">Alaska (AK)</option>
               <option value="Arizona">Arizona (AZ)</option>
@@ -158,7 +161,8 @@
               <option value="West Virginia">West Virginia</option>
               <option value="Wisconsin">Wisconsin</option>
               <option value="Wyoming">Wyoming</option>
-            </select></li>
+            </select>
+          </li>
           <li class="list-group-item"><strong>City - </strong><input formControlName="ssl_city" type="text"
               placeholder="Sacramento"></li>
           <li class="list-group-item"><strong>Address - </strong><input formControlName="ssl_avs_address" type="text"
@@ -169,8 +173,8 @@
   </div>
   <br>
   <div class="d-flex justify-content-center align-items-center">
-    <h1 id="pay-text">Total : {{total | currency}}</h1>
-    <button (click)="pay()"
+    <h1 id="pay-text">Total : {{total+tax | currency}}</h1>
+    <button [disabled]="myForm.invalid" (click)="pay()"
       class="payment-card align-self-end d-flex flex-wrap justify-content-center align-items-center">
       <svg xmlns="http://www.w3.org/2000/svg" id="cart-card-img" fill="currentColor" class="bi bi-credit-card"
         viewBox="0 0 16 16">

@@ -33,7 +33,8 @@ export class StorePageComponent implements OnInit {
   ngOnInit(): void {
     this.products.getProducts().subscribe(
       (res) => {
-        this.productsList = res
+        this.productsList = res;
+        console.log(res);
         this.loading = false}
       );
     let previousItems = JSON.parse(localStorage.getItem("Products")!)
