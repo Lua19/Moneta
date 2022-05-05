@@ -25,6 +25,7 @@ export class CartViewComponent implements OnInit {
   }
   deleteItem(index : number){
     this.products.productsInCart.splice(index,1);
+    localStorage.setItem("Products",JSON.stringify(this.products.productsInCart))
     this.total = this.calcTotal();
   }
   calcTotal(){

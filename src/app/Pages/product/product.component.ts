@@ -18,7 +18,7 @@ export class ProductComponent {
   myForm: FormGroup = this.fb.group({
     Name: ['', [Validators.required]],
     // Barcode: ['', [Validators.required]],
-    // Quantity: [0, [Validators.required]],
+    Quantity: [0, [Validators.required]],
     UnitCost: [0, [Validators.required]],
     Price: [0, [Validators.required]],
     TaxPercentage: [0, [Validators.required]],
