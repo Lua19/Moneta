@@ -15,44 +15,27 @@
     class="row row-cols-1 row-cols-md-3 g-4 d-flex justify-content-center animate__animated animate__fadeInLeft">
     <div class="card" id="item" style="width: 25rem;" *ngFor="let product of productsList; index as i">
       <div id="carouselExampleDark{{i}}" class="carousel carousel-dark slide" data-bs-ride="carousel"
-        data-bs-interval="false">
-        <div class="carousel-indicators">
-          <button type="button" [attr.data-bs-target]="'#carouselExampleDark'+i" data-bs-slide-to="0" class="active"
-            aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" [attr.data-bs-target]="'#carouselExampleDark'+i" data-bs-slide-to="1"
-            aria-label="Slide 2"></button>
-          <button type="button" [attr.data-bs-target]="'#carouselExampleDark'+i" data-bs-slide-to="2"
-            aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active" data-bs-interval="false">
-            <img src="{{productsList[i].imageData | image}}" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item" data-bs-interval="false">
-            <img src="{{productsList[i].imageData | image}}" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item" data-bs-interval="false">
-            <img src="{{productsList[i].imageData | image}}" class="d-block w-100" alt="...">
-          </div>
-        </div>
-        <div class="carousel-control-prev" type="button" [attr.data-bs-target]="'#carouselExampleDark'+i"
-          data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        </div>
-        <div class="carousel-control-next" type="button" [attr.data-bs-target]="'#carouselExampleDark'+i"
-          data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      data-bs-interval="false">
+      <div class="carousel-indicators" >
+        <button *ngFor="let image of productsList[i].storeProductImageList; index as y" type="button" [attr.data-bs-target]="'#carouselExampleDark'+i" [attr.data-bs-slide-to]="y" class="active"
+          aria-current="true" [attr.aria-label]="'Slide' +y"></button>
+
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item" data-bs-interval="false" *ngFor="let photo of productsList[i].storeProductImageList; let i = index" [ngClass]="{'active': i == 0 }">
+          <img id="prod-img" [src]="photo.imageData" class="d-block " alt="...">
         </div>
       </div>
-      <div class="card-body">
-        <h5 class="card-title">{{productsList[i].name}}</h5>
-        <p class="card-text" *ngIf="productsList[i].quantity > 0">Remaining in stock: {{productsList[i].quantity}}</p>
-      </div>
-      <ul class="list-group list-group-flush rounded">
-        <li class="list-group-item">Price: {{productsList[i].price | currency}}</li>
-        <li class="list-group-item" *ngIf="productsList[i].deliveryTime">Description: {{productsList[i].deliveryTime}}
-        </li>
-      </ul>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{productsList[i].name}}</h5>
+      <p class="card-text" *ngIf="productsList[i].quantity > 0">Remaining in stock: {{productsList[i].quantity}}</p>
+    </div>
+    <ul class="list-group list-group-flush rounded">
+      <li class="list-group-item">Price: {{productsList[i].price | currency}}</li>
+      <li class="list-group-item" *ngIf="productsList[i].deliveryTime">Description: {{productsList[i].deliveryTime}}
+      </li>
+    </ul>
       <button (click)="deleteItem(i)" id="delete-button" class="col-4 mt-2 rounded">
         Delete
         <svg id="delete-icon" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"

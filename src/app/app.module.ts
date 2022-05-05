@@ -25,6 +25,7 @@ import { UsersComponent } from './Pages/users/users.component';
 import { PaymentComponent } from './Pages/payment/payment.component';
 import { CartViewComponent } from './Pages/cart-view/cart-view.component';
 import { OrdersComponent } from './Pages/orders/orders.component';
+import { ItemPipe } from './pipes/item.pipe';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { OrdersComponent } from './Pages/orders/orders.component';
     UsersComponent,
     PaymentComponent,
     CartViewComponent,
-    OrdersComponent
+    OrdersComponent,
+    ItemPipe
     
   ],
   imports: [

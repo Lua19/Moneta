@@ -19,6 +19,7 @@ export class StorePageComponent implements OnInit {
   user:WebUser|any;
   loading : boolean = true;
   productsFromStorage: string | null = '';
+  zero : number = 0;
 
   constructor(private router : Router, private products: ProductsService, private auth : AuthService) {
     this.auth.isUserLoggedIn.subscribe( value => {
@@ -35,6 +36,7 @@ export class StorePageComponent implements OnInit {
       (res) => {
         this.productsList = res;
         console.log(res);
+        
         this.loading = false}
       );
     let previousItems = JSON.parse(localStorage.getItem("Products")!)

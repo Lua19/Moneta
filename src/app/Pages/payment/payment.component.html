@@ -4,8 +4,10 @@
   <br>
   <div id="item-row" class="row d-flex justify-content-between animate__animated animate__fadeIn rounded"
     *ngFor="let item of items; index as i">
-    <div class="col col-sm d-flex justify-content-center image-container"><img class="d-block w-25 rounded"
-        src="{{items[i].imageData | image}}" alt=""></div>
+    <div class="col col-sm d-flex justify-content-center image-container">
+      <img class="d-block w-25 rounded"
+        src="{{items[i] | image}}" alt="">
+      </div>
     <div class="col d-flex align-items-center">
       <h3 class="title-text1">Name : {{items[i].name}}</h3>
     </div>

@@ -62,6 +62,9 @@ export class ProductComponent {
   }
   closeAlert(){
     this.errorResponse = undefined;
+    this.myForm.reset()
+    this.imagesArray = [];
+    this.image = []
   }
 
 }

@@ -21,8 +21,9 @@
       </div>
     </div>
     <div id="product-row" class="row d-flex justify-content-between" *ngFor="let product of productsList; index as i">
-      <div class="col col-sm d-flex justify-content-center image-container"><img class="d-block w-25 rounded"
-          src="{{productsList[i].imageData | image}}" alt=""></div>
+      <div class="col col-sm d-flex justify-content-center image-container">
+        <img class="d-block w-25 rounded"  src="{{productsList[i] | image}}" alt="">
+        </div>
       <div class="col d-flex align-items-center">
         <h3 class="title-text3">{{productsList[i].name}}</h3>
       </div>

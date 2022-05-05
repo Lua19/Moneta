@@ -47,7 +47,7 @@ export class PaymentComponent implements OnInit {
 
   calcTotal(){
     for (let index = 0; index < this.items.length; index++) {
-       this.total = this.total + this.items[index].price;
+       this.total = this.total + this.items[index].price!;
       }
       return this.total
   }

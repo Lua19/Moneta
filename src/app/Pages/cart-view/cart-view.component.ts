@@ -30,7 +30,7 @@ export class CartViewComponent implements OnInit {
   calcTotal(){
     this.total = 0;
     for (let index = 0; index < this.productsList.length; index++) {
-       this.total = this.total + this.productsList[index].price;
+       this.total = this.total + this.productsList[index].price!;
       }
       return this.total
   }

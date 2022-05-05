@@ -43,6 +43,12 @@ li{
 }
 #prod-img{
     width: 100% !important;
-    height: 250px !important;
+    height: 350px !important;
     object-fit: cover;
 }
+.carousel-indicators {
+    bottom:-30px;
+  }
+  .carousel-inner {
+    margin-bottom:20px;
+ }
